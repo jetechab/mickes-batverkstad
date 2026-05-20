@@ -1,0 +1,138 @@
+---
+import CtaSection from "@/components/sections/CtaSection.tsx";
+import UspSection from "@/components/sections/UspSection.tsx";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://batverkstad.se/" },
+    { "@type": "ListItem", position: 2, name: "Om oss", item: "https://batverkstad.se/om-oss/" },
+  ],
+};
+---
+
+<BaseLayout
+  title="Om Mickes Båtverkstad | Marin servicetekniker i Grebbestad"
+  description="Mickes Båtverkstad är en mobil båtverkstad i Bohuslän. Marin servicetekniker med lång erfarenhet. Bas i Grebbestad."
+  schema={breadcrumbSchema}
+>
+  <section class="bg-background pt-32 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden border-b border-border">
+    <div class="absolute inset-0 pointer-events-none opacity-50">
+      <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent-sand/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-(--max-w-content) mx-auto px-6 relative z-10">
+      <nav aria-label="Brödsmulor" class="mb-8 text-sm text-muted-foreground">
+        <a href="/" class="hover:text-foreground transition-colors">Hem</a>
+        <span class="mx-2 opacity-50">/</span>
+        <span class="text-foreground">Om oss</span>
+      </nav>
+
+      <div class="relative rounded-3xl overflow-hidden border border-border shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)] aspect-[16/9] mb-12 lg:mb-16">
+        <img
+          src="/img/micke-vid-bilen.jpg"
+          alt="Micke framför servicebilen i Bohuslän"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-10">
+          <div class="flex items-center gap-3 max-w-2xl">
+            <div class="w-1 h-10 rounded-full bg-accent-sand"></div>
+            <p class="text-sm lg:text-base text-foreground font-medium leading-snug">
+              Bas i Grebbestad. Verkstaden kör jag dit båten står.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-6 h-[2px] bg-primary"></div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              Om oss
+            </span>
+          </div>
+          <h1
+            class="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-8 leading-[1.05] tracking-tight"
+          >
+            Båtverkstaden som
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-sand">
+              kommer ut till båten.
+            </span>
+          </h1>
+
+          <div class="space-y-5 text-muted-foreground text-lg leading-relaxed max-w-(--max-w-text)">
+            <p>
+              Mickes Båtverkstad startades med en enkel idé. Båtfolk ska inte
+              behöva släppa allt och köra båten till verkstad varje gång den
+              behöver service. Vi tar med verkstaden ut till båten istället.
+            </p>
+            <p>
+              Bakom företaget står Mikael "Micke" Karlsson, utbildad marin
+              servicetekniker med lång erfarenhet inom serviceyrken. Han har
+              servat utombordare i många år, både i jobb hos andra verkstäder
+              och som mobilt alternativ.
+            </p>
+            <p>
+              Idag har vi bas i Grebbestad och kör ut till kund i hela
+              Bohuslän, Dalsland och Värmland. Det vi gör är service,
+              reparation, krympplastning och bottenmålning. Garanti på arbete
+              och delar.
+            </p>
+            <p>
+              Hör av dig, så löser vi det.
+            </p>
+          </div>
+        </div>
+
+        <aside class="space-y-4 lg:sticky lg:top-28 self-start">
+          <div class="bg-card border border-border rounded-2xl p-6 lg:p-7">
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground mb-2">
+              Företaget
+            </p>
+            <p class="font-heading text-xl font-bold text-foreground mb-3">
+              Mickes Båtverkstad AB
+            </p>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><span class="text-foreground font-medium">Bas:</span> Grebbestad</li>
+              <li><span class="text-foreground font-medium">Område:</span> Bohuslän, Dalsland, Värmland</li>
+              <li><span class="text-foreground font-medium">F-skatt:</span> Ja</li>
+              <li><span class="text-foreground font-medium">Adress:</span> Box 6, 457 02 Grebbestad</li>
+            </ul>
+          </div>
+
+          <div class="bg-card border border-border rounded-2xl p-6 lg:p-7">
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground mb-2">
+              Kontakt
+            </p>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="tel:+46767166716" class="text-foreground hover:text-primary transition-colors font-medium">
+                  0767-16 67 16
+                </a>
+              </li>
+              <li>
+                <a href="mailto:mickes@batverkstad.se" class="text-foreground hover:text-primary transition-colors font-medium">
+                  mickes@batverkstad.se
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=100089773764804" target="_blank" rel="noopener noreferrer" class="text-foreground hover:text-primary transition-colors font-medium">
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <UspSection client:visible />
+  <CtaSection client:visible />
+</BaseLayout>

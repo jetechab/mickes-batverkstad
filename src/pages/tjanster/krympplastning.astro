@@ -1,0 +1,84 @@
+---
+import CtaSection from "@/components/sections/CtaSection.tsx";
+import ServicePage from "@/components/ServicePage.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Krympplastning",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Mickes Båtverkstad AB",
+  },
+  description:
+    "Krympplastning av båt på plats hos kund. UV-, regn- och snöskydd. Båten kan stå kvar på släp eller uppallning under vintern.",
+  serviceType: "Boat shrink wrapping",
+  areaServed: { "@type": "AdministrativeArea", name: "Bohuslän" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://batverkstad.se/" },
+    { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://batverkstad.se/tjanster/" },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Krympplastning",
+      item: "https://batverkstad.se/tjanster/krympplastning/",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Krympplastning av båt | Vintertäcke på plats"
+  description="Krympplastning av båt utförs på plats. Skydd mot UV, regn och snö. Båten kan stå kvar på släp eller uppallning. Slipper inomhusförvar."
+  schema={[serviceSchema, breadcrumbSchema]}
+>
+  <ServicePage
+    eyebrow="Tjänst"
+    title="Krympplastning"
+    titleAccent="vintertäcke som sitter"
+    lede="Vi krympplastar båten där den står. Plasten skräddarsys över båt och kapell, värms och sluter tätt. Resultatet är ett tåligt vinterhölje som skyddar mot UV-strålning, regn, snö och nötningar hela vintern."
+    image="/img/tackning.jpg"
+    imageAlt="Krymplastade båtar med vita och blå skyddstäcken"
+    imageCaption="Krympplastning utförs där båten ligger. På släp, vid brygga eller uppställd på land."
+    bullets={[
+      "Görs på plats, släp eller uppallning",
+      "Skydd mot UV, regn, snö och nötningar",
+      "Andas tillräckligt för att förhindra mögel",
+      "Snabbt jobb, ofta klart på dagen",
+    ]}
+    includesTitle="Det här ingår"
+    includes={[
+      "Förarbete och uppmätning",
+      "Krympplast av god kvalitet",
+      "Ventilation för att motverka mögel",
+      "Förstärkta hörn och kanter",
+      "Genomgång på plats av resultatet",
+    ]}
+    sections={[
+      {
+        heading: "Varför krympplast istället för presenning",
+        body: "Krympplast ligger spänd över båten och flagar inte upp i vinden som en presenning kan göra. Den töjer sig inte heller. Resultatet är ett tätt, slätt skyddslager som klarar väder hela vintern utan tillsyn.",
+      },
+      {
+        heading: "Båten står kvar där den är",
+        body: "Du slipper transport till inomhusvarv. Båten kan stå på trailer i carporten, uppallad på tomten eller på uppställningsplats. Vi kommer ut och plastar på plats.",
+      },
+      {
+        heading: "Andas så det inte blir mögel",
+        body: "Vi bygger in ventilationsöppningar så fukt kan komma ut. Det är avgörande för att tygseter, instrument och elektronik ska må bra över vintern.",
+      },
+      {
+        heading: "Tidpunkt och pris",
+        body: "Boka tid i god tid inför hösten. Pris beror på båtens storlek och form, vi ger alltid en uppskattning innan vi börjar. Avplastning till våren ingår inte men kan bokas separat.",
+      },
+    ]}
+  />
+
+  <CtaSection client:visible />
+</BaseLayout>

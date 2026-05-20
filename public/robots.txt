@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /tack/
+Disallow: /boka/
+
+Sitemap: https://batverkstad.se/sitemap-index.xml

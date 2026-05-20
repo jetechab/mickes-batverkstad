@@ -1,0 +1,192 @@
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/outfit";
+
+@import "tailwindcss";
+
+/*
+ * Brand-paletten är PLACEHOLDER. Maritim navy + havsblå accent + sand som lyft.
+ * Byts ut när Mickes/Måns godkänt slutgiltig palett. Komponenter ska aldrig
+ * hårdkoda hex-värden – använd semantiska klasser (bg-background, text-primary,
+ * border-border osv.) så att hela paletten kan bytas i denna fil.
+ */
+@theme {
+  /* Breakpoints */
+  --breakpoint-xs: 23rem;
+
+  /* Brand colors – placeholder Bohuslän-palett */
+  --color-primary: #5ec3d6;            /* Havsblå */
+  --color-primary-foreground: #0a1924; /* Djup navy */
+  --color-accent-teal: #8ad5e3;        /* Ljusare havsblå för glow/hover */
+  --color-accent-sand: #d4b985;        /* Varm sand som lyft-accent */
+  --color-accent-foreground: #0a1924;
+
+  /* Semantic colors */
+  --color-background: #0a1924;          /* Djup havsmörk navy */
+  --color-foreground: #f5f1ea;          /* Varm vit, drag av sand */
+  --color-muted: #102536;               /* Något ljusare än bg */
+  --color-muted-foreground: #93a7b8;    /* Dimmat blågrått */
+  --color-border: #1c3349;              /* Subtilt blå border */
+  --color-input: #1c3349;
+  --color-ring: #5ec3d6;
+
+  --color-card: #122638;                /* Card-yta */
+  --color-card-foreground: #f5f1ea;
+
+  --color-secondary: #1c3349;
+  --color-secondary-foreground: #f5f1ea;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #f5f1ea;
+
+  --color-success: #4ade80;
+
+  /* Typography */
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-heading: "Outfit Variable", system-ui, sans-serif;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+
+  /* Max widths */
+  --max-w-content: 1152px;
+  --max-w-text: 672px;
+
+  /* Animations för Accordion */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  :root {
+    color-scheme: dark;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  html {
+    scrollbar-gutter: stable;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    background-image:
+      radial-gradient(
+        circle at 15% 50%,
+        color-mix(in srgb, var(--color-primary) 5%, transparent) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 85% 30%,
+        color-mix(in srgb, var(--color-accent-sand) 3%, transparent) 0%,
+        transparent 45%
+      );
+    color: var(--color-foreground);
+    font-size: 16px;
+    line-height: 1.625;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-primary) 35%, transparent);
+    color: var(--color-foreground);
+  }
+}
+
+@utility section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  @media (max-width: 768px) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@utility container-content {
+  max-width: var(--max-w-content);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}

@@ -1,0 +1,54 @@
+---
+import ContactLeadForm from "@/components/ContactLeadForm.tsx";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Boka tid | Mickes Båtverkstad"
+  description="Boka tid för utombordsservice, krympplastning eller bottenmålning. Fyll i båtmodell, motor och önskat datum så återkommer vi."
+  noindex={true}
+  hideStickyCta={true}
+>
+  <section class="bg-background pt-32 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-50">
+      <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent-sand/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-(--max-w-content) mx-auto px-6 relative z-10">
+      <nav aria-label="Brödsmulor" class="mb-8 text-sm text-muted-foreground">
+        <a href="/" class="hover:text-foreground transition-colors">Hem</a>
+        <span class="mx-2 opacity-50">/</span>
+        <span class="text-foreground">Boka tid</span>
+      </nav>
+
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-3 mb-6">
+          <div class="w-6 h-[2px] bg-primary"></div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            Boka tid
+          </span>
+          <div class="w-6 h-[2px] bg-primary"></div>
+        </div>
+        <h1
+          class="font-heading text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.05] mb-6"
+        >
+          Skicka bokningsförfrågan
+        </h1>
+        <p class="text-muted-foreground text-lg leading-relaxed">
+          Fyll i så mycket du vet om båt, motor och plats så får vi rätt
+          fart från start. Vi återkommer samma dag på vardagar.
+        </p>
+      </div>
+
+      <ContactLeadForm client:load />
+
+      <div class="mt-10 text-center text-sm text-muted-foreground">
+        Föredrar du att ringa?{" "}
+        <a href="tel:+46767166716" class="text-primary font-bold hover:text-accent-teal transition-colors">
+          0767-16 67 16
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

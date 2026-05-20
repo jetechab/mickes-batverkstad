@@ -1,0 +1,187 @@
+---
+import { siteContact, siteContactLinks } from "@/lib/site";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="relative bg-background text-foreground overflow-hidden border-t border-border"
+>
+  <div class="absolute inset-0 pointer-events-none opacity-40">
+    <div
+      class="absolute -top-24 left-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]"
+    >
+    </div>
+    <div
+      class="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-accent-sand/10 blur-[100px]"
+    >
+    </div>
+  </div>
+
+  <div class="max-w-(--max-w-content) mx-auto px-6 pt-14 pb-8">
+    <div
+      class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-border rounded-2xl bg-card/30 px-6 pt-8"
+    >
+      <div class="lg:col-span-1">
+        <a href="/" class="flex items-center gap-2.5 mb-4 group">
+          <img
+            src="/logo.png"
+            alt="Mickes Båtverkstad"
+            class="h-10 w-auto"
+            width="120"
+            height="40"
+          />
+        </a>
+        <p class="text-[13px] text-muted-foreground leading-relaxed mb-5">
+          Mobil båtverkstad i Bohuslän. Vi servar utombordare, krympplastar och
+          bottenmålar på plats hos dig.
+        </p>
+        {
+          siteContact.fSkatt && (
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 border border-border bg-secondary rounded-md text-[11px] font-bold text-foreground uppercase tracking-wide">
+                F-skatt
+              </span>
+            </div>
+          )
+        }
+      </div>
+
+      <div>
+        <h3
+          class="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground mb-4"
+        >
+          Tjänster
+        </h3>
+        <ul class="space-y-2.5">
+          {
+            [
+              { label: "Alla tjänster", href: "/tjanster/" },
+              { label: "Utombordsservice", href: "/tjanster/utombordsservice/" },
+              { label: "Krympplastning", href: "/tjanster/krympplastning/" },
+              { label: "Bottenmålning", href: "/tjanster/bottenmalning/" },
+              { label: "Reservdelar", href: "/reservdelar/" },
+            ].map(({ label, href }) => (
+              <li>
+                <a
+                  href={href}
+                  class="text-[13px] text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3
+          class="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground mb-4"
+        >
+          Information
+        </h3>
+        <ul class="space-y-2.5">
+          {
+            [
+              { label: "Om oss", href: "/om-oss/" },
+              { label: "Priser", href: "/priser/" },
+              { label: "Garanti", href: "/garanti/" },
+              { label: "Vanliga frågor", href: "/vanliga-fragor/" },
+              { label: "Kontakt", href: "/kontakt/" },
+              { label: "Boka tid", href: "/boka/" },
+              { label: "Integritetspolicy", href: "/integritetspolicy/" },
+            ].map(({ label, href }) => (
+              <li>
+                <a
+                  href={href}
+                  class="text-[13px] text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3
+          class="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground mb-4"
+        >
+          Kontakt
+        </h3>
+        <ul class="space-y-2.5">
+          <li>
+            <a
+              href={siteContactLinks.phone}
+              class="text-[13px] text-muted-foreground hover:text-primary transition-colors"
+            >
+              {siteContact.phoneDisplay}
+            </a>
+          </li>
+          <li>
+            <!--email_off-->
+            <a
+              href={siteContactLinks.email}
+              class="text-[13px] text-muted-foreground hover:text-primary transition-colors"
+            >
+              {siteContact.email}
+            </a>
+            <!--/email_off-->
+          </li>
+          <li class="text-[13px] text-foreground">
+            {siteContact.address}
+          </li>
+          <li>
+            <a
+              href={siteContact.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-[13px] text-muted-foreground hover:text-primary transition-colors"
+            >
+              Facebook
+            </a>
+          </li>
+        </ul>
+        <a
+          href="/boka/"
+          class="mt-5 inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary/30 hover:bg-primary/20 hover:border-primary/60 text-primary text-[13px] font-bold rounded-lg transition-all"
+        >
+          Boka tid
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"
+    >
+      <p class="text-[11px] text-muted-foreground">
+        © {currentYear}
+        {siteContact.companyName}. Bas i {siteContact.city}.
+      </p>
+      <div class="flex items-center gap-4">
+        <a
+          href="https://jetechab.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-[11px] text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Utvecklad av JE Tech
+        </a>
+        <a
+          href="/integritetspolicy/"
+          class="text-[11px] text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Integritet
+        </a>
+        <a
+          href="/kontakt/"
+          class="text-[11px] text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Kontakt
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

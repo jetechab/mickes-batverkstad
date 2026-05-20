@@ -1,0 +1,125 @@
+---
+import CtaSection from "@/components/sections/CtaSection.tsx";
+import FAQSection from "@/components/sections/FAQSection.tsx";
+import GeographySection from "@/components/sections/GeographySection.tsx";
+import HeroSection from "@/components/sections/HeroSection.tsx";
+import HowItWorksSection from "@/components/sections/HowItWorksSection.tsx";
+import QuickBookSection from "@/components/sections/QuickBookSection.tsx";
+import ServicesSection from "@/components/sections/ServicesSection.tsx";
+import UspSection from "@/components/sections/UspSection.tsx";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { orter } from "@/lib/site";
+
+export function getStaticPaths() {
+  return orter.map((ort) => ({
+    params: { ort: ort.slug },
+    props: { ort },
+  }));
+}
+
+const { ort } = Astro.props;
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: `Båtverkstad ${ort.name}`,
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Mickes Båtverkstad AB",
+  },
+  areaServed: {
+    "@type": "City",
+    name: ort.name,
+  },
+  description: `Mobil båtverkstad i ${ort.name}. Service av utombordare, krympplastning och bottenmålning på plats där båten står.`,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://batverkstad.se/" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: ort.name,
+      item: `https://batverkstad.se/orter/${ort.slug}/`,
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={`Båtverkstad ${ort.name} | Service på plats hos dig`}
+  description={`Behöver du båtverkstad i ${ort.name}? Vi kommer ut med mobil verkstad. Utombordsservice, krympplastning och bottenmålning. Ring 0767-16 67 16.`}
+  schema={[serviceSchema, breadcrumbSchema]}
+>
+  <HeroSection city={ort.name} client:load />
+  <UspSection client:visible />
+  <ServicesSection client:visible />
+
+  <section class="bg-background py-20 lg:py-28 border-y border-border relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-(--max-w-content) mx-auto px-6 relative z-10">
+      <div class="grid lg:grid-cols-[1.4fr_0.6fr] gap-12 lg:gap-16">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-6 h-[2px] bg-primary"></div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              Service i {ort.name}
+            </span>
+          </div>
+          <h2
+            class="font-heading text-3xl lg:text-4xl font-bold text-foreground tracking-tight leading-tight mb-6"
+          >
+            Båtservice i {ort.name}, {ort.municipality}
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6 italic">
+            {ort.intro}
+          </p>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            {ort.localCopy.map((p) => <p>{p}</p>)}
+          </div>
+        </div>
+
+        <aside class="lg:sticky lg:top-28 self-start space-y-4">
+          <div class="bg-card border border-border rounded-2xl p-6">
+            <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground mb-2">
+              Avstånd till verkstaden
+            </p>
+            <p class="font-heading text-lg font-bold text-foreground leading-snug mb-3">
+              {ort.nearestBase}
+            </p>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+              Bas i Grebbestad. Vi tar med oss det som behövs i servicebilen,
+              du behöver inte ordna något.
+            </p>
+          </div>
+
+          <div class="bg-card border border-border rounded-2xl p-6">
+            <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground mb-3">
+              Känt för
+            </p>
+            <ul class="space-y-2">
+              {
+                ort.knownFor.map((item) => (
+                  <li class="flex items-start gap-2 text-sm text-foreground">
+                    <span class="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <span class="leading-snug">{item}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <HowItWorksSection client:visible />
+  <GeographySection client:visible />
+  <FAQSection client:visible />
+  <QuickBookSection client:visible />
+  <CtaSection client:visible />
+</BaseLayout>

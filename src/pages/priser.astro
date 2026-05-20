@@ -1,0 +1,189 @@
+---
+import CtaSection from "@/components/sections/CtaSection.tsx";
+import ShrinkWrapCalculator from "@/components/ShrinkWrapCalculator.tsx";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://batverkstad.se/" },
+    { "@type": "ListItem", position: 2, name: "Priser", item: "https://batverkstad.se/priser/" },
+  ],
+};
+
+const services = [
+  {
+    title: "Årsservice utombordare",
+    range: "Från cirka 2 500 kr",
+    details:
+      "Inkluderar olje- och oljefilterbyte, tändstift, impeller, kontroll av batteri och anoder samt testkörning. Pris beror på motorstorlek och eventuella tillägg.",
+    includes: [
+      "Olja och oljefilter",
+      "Tändstift",
+      "Impeller",
+      "Kontroll batteri och anoder",
+      "Testkörning",
+    ],
+  },
+  {
+    title: "Krympplastning",
+    range: "Cirka 3 500–11 500 kr",
+    details:
+      "Beror på båtlängd, form och eventuella förstärkningar. Inkluderar krympplast, värmning, ventilation och förstärkta kanter. Använd vår räknare nedan för en uppskattning.",
+    includes: [
+      "Krympplast av god kvalitet",
+      "Värmning på plats",
+      "Förstärkta hörn",
+      "Ventilation för att motverka mögel",
+    ],
+  },
+  {
+    title: "Bottenmålning",
+    range: "Cirka 4 500–14 000 kr",
+    details:
+      "Beror på båtens längd, befintligt skick och valt färgsystem. Slip, primer och två lager Jotun-färg ingår. Extra lager på utsatta ytor kan tillkomma.",
+    includes: [
+      "Bedömning på plats",
+      "Slip och förarbete",
+      "Primer på bar yta",
+      "Två lager Jotun bottenfärg",
+    ],
+  },
+  {
+    title: "Felsökning och reparation",
+    range: "Timpris efter avtal",
+    details:
+      "Vi tar ett kostnadsbesked innan arbetet börjar. Resor inom hemkommunen ingår i timpriset. För längre utryckningar tillkommer en framkörningsavgift som vi alltid stämmer av i förväg.",
+    includes: [
+      "Diagnos och felsökning",
+      "Reservdelar kvalitetsalternativ eller original",
+      "Garanti på arbete",
+      "Dokumentation av åtgärder",
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Priser | Mickes Båtverkstad"
+  description="Vad det brukar kosta. Årsservice, krympplastning, bottenmålning och reparation. Vi ger alltid ett kostnadsbesked innan vi börjar."
+  schema={breadcrumbSchema}
+>
+  <section class="bg-background pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-50">
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-sand/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-(--max-w-content) mx-auto px-6 relative z-10">
+      <nav aria-label="Brödsmulor" class="mb-8 text-sm text-muted-foreground">
+        <a href="/" class="hover:text-foreground transition-colors">Hem</a>
+        <span class="mx-2 opacity-50">/</span>
+        <span class="text-foreground">Priser</span>
+      </nav>
+
+      <div class="max-w-3xl mb-6">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-6 h-[2px] bg-primary"></div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            Priser
+          </span>
+        </div>
+        <h1 class="font-heading text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.05] mb-6">
+          Vad det brukar kosta
+        </h1>
+        <p class="text-muted-foreground text-lg leading-relaxed">
+          Inga ärenden ser exakt likadana ut. Här är ungefärliga intervall för
+          våra vanligaste tjänster. Slutpriset bekräftas alltid innan vi
+          börjar arbetet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-muted/40 py-16 lg:py-24 border-y border-border">
+    <div class="max-w-(--max-w-content) mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
+        {
+          services.map((service) => (
+            <article class="bg-card border border-border rounded-2xl p-6 lg:p-8 flex flex-col">
+              <h2 class="font-heading text-2xl font-bold text-foreground mb-3">
+                {service.title}
+              </h2>
+              <p class="font-heading text-xl font-bold text-primary mb-4">
+                {service.range}
+              </p>
+              <p class="text-muted-foreground text-sm leading-relaxed mb-5">
+                {service.details}
+              </p>
+              <ul class="space-y-2 mt-auto pt-5 border-t border-border">
+                {service.includes.map((item) => (
+                  <li class="flex items-start gap-2 text-sm text-foreground">
+                    <span class="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <span class="leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-3 mb-4">
+          <div class="w-6 h-[2px] bg-primary"></div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            Interaktivt
+          </span>
+          <div class="w-6 h-[2px] bg-primary"></div>
+        </div>
+        <h2 class="font-heading text-3xl lg:text-4xl font-bold text-foreground tracking-tight mb-4">
+          Räkna ut din krympplastning
+        </h2>
+        <p class="text-muted-foreground text-[15px] leading-relaxed max-w-2xl mx-auto">
+          Skjut reglaget till din båts längd så får du en uppskattning. Boka
+          tid via formuläret så bekräftar vi ett fast pris efter mätning.
+        </p>
+      </div>
+
+      <ShrinkWrapCalculator client:visible />
+    </div>
+  </section>
+
+  <section class="bg-muted/40 py-16 lg:py-24 border-t border-border">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-heading text-2xl lg:text-3xl font-bold text-foreground mb-8">
+        Så här jobbar vi med priser
+      </h2>
+      <div class="space-y-5 text-muted-foreground leading-relaxed">
+        <p>
+          <span class="text-foreground font-semibold">Kostnadsbesked innan arbete.</span>
+          Vi ger alltid ett pris eller ett tydligt intervall innan vi börjar.
+          Skulle något oväntat dyka upp så stannar vi och stämmer av med dig.
+        </p>
+        <p>
+          <span class="text-foreground font-semibold">Ingen utryckningsavgift inom hemkommunen.</span>
+          Tanums kommun ingår alltid. För längre köror lägger vi en
+          framkörningsavgift som vi stämmer av i förväg.
+        </p>
+        <p>
+          <span class="text-foreground font-semibold">Garanti ingår.</span>
+          Garanti på arbete och reservdelar enligt branschpraxis. Du får
+          dokumentation på vad som utförts.
+        </p>
+        <p>
+          <span class="text-foreground font-semibold">F-skatt och faktura.</span>
+          Vi är godkända för F-skatt. Faktura med vanliga betalningsvillkor.
+          Swish och faktura vid mindre uppdrag.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection client:visible />
+</BaseLayout>

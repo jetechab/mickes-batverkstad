@@ -1,0 +1,85 @@
+---
+import CtaSection from "@/components/sections/CtaSection.tsx";
+import ServicePage from "@/components/ServicePage.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Utombordsservice",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Mickes Båtverkstad AB",
+  },
+  description:
+    "Service och reparation av utombordare på plats hos kund. Alla större märken. Bas i Grebbestad, hela Bohuslän, Dalsland och Värmland.",
+  serviceType: "Outboard motor service",
+  areaServed: { "@type": "AdministrativeArea", name: "Bohuslän" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://batverkstad.se/" },
+    { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://batverkstad.se/tjanster/" },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Utombordsservice",
+      item: "https://batverkstad.se/tjanster/utombordsservice/",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Utombordsservice | Yamaha, Mercury, Suzuki och fler"
+  description="Service och reparation av utombordare på plats hos dig. Yamaha, Mercury, Suzuki, Honda, Evinrude, Tohatsu med flera. Garanti på arbete och delar."
+  schema={[serviceSchema, breadcrumbSchema]}
+>
+  <ServicePage
+    eyebrow="Tjänst"
+    title="Utombordsservice"
+    titleAccent="alla märken, på plats"
+    lede="Utbildad marin servicetekniker med lång erfarenhet på samtliga större märken. Vi gör allt från enklare årsservice till felsökning och reparation. Verkstadsbilen rullar fram där båten står, du behöver inte boka tid på något varv."
+    image="/img/service.jpg"
+    imageAlt="Service av utombordsmotor med flushöra under spolning"
+    imageCaption="Service och reparation av utombordare, alla större märken. Garanti på arbete och delar."
+    bullets={[
+      "Yamaha, Mercury, Suzuki, Honda, Evinrude, Tohatsu med flera",
+      "Årsservice, felsökning och reparation",
+      "Garanti på arbete och reservdelar",
+      "Originaldelar och kvalitetsalternativ",
+    ]}
+    includesTitle="Vad ingår i en årsservice"
+    includes={[
+      "Olje- och oljefilterbyte",
+      "Byte av tändstift",
+      "Kontroll och byte av impeller",
+      "Kontroll av växelhusolja",
+      "Kontroll av batteri och anoder",
+      "Test under last och dokumentation",
+    ]}
+    sections={[
+      {
+        heading: "Service inför säsongen",
+        body: "Inför säsongsstart går vi igenom motorn så du inte fastnar vid första turen. Servicen säkerställer att grundfunktioner som tändning, kylning och bränsletillförsel fungerar. Vi gör testkörning innan vi lämnar över.",
+      },
+      {
+        heading: "Felsökning och reparation",
+        body: "Startar inte motorn? Tappar varv? Vi kommer ut, gör en strukturerad felsökning och åtgärdar på plats om det går. Behöver något beställas hem så återkommer vi med ny tid utan extra utryckningsavgift.",
+      },
+      {
+        heading: "Garanti och dokumentation",
+        body: "Du får dokumentation på vad som utförts och vilka delar som bytts. Garanti på arbete och delar enligt branschpraxis. Skulle något inte fungera som det ska efter besöket, hör av dig så löser vi det.",
+      },
+      {
+        heading: "Reservdelar och tillbehör",
+        body: "Behöver du en specifik reservdel eller tillbehör? Vi har bra kanaler för utombordare av alla större märken. Hör av dig så ordnar vi det inför nästa besök.",
+      },
+    ]}
+  />
+
+  <CtaSection client:visible />
+</BaseLayout>

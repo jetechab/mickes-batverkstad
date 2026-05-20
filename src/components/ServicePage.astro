@@ -1,0 +1,157 @@
+---
+import { CheckCircle2 } from "lucide-react";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  titleAccent: string;
+  lede: string;
+  bullets: string[];
+  sections: { heading: string; body: string }[];
+  includesTitle: string;
+  includes: string[];
+  image?: string;
+  imageAlt?: string;
+  imageCaption?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  titleAccent,
+  lede,
+  bullets,
+  sections,
+  includesTitle,
+  includes,
+  image,
+  imageAlt,
+  imageCaption,
+} = Astro.props;
+---
+
+<section
+  class="bg-background pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden border-b border-border"
+>
+  <div class="absolute inset-0 pointer-events-none opacity-50">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
+  </div>
+
+  <div class="max-w-(--max-w-content) mx-auto px-6 relative z-10">
+    <nav aria-label="Brödsmulor" class="mb-8 text-sm text-muted-foreground">
+      <a href="/" class="hover:text-foreground transition-colors">Hem</a>
+      <span class="mx-2 opacity-50">/</span>
+      <a href="/tjanster/" class="hover:text-foreground transition-colors">Tjänster</a>
+      <span class="mx-2 opacity-50">/</span>
+      <span class="text-foreground">{title}</span>
+    </nav>
+
+    <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-start">
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-6 h-[2px] bg-primary"></div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            {eyebrow}
+          </span>
+        </div>
+        <h1 class="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-[1.05] tracking-tight">
+          {title}
+          <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-sand">
+            {titleAccent}
+          </span>
+        </h1>
+        <p class="text-muted-foreground text-lg leading-relaxed mb-8 max-w-(--max-w-text)">
+          {lede}
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-10">
+          {
+            bullets.map((item) => (
+              <div class="flex items-start gap-3">
+                <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" client:load />
+                <span class="text-sm text-foreground">{item}</span>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="flex flex-col sm:flex-row flex-wrap gap-4">
+          <a
+            href="/boka/"
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(94,195,214,0.25)] hover:shadow-[0_0_40px_rgba(94,195,214,0.4)] hover:-translate-y-0.5"
+          >
+            Boka tid
+          </a>
+          <a
+            href="tel:+46767166716"
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 border border-border bg-card text-foreground font-medium rounded-xl hover:border-primary/40 transition-all"
+          >
+            Ring 0767-16 67 16
+          </a>
+        </div>
+      </div>
+
+      <aside class="bg-card border border-border rounded-2xl p-6 lg:p-8 lg:sticky lg:top-28 shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
+        <h2 class="font-heading text-lg font-bold text-foreground mb-5">
+          {includesTitle}
+        </h2>
+        <ul class="space-y-3">
+          {
+            includes.map((item) => (
+              <li class="flex items-start gap-3 text-sm text-muted-foreground">
+                <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" client:load />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+{
+  image && (
+    <section class="bg-background py-12 lg:py-16">
+      <div class="max-w-(--max-w-content) mx-auto px-6">
+        {/* TEMP: ersätt med Mickes egen bild från verkstaden */}
+        <figure class="relative rounded-3xl overflow-hidden border border-border shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)] aspect-[16/9] lg:aspect-[21/9]">
+          <img
+            src={image}
+            alt={imageAlt}
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+          {imageCaption && (
+            <figcaption class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+              <div class="flex items-center gap-3 max-w-2xl">
+                <div class="w-1 h-10 rounded-full bg-accent-sand" />
+                <p class="text-sm lg:text-base text-foreground font-medium leading-snug">
+                  {imageCaption}
+                </p>
+              </div>
+            </figcaption>
+          )}
+        </figure>
+      </div>
+    </section>
+  )
+}
+
+<section class="bg-muted/40 py-20 lg:py-28 border-b border-border">
+  <div class="max-w-(--max-w-content) mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+      {
+        sections.map((s) => (
+          <article class="bg-card border border-border rounded-2xl p-8">
+            <h3 class="font-heading text-xl lg:text-2xl font-bold text-foreground mb-4">
+              {s.heading}
+            </h3>
+            <p class="text-muted-foreground leading-relaxed">{s.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

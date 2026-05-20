@@ -1,0 +1,160 @@
+---
+import CtaSection from "@/components/sections/CtaSection.tsx";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://batverkstad.se/" },
+    { "@type": "ListItem", position: 2, name: "Garanti", item: "https://batverkstad.se/garanti/" },
+  ],
+};
+---
+
+<BaseLayout
+  title="Garanti på arbete och reservdelar | Mickes Båtverkstad"
+  description="Garanti på utfört arbete och reservdelar enligt branschpraxis. Tydliga villkor, F-skatt och dokumentation efter varje uppdrag."
+  schema={breadcrumbSchema}
+>
+  <section class="bg-background pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-50">
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-sand/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-(--max-w-content) mx-auto px-6 relative z-10">
+      <nav aria-label="Brödsmulor" class="mb-8 text-sm text-muted-foreground">
+        <a href="/" class="hover:text-foreground transition-colors">Hem</a>
+        <span class="mx-2 opacity-50">/</span>
+        <span class="text-foreground">Garanti</span>
+      </nav>
+
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-6 h-[2px] bg-primary"></div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            Garanti och trygghet
+          </span>
+        </div>
+        <h1 class="font-heading text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.05] mb-6">
+          Vi står för det vi gör
+        </h1>
+        <p class="text-muted-foreground text-lg leading-relaxed">
+          Du ska kunna känna dig trygg när vi servar din båt. Vi lämnar
+          garanti på både arbete och reservdelar. Skulle något ändå inte
+          fungera som det ska, hör du av dig så löser vi det.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-muted/40 py-16 lg:py-24 border-y border-border">
+    <div class="max-w-(--max-w-content) mx-auto px-6">
+      <div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
+        <article class="bg-card border border-border rounded-2xl p-8">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h2 class="font-heading text-xl font-bold text-foreground mb-3">
+            Arbetsgaranti
+          </h2>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Skulle ett fel uppstå på grund av hur arbetet utförts, åtgärdar vi
+            det utan kostnad. Garantitid enligt branschpraxis räknad från
+            servicedagen.
+          </p>
+        </article>
+
+        <article class="bg-card border border-border rounded-2xl p-8">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+            </svg>
+          </div>
+          <h2 class="font-heading text-xl font-bold text-foreground mb-3">
+            Reservdelsgaranti
+          </h2>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Reservdelar omfattas av leverantörens garanti. Vi hjälper dig att
+            ta tillvara den om något skulle gå sönder. Originaldelar och
+            kvalitetsalternativ från etablerade leverantörer.
+          </p>
+        </article>
+
+        <article class="bg-card border border-border rounded-2xl p-8">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+          </div>
+          <h2 class="font-heading text-xl font-bold text-foreground mb-3">
+            Dokumentation
+          </h2>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Du får ett underlag på vad som utförts, vilka delar som bytts och
+            vilka kontroller som gjorts. Spara det till nästa servicetillfälle
+            eller för försäljning av båten.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-heading text-2xl lg:text-3xl font-bold text-foreground mb-8">
+        Så fungerar garantin
+      </h2>
+      <div class="space-y-5 text-muted-foreground leading-relaxed">
+        <p>
+          <span class="text-foreground font-semibold">1. Något fungerar inte.</span>
+          Märker du att en service eller reparation inte fått önskat resultat,
+          ring eller maila oss direkt. Beskriv vad du upplever och när det
+          började.
+        </p>
+        <p>
+          <span class="text-foreground font-semibold">2. Vi tittar på det.</span>
+          Oftast bokar vi en tid och kommer ut och kollar. Är problemet
+          relaterat till vårt arbete eller en garantidel åtgärdar vi det utan
+          kostnad.
+        </p>
+        <p>
+          <span class="text-foreground font-semibold">3. Skulle det vara något annat</span>
+          ger vi en ärlig bedömning av vad det är och vad det skulle kosta att
+          åtgärda. Inget krångel.
+        </p>
+        <p class="pt-2">
+          Garantin täcker inte normalt slitage, skador från olyckor eller fel
+          orsakade av annan part. Vi följer branschpraxis och svensk
+          konsumentlagstiftning.
+        </p>
+      </div>
+
+      <div class="mt-10 bg-card border border-border rounded-2xl p-6 lg:p-8">
+        <h3 class="font-heading text-lg font-bold text-foreground mb-3">
+          Företagsuppgifter
+        </h3>
+        <ul class="space-y-2 text-sm text-muted-foreground">
+          <li><span class="text-foreground font-medium">Mickes Båtverkstad AB</span></li>
+          <li>Box 6, 457 02 Grebbestad</li>
+          <li>Godkänd för F-skatt</li>
+          <li>
+            <a href="mailto:mickes@batverkstad.se" class="text-primary hover:underline">
+              mickes@batverkstad.se
+            </a>
+          </li>
+          <li>
+            <a href="tel:+46767166716" class="text-primary hover:underline">
+              0767-16 67 16
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection client:visible />
+</BaseLayout>

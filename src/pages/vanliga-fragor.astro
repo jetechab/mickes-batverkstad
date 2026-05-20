@@ -1,0 +1,68 @@
+---
+import CtaSection from "@/components/sections/CtaSection.tsx";
+import FAQSection, { faqs } from "@/components/sections/FAQSection.tsx";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.plain },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://batverkstad.se/" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Vanliga frågor",
+      item: "https://batverkstad.se/vanliga-fragor/",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Vanliga frågor | Mickes Båtverkstad"
+  description="Svar på vanliga frågor om utombordsservice, krympplastning, bottenmålning, garanti och täckningsområde i Bohuslän."
+  schema={[faqSchema, breadcrumbSchema]}
+>
+  <section class="bg-background pt-32 pb-12 lg:pt-40 lg:pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-50">
+      <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-(--max-w-content) mx-auto px-6 relative z-10">
+      <nav aria-label="Brödsmulor" class="mb-8 text-sm text-muted-foreground">
+        <a href="/" class="hover:text-foreground transition-colors">Hem</a>
+        <span class="mx-2 opacity-50">/</span>
+        <span class="text-foreground">Vanliga frågor</span>
+      </nav>
+
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-6 h-[2px] bg-primary"></div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            Vanliga frågor
+          </span>
+        </div>
+        <h1 class="font-heading text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.05] mb-6">
+          Det folk brukar undra över
+        </h1>
+        <p class="text-muted-foreground text-lg leading-relaxed">
+          Saknar du svar? Ring 0767-16 67 16 eller maila
+          mickes@batverkstad.se så återkommer vi.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection client:visible />
+  <CtaSection client:visible />
+</BaseLayout>

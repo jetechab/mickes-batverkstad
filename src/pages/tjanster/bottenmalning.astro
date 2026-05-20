@@ -1,0 +1,85 @@
+---
+import CtaSection from "@/components/sections/CtaSection.tsx";
+import ServicePage from "@/components/ServicePage.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Bottenmålning",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Mickes Båtverkstad AB",
+  },
+  description:
+    "Bottenmålning av båt med Jotun-produkter. Utförs på släp eller bockar hos kund. Bohuslän, Dalsland och Värmland.",
+  serviceType: "Boat antifouling painting",
+  areaServed: { "@type": "AdministrativeArea", name: "Bohuslän" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://batverkstad.se/" },
+    { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://batverkstad.se/tjanster/" },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Bottenmålning",
+      item: "https://batverkstad.se/tjanster/bottenmalning/",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Bottenmålning båt | Jotun-färg på plats"
+  description="Bottenmålning med Jotun-produkter. Slip, primer och färg på släp eller bockar. Du slipper varv och transport. Bohuslän och Dalsland."
+  schema={[serviceSchema, breadcrumbSchema]}
+>
+  <ServicePage
+    eyebrow="Tjänst"
+    title="Bottenmålning"
+    titleAccent="med Jotun, där båten står"
+    lede="Vi sliper, primar och målar botten på plats. Båten kan stå på släp eller bockar, du slipper transport till varv. Vi använder Jotun-produkter som passar för västkusten och de förhållanden båten ska gå i."
+    image="/img/bottenmalning.jpg"
+    imageAlt="Bottenmålning av båtskrov med roller och vit Jotun-färg"
+    imageCaption="Bottenmålning gjord rätt syns på vattnet. Båten är snabbare, drar mindre och håller längre."
+    bullets={[
+      "Görs på släp, trailer eller bockar",
+      "Jotun-färg anpassad efter saltvatten",
+      "Slip och förarbete ingår",
+      "Tydlig torktid och hanteringsanvisning",
+    ]}
+    includesTitle="Det här gör vi"
+    includes={[
+      "Bedömning av befintligt skick",
+      "Slip och avfärgning där det behövs",
+      "Primer på bar yta",
+      "Två lager bottenfärg (Jotun)",
+      "Extra lager där friktionen är hög",
+      "Tipsar om sjösättning och underhåll",
+    ]}
+    sections={[
+      {
+        heading: "Varför Jotun",
+        body: "Jotun är en av branschens etablerade leverantörer av bottenfärg. Färgerna är anpassade för olika vattentyper och båttyper. Vi väljer system baserat på var båten ska gå och hur snabbt du brukar köra.",
+      },
+      {
+        heading: "Slip eller bockar, samma resultat",
+        body: "Vi jobbar lika gärna på trailer, släp eller uppallad på bockar. Står båten redan färdig att börja målas så sparar du både tid och pengar genom att vi kommer ut istället för transport.",
+      },
+      {
+        heading: "Hur ofta behövs det",
+        body: "De flesta båtar i västkustvatten behöver bottenmålas varje eller varannan säsong, beroende på trafik och färgsystem. Vi gör en bedömning på plats och rekommenderar utifrån vad du har på skrovet idag.",
+      },
+      {
+        heading: "Miljö och regler",
+        body: "Vi följer gällande miljöregler för slip och färghantering. Jotuns produkter finns både som hård och självpolerande matt finish, samt biocidfria alternativ för områden där det krävs.",
+      },
+    ]}
+  />
+
+  <CtaSection client:visible />
+</BaseLayout>
