@@ -1,0 +1,22 @@
+{
+  "name": "Mickes Båtverkstad",
+  "short_name": "Mickes",
+  "description": "Mobil båtverkstad i Bohuslän. Service av utombordare, krympplastning och bottenmålning på plats hos kunden.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1f305f",
+  "background_color": "#0a1924",
+  "display": "browser",
+  "start_url": "/",
+  "lang": "sv-SE"
+}
