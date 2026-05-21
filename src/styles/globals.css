@@ -3,37 +3,41 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /*
  * Brand-paletten är PLACEHOLDER. Maritim navy + havsblå accent + sand som lyft.
  * Byts ut när Mickes/Måns godkänt slutgiltig palett. Komponenter ska aldrig
  * hårdkoda hex-värden – använd semantiska klasser (bg-background, text-primary,
  * border-border osv.) så att hela paletten kan bytas i denna fil.
+ *
+ * Mörkt tema (marinblå bas) deklareras i @layer base som .dark-override.
  */
 @theme {
   /* Breakpoints */
   --breakpoint-xs: 23rem;
 
-  /* Brand colors – placeholder Bohuslän-palett */
-  --color-primary: #5ec3d6;            /* Havsblå */
-  --color-primary-foreground: #0a1924; /* Djup navy */
-  --color-accent-teal: #8ad5e3;        /* Ljusare havsblå för glow/hover */
-  --color-accent-sand: #d4b985;        /* Varm sand som lyft-accent */
-  --color-accent-foreground: #0a1924;
+  /* Brand colors – klassisk maritim cream-palett */
+  --color-primary: #1e4a6b;            /* Djup havsblå – syns mot ljus bg */
+  --color-primary-foreground: #ffffff; /* Vit text på primary-knappar */
+  --color-accent-teal: #3a6b8c;        /* Ljusare havsblå för hover/accent */
+  --color-accent-sand: #c89968;        /* Varm sand med lägre mättnad för cream-bg */
+  --color-accent-foreground: #1f1408;
 
-  /* Semantic colors */
-  --color-background: #0a1924;          /* Djup havsmörk navy */
-  --color-foreground: #f5f1ea;          /* Varm vit, drag av sand */
-  --color-muted: #102536;               /* Något ljusare än bg */
-  --color-muted-foreground: #93a7b8;    /* Dimmat blågrått */
-  --color-border: #1c3349;              /* Subtilt blå border */
-  --color-input: #1c3349;
-  --color-ring: #5ec3d6;
+  /* Semantic colors – varm cream, brygga i juli */
+  --color-background: #f5f1ea;          /* Varm sandvit cream */
+  --color-foreground: #0e2235;          /* Djup navy som text */
+  --color-muted: #efe8d8;               /* Något varmare än bg för sektioner */
+  --color-muted-foreground: #5b6b7a;    /* Varmgrå för subtext */
+  --color-border: #e3dccb;              /* Sandig border, synlig men diskret */
+  --color-input: #e3dccb;
+  --color-ring: #1e4a6b;
 
-  --color-card: #122638;                /* Card-yta */
-  --color-card-foreground: #f5f1ea;
+  --color-card: #ffffff;                /* Rent vit card-yta lyfter mot cream */
+  --color-card-foreground: #0e2235;
 
-  --color-secondary: #1c3349;
-  --color-secondary-foreground: #f5f1ea;
+  --color-secondary: #efe8d8;
+  --color-secondary-foreground: #0e2235;
 
   --color-destructive: #ef4444;
   --color-destructive-foreground: #f5f1ea;
@@ -84,7 +88,41 @@
   }
 
   :root {
+    color-scheme: light;
+  }
+
+  /*
+   * Mörkt tema – marinblå bas med ljus havsblå CTA. Sand-accenten behålls
+   * eftersom den fortfarande lyfter mot djup navy. Variabel-namnen är samma
+   * som @theme ovan, så samtliga bg-/text-/border-utilities byts automatiskt.
+   */
+  .dark {
     color-scheme: dark;
+
+    --color-primary: #4a90c2;
+    --color-primary-foreground: #ffffff;
+    --color-accent-teal: #7cc3e8;
+    --color-accent-sand: #d4a574;
+    --color-accent-foreground: #1f1408;
+
+    --color-background: #0a1928;
+    --color-foreground: #e6ecf3;
+    --color-muted: #142537;
+    --color-muted-foreground: #93a3b8;
+    --color-border: #1d3148;
+    --color-input: #1d3148;
+    --color-ring: #4a90c2;
+
+    --color-card: #102338;
+    --color-card-foreground: #e6ecf3;
+
+    --color-secondary: #142537;
+    --color-secondary-foreground: #e6ecf3;
+
+    --color-destructive: #ef4444;
+    --color-destructive-foreground: #f5f1ea;
+
+    --color-success: #4ade80;
   }
 
   *:focus-visible {
@@ -150,8 +188,8 @@
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-primary) 35%, transparent);
-    color: var(--color-foreground);
+    background: var(--color-primary);
+    color: #ffffff;
   }
 }
 

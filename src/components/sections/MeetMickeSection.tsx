@@ -173,7 +173,7 @@ export default function MeetMickeSection() {
               initial={{ opacity: 0, y: 12 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.7 }}
-              className="group flex items-center justify-between gap-4 bg-primary text-primary-foreground rounded-2xl p-6 hover:bg-primary/90 transition-all shadow-[0_15px_40px_-15px_rgba(94,195,214,0.6)]"
+              className="group flex items-center justify-between gap-4 bg-primary text-primary-foreground rounded-2xl p-6 hover:bg-primary/90 transition-all shadow-[0_15px_40px_-15px_rgba(30,74,107,0.28)]"
             >
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.18em] opacity-80 mb-1">

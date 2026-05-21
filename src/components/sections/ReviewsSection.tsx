@@ -103,7 +103,7 @@ export default function ReviewsSection() {
                   href="https://www.facebook.com/profile.php?id=100089773764804"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-all shadow-[0_0_25px_rgba(94,195,214,0.2)] hover:shadow-[0_0_35px_rgba(94,195,214,0.4)] group"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-all shadow-[0_0_25px_rgba(30,74,107,0.1)] hover:shadow-[0_0_35px_rgba(30,74,107,0.18)] group"
                 >
                   <Facebook className="w-4 h-4" />
                   Se omdömen på Facebook

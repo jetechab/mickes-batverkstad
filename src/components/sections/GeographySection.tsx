@@ -64,7 +64,7 @@ export default function GeographySection() {
               {allCities.map((city, i) => {
                 const className = `inline-flex items-center gap-2 px-4 py-2 rounded-xl text-[13px] font-medium transition-all ${
                   city.primary
-                    ? "bg-primary text-primary-foreground font-bold shadow-[0_0_15px_rgba(94,195,214,0.2)] hover:scale-105"
+                    ? "bg-primary text-primary-foreground font-bold shadow-[0_0_15px_rgba(30,74,107,0.1)] hover:scale-105"
                     : "bg-card border border-border text-foreground hover:border-primary/40"
                 }`;
                 const content = (

@@ -84,7 +84,7 @@ export default function HowItWorksSection() {
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.12 }}
                 className="relative z-10 flex flex-col px-7 pb-9 pt-9 rounded-2xl border border-border bg-card backdrop-blur-md hover:border-primary/50 hover:bg-card/95 hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] hover:-translate-y-1 transition-all duration-300 group"
               >
-                <div className="absolute -top-3 -left-3 w-9 h-9 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-heading text-sm font-bold shadow-[0_8px_20px_-5px_rgba(94,195,214,0.5)] z-10">
+                <div className="absolute -top-3 -left-3 w-9 h-9 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-heading text-sm font-bold shadow-[0_8px_20px_-5px_rgba(30,74,107,0.22)] z-10">
                   {i + 1}
                 </div>
 
@@ -111,7 +111,7 @@ export default function HowItWorksSection() {
         >
           <a
             href="/boka/"
-            className="inline-flex items-center gap-2.5 px-12 py-3.5 bg-primary text-primary-foreground text-[15px] font-bold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_25px_rgba(94,195,214,0.25)] hover:shadow-[0_0_35px_rgba(94,195,214,0.4)] hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2.5 px-12 py-3.5 bg-primary text-primary-foreground text-[15px] font-bold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_25px_rgba(30,74,107,0.12)] hover:shadow-[0_0_35px_rgba(30,74,107,0.18)] hover:-translate-y-0.5"
           >
             Boka tid
             <ArrowRight className="h-4 w-4" />

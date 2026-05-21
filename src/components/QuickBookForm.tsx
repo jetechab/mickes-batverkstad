@@ -146,7 +146,7 @@ export default function QuickBookForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_25px_rgba(94,195,214,0.2)] hover:shadow-[0_0_35px_rgba(94,195,214,0.4)] disabled:opacity-50 disabled:cursor-not-allowed text-[15px]"
+          className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_25px_rgba(30,74,107,0.1)] hover:shadow-[0_0_35px_rgba(30,74,107,0.18)] disabled:opacity-50 disabled:cursor-not-allowed text-[15px]"
         >
           {status === "submitting" ? "Skickar..." : "Skicka förfrågan"}
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

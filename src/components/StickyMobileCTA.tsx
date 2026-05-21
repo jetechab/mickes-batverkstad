@@ -40,7 +40,7 @@ export default function StickyMobileCTA() {
           </a>
           <a
             href="/boka/"
-            className="flex-[1.4] inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-primary-foreground font-bold rounded-xl text-sm shadow-[0_0_20px_rgba(94,195,214,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="flex-[1.4] inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-primary-foreground font-bold rounded-xl text-sm shadow-[0_0_20px_rgba(30,74,107,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             tabIndex={visible ? 0 : -1}
           >
             Boka tid

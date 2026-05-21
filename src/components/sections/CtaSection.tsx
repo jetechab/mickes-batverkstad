@@ -42,7 +42,7 @@ export default function CtaSection() {
           initial={{ opacity: 0, y: 20, scale: 0.95 }}
           animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="w-full max-w-[880px] rounded-3xl border border-primary/30 bg-gradient-to-b from-card/80 to-background/90 backdrop-blur-xl px-8 py-12 md:px-16 md:py-16 shadow-[0_0_50px_rgba(94,195,214,0.1)] text-center relative overflow-hidden"
+          className="w-full max-w-[880px] rounded-3xl border border-primary/30 bg-gradient-to-b from-card/80 to-background/90 backdrop-blur-xl px-8 py-12 md:px-16 md:py-16 shadow-[0_0_50px_rgba(30,74,107,0.06)] text-center relative overflow-hidden"
         >
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
@@ -64,7 +64,7 @@ export default function CtaSection() {
           <div className="flex flex-col sm:flex-row justify-center gap-5 mb-14">
             <a
               href="/boka/"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(94,195,214,0.25)] hover:shadow-[0_0_40px_rgba(94,195,214,0.4)] hover:-translate-y-1 text-[15px]"
+              className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(30,74,107,0.12)] hover:shadow-[0_0_40px_rgba(30,74,107,0.18)] hover:-translate-y-1 text-[15px]"
             >
               Boka tid
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

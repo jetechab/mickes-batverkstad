@@ -114,7 +114,7 @@ export default function HeroSection({ city }: HeroSectionProps) {
             >
               <a
                 href="/boka/"
-                className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-2xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(94,195,214,0.25)] hover:shadow-[0_0_40px_rgba(94,195,214,0.4)] hover:-translate-y-0.5 text-[15px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-2xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(30,74,107,0.12)] hover:shadow-[0_0_40px_rgba(30,74,107,0.18)] hover:-translate-y-0.5 text-[15px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Boka tid
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
