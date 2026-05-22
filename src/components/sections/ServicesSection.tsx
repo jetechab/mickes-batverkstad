@@ -9,8 +9,8 @@ const services = [
     icon: Wrench,
     title: "Utombordsservice",
     href: "/tjanster/utombordsservice/",
-    body: "Vi servar alla märken av utombordare med mobil verkstad, på plats hos dig. Yamaha, Mercury, Suzuki, Honda, Evinrude, Tohatsu m.fl. Garanti på arbete och delar.",
-    bullets: ["Årsservice", "Felsökning", "Reservdelar"],
+    body: "Vi gör planerad service och underhåll på alla märken av utombordare med mobil verkstad, på plats hos dig. Yamaha, Mercury, Suzuki, Honda, Evinrude, Tohatsu m.fl. Garanti på arbete och delar.",
+    bullets: ["Årsservice", "Underhåll", "Reservdelar"],
   },
   {
     icon: Droplets,

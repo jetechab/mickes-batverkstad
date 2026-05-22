@@ -27,7 +27,7 @@ export const services = [
   {
     slug: "utombordsservice",
     title: "Utombordsservice",
-    short: "Service och reparation av alla märken av utombordare, på plats hos dig.",
+    short: "Planerad service och underhåll av alla utombordsmärken, på plats hos dig.",
     brands: ["Yamaha", "Mercury", "Suzuki", "Honda", "Evinrude", "Tohatsu"],
   },
   {

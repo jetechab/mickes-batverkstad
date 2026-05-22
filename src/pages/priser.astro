@@ -15,7 +15,7 @@ const breadcrumbSchema = {
 const services = [
   {
     title: "Årsservice utombordare",
-    range: "Från cirka 2 500 kr",
+    range: "Från 2 500 kr",
     details:
       "Inkluderar olje- och oljefilterbyte, tändstift, impeller, kontroll av batteri och anoder samt testkörning. Pris beror på motorstorlek och eventuella tillägg.",
     includes: [
@@ -28,7 +28,7 @@ const services = [
   },
   {
     title: "Krympplastning",
-    range: "Cirka 3 500–11 500 kr",
+    range: "Från 3 500 kr",
     details:
       "Beror på båtlängd, form och eventuella förstärkningar. Inkluderar krympplast, värmning, ventilation och förstärkta kanter. Använd vår räknare nedan för en uppskattning.",
     includes: [
@@ -40,7 +40,7 @@ const services = [
   },
   {
     title: "Bottenmålning",
-    range: "Cirka 4 500–14 000 kr",
+    range: "Från 4 500 kr",
     details:
       "Beror på båtens längd, befintligt skick och valt färgsystem. Slip, primer och två lager Jotun-färg ingår. Extra lager på utsatta ytor kan tillkomma.",
     includes: [
@@ -50,24 +50,12 @@ const services = [
       "Två lager Jotun bottenfärg",
     ],
   },
-  {
-    title: "Felsökning och reparation",
-    range: "Timpris efter avtal",
-    details:
-      "Vi tar ett kostnadsbesked innan arbetet börjar. Resor inom hemkommunen ingår i timpriset. För längre utryckningar tillkommer en framkörningsavgift som vi alltid stämmer av i förväg.",
-    includes: [
-      "Diagnos och felsökning",
-      "Reservdelar kvalitetsalternativ eller original",
-      "Garanti på arbete",
-      "Dokumentation av åtgärder",
-    ],
-  },
 ];
 ---
 
 <BaseLayout
   title="Priser | Mickes Båtverkstad"
-  description="Vad det brukar kosta. Årsservice, krympplastning, bottenmålning och reparation. Vi ger alltid ett kostnadsbesked innan vi börjar."
+  description="Vad det brukar kosta. Från-priser för årsservice av utombordare, krympplastning och bottenmålning. Vi ger alltid ett kostnadsbesked innan vi börjar."
   schema={breadcrumbSchema}
 >
   <section class="bg-background pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
@@ -94,9 +82,10 @@ const services = [
           Vad det brukar kosta
         </h1>
         <p class="text-muted-foreground text-lg leading-relaxed">
-          Inga ärenden ser exakt likadana ut. Här är ungefärliga intervall för
-          våra vanligaste tjänster. Slutpriset bekräftas alltid innan vi
-          börjar arbetet.
+          Inga ärenden ser exakt likadana ut. Här är från-priser för våra
+          vanligaste tjänster, med ungefärliga nivåer beroende på båtens
+          storlek och skick. Slutpriset bekräftas alltid innan vi börjar
+          arbetet.
         </p>
       </div>
     </div>
