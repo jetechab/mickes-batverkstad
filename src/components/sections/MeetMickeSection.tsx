@@ -116,8 +116,8 @@ export default function MeetMickeSection() {
           >
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)] aspect-[4/3]">
               <img
-                src="/img/segelbat-rigg.jpg"
-                alt="Segelbåtens däck med riggning, hav i bakgrunden"
+                src="/img/micke-vid-bilen.jpg"
+                alt="Micke vid sin servicebil vid vattnet i Bohuslän"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
