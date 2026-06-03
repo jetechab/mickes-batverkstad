@@ -108,19 +108,18 @@ const schemas = [
     <meta name="theme-color" content="#f5f1ea" />
     <meta name="apple-mobile-web-app-title" content="Mickes Båtverkstad" />
 
-    {/* Sätt .dark innan paint för att undvika FOUC. Måste vara is:inline. */}
+    {/*
+      Sajten är tills vidare låst till ljust tema (mörkt tema ses över som
+      eventuell plusmeny längre fram). Vi tvingar bort ev. sparat "dark" så att
+      återvändande besökare och OS i mörkt läge ändå får ljust. För att
+      återaktivera mörkt tema: återställ detta script + temaväxlaren i Header.
+    */}
     <script is:inline>
       (function () {
         try {
-          var stored = localStorage.getItem("theme");
-          var systemDark = window.matchMedia(
-            "(prefers-color-scheme: dark)",
-          ).matches;
-          var dark =
-            stored === "dark" || (stored !== "light" && systemDark);
-          if (dark) document.documentElement.classList.add("dark");
+          document.documentElement.classList.remove("dark");
           var meta = document.querySelector('meta[name="theme-color"]');
-          if (meta) meta.setAttribute("content", dark ? "#0a1928" : "#f5f1ea");
+          if (meta) meta.setAttribute("content", "#f5f1ea");
         } catch (e) {}
       })();
     </script>

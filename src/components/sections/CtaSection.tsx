@@ -53,7 +53,7 @@ export default function CtaSection() {
             Hör av dig så löser vi det.
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-sand">
-              Vi svarar samma dag.
+              Vi svarar inom 24 timmar.
             </span>
           </h2>
           <p className="text-muted-foreground text-[16px] leading-relaxed mb-12 max-w-[500px] mx-auto">

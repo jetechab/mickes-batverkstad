@@ -74,8 +74,7 @@ export default function ContactLeadForm() {
           Tack för din förfrågan!
         </h2>
         <p className="text-muted-foreground text-[16px] leading-relaxed mb-6">
-          Vi har tagit emot din bokning och återkommer så snart vi kan. På
-          vardagar oftast samma dag.
+          Vi har tagit emot din bokning och återkommer inom 24 timmar.
         </p>
         <a
           href="tel:+46767166716"

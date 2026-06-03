@@ -4,12 +4,11 @@ import { motion, useReducedMotion } from "framer-motion";
 import {
   Anchor,
   ArrowRight,
+  ArrowUpRight,
   CheckCircle2,
   MapPin,
   Phone,
-  ShieldCheck,
   Star,
-  Wrench,
 } from "lucide-react";
 
 const checkmarks = [
@@ -19,11 +18,25 @@ const checkmarks = [
   "F-skatt",
 ];
 
-const stats = [
-  { label: "Tekniker", value: "Marin", sub: "med utbildning" },
-  { label: "Märken", value: "Alla", sub: "större utombordare" },
-  { label: "Verkstad", value: "Mobil", sub: "på plats hos dig" },
-  { label: "Bas", value: "Grebbestad", sub: "Bohuslän" },
+const heroServices = [
+  {
+    label: "Utombordare",
+    value: "Service",
+    sub: "Gäller alla märken",
+    href: "/tjanster/utombordsservice/",
+  },
+  {
+    label: "Krympplast",
+    value: "Täckning",
+    sub: "Båtar mellan 2-12 meter",
+    href: "/tjanster/krympplastning/",
+  },
+  {
+    label: "Skydda skrovet",
+    value: "Bottenmålning",
+    sub: "Båtar mellan 2-12 meter",
+    href: "/tjanster/bottenmalning/",
+  },
 ];
 
 interface HeroSectionProps {
@@ -41,10 +54,10 @@ export default function HeroSection({ city }: HeroSectionProps) {
 
   return (
     <section
-      className="relative overflow-hidden min-h-[88vh] lg:min-h-[92vh] flex items-center bg-background pt-24 pb-12 lg:pt-32 lg:pb-24"
+      className="relative overflow-hidden min-h-[82vh] lg:min-h-[86vh] flex items-center bg-background pt-20 pb-12 lg:pt-24 lg:pb-24"
       aria-labelledby="hero-heading"
     >
-      <HeroBackdrop reduceMotion={reduceMotion ?? false} />
+      <HeroBackdrop />
 
       <div className="relative max-w-(--max-w-content) mx-auto px-6 w-full z-10">
         <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
@@ -62,9 +75,7 @@ export default function HeroSection({ city }: HeroSectionProps) {
                 </span>
               </div>
               <a
-                href="https://www.facebook.com/profile.php?id=100089773764804"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/#recensioner"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-card/60 backdrop-blur-md text-[11px] sm:text-xs text-muted-foreground hover:text-foreground hover:border-accent-sand/40 transition-all group"
               >
                 <div className="flex items-center gap-0.5">
@@ -75,7 +86,7 @@ export default function HeroSection({ city }: HeroSectionProps) {
                     />
                   ))}
                 </div>
-                <span className="font-medium">Recensioner på Facebook</span>
+                <span className="font-medium">Se recensioner</span>
                 <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
               </a>
             </motion.div>
@@ -85,15 +96,21 @@ export default function HeroSection({ city }: HeroSectionProps) {
               initial={reduceMotion ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              className="font-heading text-[2rem] xs:text-[2.4rem] sm:text-[3.2rem] md:text-[3.8rem] lg:text-[4.5rem] font-bold text-foreground leading-[1.02] tracking-tight mb-6"
+              className="font-heading text-[2rem] xs:text-[2.4rem] sm:text-[3.2rem] md:text-[3.8rem] lg:text-[4.5rem] font-bold text-foreground leading-[1.02] tracking-tight mb-3"
               lang="sv"
             >
               {headingMain}
-              <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-sand">
-                {headingAccent}
-              </span>
             </motion.h1>
+
+            <motion.p
+              initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="font-heading text-xl sm:text-2xl md:text-[1.75rem] font-bold leading-snug tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-sand"
+              lang="sv"
+            >
+              {headingAccent}
+            </motion.p>
 
             <motion.p
               initial={reduceMotion ? false : { opacity: 0 }}
@@ -101,9 +118,9 @@ export default function HeroSection({ city }: HeroSectionProps) {
               transition={{ duration: 0.5, delay: 0.15 }}
               className="text-[1.05rem] md:text-[1.2rem] text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-(--max-w-text)"
             >
-              Mobil service av utombordare. Krympplastning och bottenmålning
-              utförs där båten står. Verkstaden kommer ut till dig, så slipper
-              du transport och inomhusförvar.
+              Service av utombordare, krympplastning och bottenmålning utförs
+              där båten står. Vi kommer ut till dig så att du slipper transport
+              och inomhusförvar.
             </motion.p>
 
             <motion.div
@@ -114,16 +131,16 @@ export default function HeroSection({ city }: HeroSectionProps) {
             >
               <a
                 href="/boka/"
-                className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-2xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(30,74,107,0.12)] hover:shadow-[0_0_40px_rgba(30,74,107,0.18)] hover:-translate-y-0.5 text-[15px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-primary text-primary-foreground font-bold rounded-2xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(30,74,107,0.12)] hover:shadow-[0_0_40px_rgba(30,74,107,0.18)] hover:-translate-y-0.5 text-[17px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Boka tid
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
               <a
                 href="tel:+46767166716"
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 border border-border bg-card/40 backdrop-blur-md text-foreground font-medium rounded-2xl hover:bg-card/70 hover:border-primary/40 transition-all duration-300 text-[15px]"
+                className="inline-flex items-center justify-center gap-3 px-10 py-5 border border-border bg-card/40 backdrop-blur-md text-foreground font-semibold rounded-2xl hover:bg-card/70 hover:border-primary/40 transition-all duration-300 text-[17px]"
               >
-                <Phone className="h-4 w-4 text-primary" />
+                <Phone className="h-5 w-5 text-primary" />
                 Ring 0767-16 67 16
               </a>
             </motion.div>
@@ -165,75 +182,53 @@ export default function HeroSection({ city }: HeroSectionProps) {
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.65 }}
-          className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl border border-border bg-border overflow-hidden"
+          className="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4"
         >
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="bg-card/70 backdrop-blur-sm px-5 py-5 md:px-6 md:py-6"
+          {heroServices.map((service) => (
+            <a
+              key={service.label}
+              href={service.href}
+              className="group rounded-2xl border border-border bg-card/70 backdrop-blur-sm px-5 py-5 md:px-6 md:py-6 hover:border-primary/40 hover:bg-card transition-all duration-300"
             >
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
-                {s.label}
+              <div className="flex items-center justify-between mb-1.5">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                  {service.label}
+                </p>
+                <ArrowUpRight className="w-4 h-4 text-muted-foreground/60 group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+              </div>
+              <p className="font-heading text-xl md:text-2xl font-bold text-foreground leading-tight mb-1.5">
+                {service.value}
               </p>
-              <p className="font-heading text-2xl md:text-3xl font-bold text-foreground leading-none mb-1.5">
-                {s.value}
-              </p>
-              <p className="text-[12px] text-muted-foreground">{s.sub}</p>
-            </div>
+              <p className="text-[12px] text-muted-foreground">{service.sub}</p>
+            </a>
           ))}
+
+          <a
+            href="/boka/"
+            className="group flex flex-col justify-between rounded-2xl bg-primary text-primary-foreground px-5 py-5 md:px-6 md:py-6 hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(30,74,107,0.12)] hover:shadow-[0_0_40px_rgba(30,74,107,0.18)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground/70">
+              Redo att boka?
+            </p>
+            <span className="flex items-center justify-between gap-2 mt-2">
+              <span className="font-heading text-xl md:text-2xl font-bold leading-tight">
+                Boka nu
+              </span>
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </span>
+          </a>
         </motion.div>
       </div>
     </section>
   );
 }
 
-function HeroBackdrop({ reduceMotion }: { reduceMotion: boolean }) {
+function HeroBackdrop() {
   return (
     <div className="absolute inset-0 pointer-events-none">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_45%,color-mix(in_srgb,var(--color-primary)_10%,transparent)_0%,transparent_55%)]" />
       <div className="absolute -top-28 -left-24 h-80 w-80 rounded-full bg-primary/10 blur-[110px]" />
       <div className="absolute -bottom-24 right-8 h-80 w-80 rounded-full bg-accent-sand/10 blur-[110px]" />
-
-      <svg
-        className="absolute inset-0 w-full h-full opacity-[0.06]"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <pattern
-            id="hero-grid"
-            width="60"
-            height="60"
-            patternUnits="userSpaceOnUse"
-          >
-            <path
-              d="M 60 0 L 0 0 0 60"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              className="text-primary"
-            />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hero-grid)" />
-      </svg>
-
-      {!reduceMotion && (
-        <div
-          className="absolute inset-x-0 top-1/3 h-px"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-primary) 30%, transparent), transparent)",
-            animation: "hero-sweep 8s ease-in-out infinite",
-          }}
-        />
-      )}
-
-      <style>{`
-        @keyframes hero-sweep {
-          0%, 100% { transform: translateY(-30vh); opacity: 0; }
-          50% { transform: translateY(40vh); opacity: 1; }
-        }
-      `}</style>
     </div>
   );
 }
@@ -244,18 +239,18 @@ function PersonalCard() {
       <div className="relative rounded-[2rem] border border-border bg-card shadow-[0_30px_80px_-20px_rgba(0,0,0,0.65)] overflow-hidden">
         <div className="relative aspect-[4/3] overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1562603813-fb781dee22fe?auto=format&fit=crop&q=80&w=900"
-            alt="Närbild på en utombordsmotor i god skick"
+            src="/img/micke-vid-bilen.jpg"
+            alt="Micke vid sin servicebil vid vattnet i Bohuslän"
             className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/30 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-card/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/20 via-transparent to-transparent" />
 
           <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-md border border-border">
             <div className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-foreground">
-              På uppdrag
+              Tillgänglig för bokning
             </span>
           </div>
         </div>
@@ -263,33 +258,20 @@ function PersonalCard() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
         <div className="relative px-8 pb-8 pt-6 lg:px-10 lg:pb-10">
-          <div className="flex items-center gap-4 mb-6 -mt-12 relative z-10">
-            <div className="relative w-16 h-16 shrink-0">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/40 to-accent-sand/40 blur-md" />
-              <div className="relative w-full h-full rounded-full border border-primary/40 bg-background flex items-center justify-center shadow-[0_8px_30px_-8px_rgba(0,0,0,0.6)]">
-                <span className="font-heading font-bold text-3xl text-foreground tracking-tight">
-                  M
-                </span>
-              </div>
-            </div>
-            <div className="pt-2">
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary mb-1">
-                Möt Micke
-              </p>
-              <p className="font-heading text-lg font-bold text-foreground leading-tight">
-                Mikael Karlsson
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Grundare och tekniker
-              </p>
-            </div>
+          <div className="mb-6 relative z-10">
+            <p className="font-heading text-2xl lg:text-[1.7rem] font-bold text-foreground leading-tight">
+              Mikael Karlsson
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">
+              Grundare och utbildad tekniker
+            </p>
           </div>
 
           <div className="relative pl-6 mb-6">
             <div className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full bg-gradient-to-b from-primary to-accent-sand" />
             <p className="font-heading text-base lg:text-lg text-foreground leading-snug italic">
-              "Bästa båtservicen är när du knappt märker att den har varit
-              där. Båten bara funkar."
+              "Att äga båt ska vara enkelt. Vi tar hand om din båt där den står,
+              så att du slipper krångel och får mer tid på vattnet."
             </p>
           </div>
 
@@ -344,7 +326,7 @@ function PersonalCard() {
         </div>
       </div>
 
-      <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-2xl px-5 py-4 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)] backdrop-blur-xl">
+      <div className="absolute -top-6 -right-6 bg-card border border-border rounded-2xl px-5 py-4 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)] backdrop-blur-xl">
         <div className="flex items-center gap-2.5">
           <div className="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
             <MapPin className="w-4 h-4 text-primary" />
@@ -355,22 +337,6 @@ function PersonalCard() {
             </p>
             <p className="text-sm font-medium text-foreground leading-snug">
               Grebbestad
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="absolute -top-6 -right-6 bg-card border border-border rounded-2xl px-5 py-4 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)] backdrop-blur-xl">
-        <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-lg bg-accent-sand/10 border border-accent-sand/30 flex items-center justify-center">
-            <ShieldCheck className="w-4 h-4 text-accent-sand" />
-          </div>
-          <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
-              Garanti
-            </p>
-            <p className="text-sm font-medium text-foreground leading-snug">
-              F-skatt
             </p>
           </div>
         </div>

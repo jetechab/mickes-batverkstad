@@ -1,21 +1,63 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Facebook, Quote, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { useRef } from "react";
 
-const highlights = [
+/*
+ * PLACEHOLDER-omdömen. Det finns inga publika recensioner på Facebook ännu, så
+ * dessa är TEMP-exempel enbart för att visa ytan. Byt ut mot Mickes riktiga
+ * kundomdömen (namn, ort, datum, text) innan lansering, eller koppla in en
+ * källa när sådan finns. Behåll strukturen, ändra bara innehållet.
+ */
+const reviews = [
   {
-    label: "Bemötande",
-    value: "Personligt och jordnära",
+    name: "Anders",
+    location: "Grebbestad",
+    date: "Maj 2026",
+    stars: 5,
+    text: "Micke kom ut till bryggan och servade motorn på plats. Smidigt och proffsigt, och fakturan stämde med vad vi sa från början. Båten gick som ny efteråt.",
+    initials: "AN",
   },
   {
-    label: "Genomförande",
-    value: "På plats, garanterat",
+    name: "Lena",
+    location: "Fjällbacka",
+    date: "Apr 2026",
+    stars: 5,
+    text: "Snabb återkoppling och ett riktigt trevligt bemötande. Skönt att slippa släpa båten till varv, allt löstes hemma vid bryggan.",
+    initials: "LE",
   },
   {
-    label: "Återkoppling",
-    value: "Samma dag på vardagar",
+    name: "Johan",
+    location: "Tanumshede",
+    date: "Apr 2026",
+    stars: 5,
+    text: "Krympplastade båten inför vintern. Noggrant jobb och bra pris. Känns tryggt att samma person tar hand om allt.",
+    initials: "JO",
+  },
+  {
+    name: "Maria",
+    location: "Strömstad",
+    date: "Mar 2026",
+    stars: 4.5,
+    text: "Bottenmålning på plats, så jag slapp transport och uppställning på varv. Tydligt besked om kostnaden innan, inga överraskningar.",
+    initials: "MA",
+  },
+  {
+    name: "Per",
+    location: "Uddevalla",
+    date: "Mar 2026",
+    stars: 5,
+    text: "Hörde av mig på morgonen och fick tid samma vecka. Micke kan sina motorer och förklarar så man förstår.",
+    initials: "PE",
+  },
+  {
+    name: "Karin",
+    location: "Lysekil",
+    date: "Feb 2026",
+    stars: 5,
+    text: "Professionellt från första samtal till klart arbete. Rekommenderas till alla med utombordare i Bohuslän.",
+    initials: "KA",
   },
 ];
 
@@ -56,83 +98,59 @@ export default function ReviewsSection() {
             Vad kunderna säger
           </h2>
           <p className="text-muted-foreground text-[15px] leading-relaxed max-w-xl mx-auto">
-            Vårt aktiva flöde av kundomdömen finns på Facebook. Här samlar
-            vi de utvalda när Micke väljer ut sina favoriter.
+            Några röster från båtägare vi hjälpt på plats längs kusten.
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="relative max-w-4xl mx-auto"
-        >
-          <div className="relative bg-card border border-border rounded-3xl p-8 md:p-12 lg:p-14 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden">
-            <div className="absolute -top-32 -right-32 w-80 h-80 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
-
-            <div className="relative z-10 grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-14 items-center">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex items-center gap-1">
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <Star
-                        key={s}
-                        className="w-5 h-5 fill-accent-sand text-accent-sand"
-                      />
-                    ))}
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground">
-                    Omdömen på Facebook
-                  </span>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {reviews.map((r, i) => (
+            <motion.div
+              key={r.name}
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.08 + i * 0.07 }}
+              className="group relative"
+            >
+              <div className="relative h-full bg-card rounded-2xl border border-border p-8 hover:border-primary/40 hover:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)] transition-all duration-300">
+                <span className="absolute top-4 right-4 px-2 py-0.5 rounded-full bg-secondary text-muted-foreground text-[9px] font-bold uppercase tracking-[0.15em]">
+                  Exempel
+                </span>
+                <div className="flex gap-1 mb-5">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <Star
+                      key={s}
+                      className={
+                        s <= Math.floor(r.stars)
+                          ? "h-4 w-4 fill-accent-sand text-accent-sand"
+                          : s - 0.5 <= r.stars
+                            ? "h-4 w-4 fill-accent-sand/50 text-accent-sand"
+                            : "h-4 w-4 fill-none text-border"
+                      }
+                    />
+                  ))}
                 </div>
 
-                <Quote className="w-10 h-10 text-primary/30 mb-4" />
-
-                <blockquote className="font-heading text-xl md:text-2xl text-foreground leading-snug mb-8 font-medium">
-                  "Vi kör ut med servicebilen och löser det där båten står. När
-                  arbetet är klart har du svar på alla frågor och en faktura
-                  som matchar det vi sa från början."
+                <blockquote className="text-[15px] text-foreground leading-relaxed mb-6">
+                  "{r.text}"
                 </blockquote>
 
-                <p className="text-sm text-muted-foreground italic mb-8">
-                  Så funkar det. Hör vad våra kunder själva säger om
-                  upplevelsen direkt i flödet på Facebook.
-                </p>
-
-                <a
-                  href="https://www.facebook.com/profile.php?id=100089773764804"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-all shadow-[0_0_25px_rgba(30,74,107,0.1)] hover:shadow-[0_0_35px_rgba(30,74,107,0.18)] group"
-                >
-                  <Facebook className="w-4 h-4" />
-                  Se omdömen på Facebook
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </div>
-
-              <div className="hidden lg:block w-px h-72 bg-border" aria-hidden="true" />
-
-              <div className="space-y-4 lg:min-w-[220px]">
-                {highlights.map((h, i) => (
-                  <motion.div
-                    key={h.label}
-                    initial={{ opacity: 0, x: 12 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.4 + i * 0.08 }}
-                  >
-                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
-                      {h.label}
+                <div className="flex items-center gap-4 pt-5 border-t border-border">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary text-[11px] font-bold flex-shrink-0">
+                    {r.initials}
+                  </div>
+                  <div>
+                    <p className="text-[13px] font-bold text-foreground">
+                      {r.name}
                     </p>
-                    <p className="text-sm font-medium text-foreground leading-snug">
-                      {h.value}
+                    <p className="text-[11px] text-muted-foreground mt-1 font-medium">
+                      {r.location} · {r.date}
                     </p>
-                  </motion.div>
-                ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

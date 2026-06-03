@@ -60,7 +60,7 @@ export default function QuickBookForm() {
           Tack, vi hör av oss!
         </h3>
         <p className="text-muted-foreground text-[15px] leading-relaxed max-w-md mx-auto">
-          Vi återkommer så snart vi kan, oftast samma dag på vardagar. Behöver
+          Vi återkommer inom 24 timmar. Behöver
           du svar snabbare, ring{" "}
           <a
             href="tel:+46767166716"

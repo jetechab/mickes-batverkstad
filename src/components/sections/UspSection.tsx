@@ -8,7 +8,7 @@ const usps = [
   {
     icon: Truck,
     title: "Vi kommer ut till båten",
-    body: "Du behöver inte transportera båten. Vi rullar fram med servicebilen där den står, hemma på tomten eller vid bryggan.",
+    body: "Du behöver inte tänka på transport. Vi kommer ut med servicebilen till din båt, hemma eller vid båtplatsen.",
   },
   {
     icon: Wrench,
@@ -23,7 +23,7 @@ const usps = [
   {
     icon: MapPin,
     title: "Brett täckningsområde",
-    body: "Bas i Grebbestad, kör i hela Bohuslän, Västra Götaland, Dalsland och Värmland. Även Norge vid behov.",
+    body: "Vi utför service i hela Bohuslän, Västra Götaland, Dalsland och Värmland samt i Norge vid behov. Vår bas är i Grebbestad.",
   },
 ];
 
@@ -47,11 +47,12 @@ export default function UspSection() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-14 lg:mb-20"
         >
-          <span className="inline-flex items-center gap-2 text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
-            <span className="w-8 h-px bg-primary/60" />
-            Därför Mickes Båtverkstad
-            <span className="w-8 h-px bg-primary/60" />
-          </span>
+          <img
+            src="/logo.png"
+            alt="Mickes Båtverkstad"
+            className="h-10 md:h-12 w-auto mx-auto mb-6"
+            loading="lazy"
+          />
           <h2 className="font-heading text-2xl md:text-3xl lg:text-[2.5rem] font-bold text-foreground leading-tight max-w-2xl mx-auto">
             Båtservice på dina villkor
             <span className="block text-primary/80 mt-1">
@@ -60,8 +61,8 @@ export default function UspSection() {
           </h2>
           <p className="mt-5 text-muted-foreground text-base lg:text-lg max-w-(--max-w-text) mx-auto leading-relaxed">
             Mobil verkstad betyder att service, krympplastning och
-            bottenmålning sker där båten redan står. Snabbare för dig och
-            billigare i längden.
+            bottenmålning sker där båten redan står. Mindre tid med båten på
+            vägen, mer tid med båten i vattnet!
           </p>
         </motion.div>
 

@@ -14,18 +14,18 @@ import { useRef } from "react";
 const principles = [
   {
     icon: Wrench,
-    title: "Hantverkare först, säljare aldrig",
-    body: "Jag tjänar inget på att byta delar du inte behöver. Hör jag ett ljud som inte stämmer, säger jag till. Är något bra som det är, lämnar jag det.",
+    title: "Service är vårt uppdrag!",
+    body: "Att du som kund är nöjd är det viktigaste för mig som företagare och servicetekniker. Jag utför den service som din båt behöver och byter aldrig delar som inte behöver bytas. Hör jag ett ljud som inte stämmer säger jag till. Är något bra som det är så lämnar jag det.",
   },
   {
     icon: HandshakeIcon,
-    title: "Du ska veta vad det landar på",
-    body: "Innan jag drar igång ger jag dig ett kostnadsbesked. Skulle något oväntat dyka upp stannar jag och stämmer av med dig först. Inga överraskningar i fakturan.",
+    title: "Du ska veta vad det landar på!",
+    body: "Innan jag börjar arbeta ger jag dig ett kostnadsförslag. Dyker något oväntat upp stannar jag upp och stämmer av med dig. Inga överraskningar i fakturan.",
   },
   {
     icon: ShieldCheck,
-    title: "Garanti, helt enkelt",
-    body: "Skulle något jag servat inte fungera som det ska efter besöket, ring så löser jag det. Det är hela poängen med att en namngiven person står bakom jobbet.",
+    title: "Garanti, alltid!",
+    body: "Vi lämnar garanti på både arbete och delar. Skulle något inte funka som det ska efter besöket, ring så kommer jag tillbaka och löser det.",
   },
 ];
 
@@ -55,39 +55,39 @@ export default function MeetMickeSection() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-6 h-[2px] bg-primary" />
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
-                Möt Micke
+                Möt din servicetekniker
               </span>
             </div>
             <h2
               id="meet-micke-heading"
               className="font-heading text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.05] mb-8"
             >
-              Hej, jag heter Micke.
+              Hej, det är jag som är Micke.
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-sand">
-                Jag är din båtmekaniker.
+                Din båtmekaniker och grundare av Mickes båtverkstad.
               </span>
             </h2>
 
             <div className="space-y-5 text-muted-foreground text-[17px] leading-relaxed max-w-(--max-w-text)">
               <p>
-                Jag startade Mickes Båtverkstad för att jag tröttnade på att se
-                båtfolk släppa allt för att frakta båtarna till verkstad. Det
-                kändes bakvänt. Det är ju båten som ska fixas, inte din
-                lördag.
+                Jag grundade Mickes Båtverkstad för att göra båtlivet enklare.
+                Vi som älskar vår båt ska inte behöva köra runt med den på
+                vägarna i onödan, det känns bakvänt.
               </p>
               <p>
-                Sedan dess kör jag ut till båten där den står. Med
-                servicebilen, verktyg och delar som behövs. Hemma på tomten,
-                vid bryggan eller på uppställningsplatsen, det funkar lika
-                bra. Och jag står själv bakom varje uppdrag, vilket innebär
-                att du alltid pratar med samma person, från första samtal till
-                klart arbete.
+                Sedan dess har jag kört ut till över 150 båtar, där de står.
+                Med servicebilen, verktyg och de delar som behövs. Hemma på
+                tomten, vid bryggan eller på uppställningsplatsen. Jag står
+                själv bakom varje uppdrag, vilket betyder att du alltid pratar
+                med samma person. Du vet vem som tar ansvar för din båt från
+                första samtal till klart arbete.
               </p>
               <p>
-                Jag är utbildad marin servicetekniker och har servat
-                utombordare i många år. Det är inget jag gör vid sidan av.
-                Det är hela mitt jobb.
+                Jag är utbildad marin servicetekniker och har tagit hand om
+                utombordare i många år. När du hör av dig till mig så hjälper
+                jag dig med den bästa och smidigaste lösningen för dig och din
+                båt.
               </p>
             </div>
 
@@ -130,7 +130,7 @@ export default function MeetMickeSection() {
                   </p>
                 </div>
                 <p className="font-heading text-base lg:text-lg font-bold text-foreground leading-snug">
-                  Båten där den ligger. Servicen där den behövs.
+                  Service där båten ligger. När det behövs.
                 </p>
               </div>
             </div>
@@ -183,7 +183,7 @@ export default function MeetMickeSection() {
                   Skicka en kort förfrågan
                 </p>
                 <p className="text-sm opacity-90 mt-1">
-                  Jag återkommer samma dag på vardagar.
+                  Jag återkommer inom 24 timmar.
                 </p>
               </div>
               <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1 flex-shrink-0" />

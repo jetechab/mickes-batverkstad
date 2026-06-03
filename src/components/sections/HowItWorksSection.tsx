@@ -13,21 +13,21 @@ import { useRef } from "react";
 const steps = [
   {
     icon: MessageCircle,
-    title: "Hör av dig",
+    title: "Kontakta oss",
     description:
-      "Ring 0767-16 67 16 eller fyll i bokningsformuläret. Berätta vad det gäller och var båten står.",
+      "Ring, mejla eller fyll i bokningsformuläret. Berätta vad du vill ha hjälp med och var båten står.",
   },
   {
     icon: CalendarDays,
     title: "Vi bokar tid",
     description:
-      "Vi återkommer inom dagen med tid som funkar för dig. Ofta inom samma vecka.",
+      "Vi återkommer inom 24 timmar och hittar en tid som passar dig. Ofta kan vi utföra jobbet redan samma vecka.",
   },
   {
     icon: Truck,
     title: "Vi kommer ut",
     description:
-      "Servicebilen rullar fram med allt som behövs. Arbetet utförs på plats hos dig.",
+      "Servicebilen rullar fram med allt som behövs. Vi utför arbetet där din båt är.",
   },
   {
     icon: CheckCircle2,
@@ -57,7 +57,7 @@ export default function HowItWorksSection() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-6 h-[2px] bg-primary" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              Processen
+              Så går det till
             </span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
@@ -65,8 +65,8 @@ export default function HowItWorksSection() {
               Från samtal till klar båt
             </h2>
             <p className="text-muted-foreground max-w-[400px] text-[15px] leading-relaxed">
-              Inget krångel. Vi tar hand om allt från första kontakt till klart
-              arbete.
+              Alltid lika smidigt. Vi tar hand om allt från första kontakt till
+              klart arbete.
             </p>
           </div>
         </motion.div>

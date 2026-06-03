@@ -34,7 +34,7 @@ export default function QuickBookSection() {
             Skicka kort förfrågan
           </h2>
           <p className="text-muted-foreground text-[15px] leading-relaxed max-w-xl mx-auto">
-            Namn, telefon och vad det gäller. Vi hör av oss inom dagen.
+            Namn, telefon och vad det gäller. Vi hör av oss inom 24 timmar.
             Behöver du beskriva mer kan du istället gå till{" "}
             <a
               href="/boka/"

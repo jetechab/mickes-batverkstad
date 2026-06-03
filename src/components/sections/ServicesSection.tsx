@@ -55,7 +55,7 @@ export default function ServicesSection() {
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <h2 className="font-heading text-4xl lg:text-6xl font-bold text-foreground tracking-tight max-w-3xl leading-[1.05]">
-              Allt en båt behöver,
+              Allt din båt behöver,
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-sand">
                 där den står.
