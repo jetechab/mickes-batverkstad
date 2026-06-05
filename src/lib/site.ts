@@ -44,6 +44,40 @@ export const services = [
   },
 ] as const;
 
+// Orter vi täcker utöver de med egen sida (orter nedan). Visas som täckningslista.
+export const coverageCities: string[] = [
+  "Ale",
+  "Alingsås",
+  "Bengtsfors",
+  "Bovallstrand",
+  "Dals-Ed",
+  "Fredrikstad",
+  "Färgelanda",
+  "Grästorp",
+  "Göteborg",
+  "Halden",
+  "Härryda",
+  "Hunnebostrand",
+  "Karlstad",
+  "Kungälv",
+  "Kungshamn",
+  "Kungsbacka",
+  "Lerum",
+  "Lidköping",
+  "Lilla Edet",
+  "Mellerud",
+  "Moss",
+  "Munkedal",
+  "Orust",
+  "Sarpsborg",
+  "Sotenäs",
+  "Stenungsund",
+  "Tjörn",
+  "Trollhättan",
+  "Vänersborg",
+  "Åmål",
+];
+
 export type Ort = {
   slug: string;
   name: string;

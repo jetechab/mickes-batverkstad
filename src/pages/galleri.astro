@@ -1,0 +1,59 @@
+---
+import CtaSection from "@/components/sections/CtaSection.tsx";
+import Gallery from "@/components/Gallery.tsx";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://batverkstad.se/" },
+    { "@type": "ListItem", position: 2, name: "Galleri", item: "https://batverkstad.se/galleri/" },
+  ],
+};
+---
+
+<BaseLayout
+  title="Galleri | Mickes Båtverkstad"
+  description="Bilder från jobben. Service av utombordare, krympplastning och bottenmålning på plats längs Bohuskusten, med mobil verkstad."
+  schema={breadcrumbSchema}
+>
+  <section class="bg-background pt-24 pb-12 lg:pt-28 lg:pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-50">
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-sand/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-(--max-w-content) mx-auto px-6 relative z-10">
+      <nav aria-label="Brödsmulor" class="mb-8 text-sm text-muted-foreground">
+        <a href="/" class="hover:text-foreground transition-colors">Hem</a>
+        <span class="mx-2 opacity-50">/</span>
+        <span class="text-foreground">Galleri</span>
+      </nav>
+
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-6 h-[2px] bg-primary"></div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            Galleri
+          </span>
+        </div>
+        <h1 class="font-heading text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.05] mb-6">
+          Bilder från jobben
+        </h1>
+        <p class="text-muted-foreground text-lg leading-relaxed">
+          Riktiga uppdrag längs kusten. Service av utombordare, krympplastning
+          och bottenmålning, utförda på plats där båten står.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background pb-20 lg:pb-28">
+    <div class="max-w-(--max-w-content) mx-auto px-6">
+      <Gallery client:visible />
+    </div>
+  </section>
+
+  <CtaSection client:visible />
+</BaseLayout>

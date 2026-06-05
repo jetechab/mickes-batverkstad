@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 const navLinks = [
   { label: "Tjänster", href: "/tjanster/" },
   { label: "Priser", href: "/priser/" },
+  { label: "Galleri", href: "/galleri/" },
   { label: "Om oss", href: "/om-oss/" },
   { label: "Vanliga frågor", href: "/vanliga-fragor/" },
   { label: "Kontakt", href: "/kontakt/" },

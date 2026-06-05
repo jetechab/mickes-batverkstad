@@ -3,21 +3,11 @@
 import { motion, useInView } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { useRef } from "react";
-import { orter } from "@/lib/site";
+import { coverageCities, orter } from "@/lib/site";
 
 const allCities = [
-  ...orter.map((o) => ({ name: o.name, slug: o.slug, primary: true })),
-  { name: "Munkedal", slug: null, primary: false },
-  { name: "Sotenäs", slug: null, primary: false },
-  { name: "Orust", slug: null, primary: false },
-  { name: "Tjörn", slug: null, primary: false },
-  { name: "Stenungsund", slug: null, primary: false },
-  { name: "Göteborg", slug: null, primary: false },
-  { name: "Trollhättan", slug: null, primary: false },
-  { name: "Vänersborg", slug: null, primary: false },
-  { name: "Mellerud", slug: null, primary: false },
-  { name: "Åmål", slug: null, primary: false },
-  { name: "Karlstad", slug: null, primary: false },
+  ...orter.map((o) => ({ name: o.name, slug: o.slug as string | null, primary: true })),
+  ...coverageCities.map((name) => ({ name, slug: null, primary: false })),
 ];
 
 export default function GeographySection() {
@@ -57,7 +47,8 @@ export default function GeographySection() {
             </h2>
             <p className="text-muted-foreground text-[16px] leading-relaxed mb-10 max-w-[480px]">
               Vi har bas i Grebbestad och kör ut till båten där den står. Hela
-              Bohuslän, Dalsland och Värmland. Norge går också bra vid behov.
+              Bohuslän och Västra Götaland, in i Dalsland och Värmland, och
+              Norge går också bra vid behov.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-8">
@@ -83,7 +74,7 @@ export default function GeographySection() {
                     href={`/orter/${city.slug}/`}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.3, delay: 0.3 + i * 0.04 }}
+                    transition={{ duration: 0.3, delay: 0.3 + Math.min(i, 12) * 0.04 }}
                     className={className}
                   >
                     {content}
@@ -93,7 +84,7 @@ export default function GeographySection() {
                     key={city.name}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.3, delay: 0.3 + i * 0.04 }}
+                    transition={{ duration: 0.3, delay: 0.3 + Math.min(i, 12) * 0.04 }}
                     className={className}
                   >
                     {content}
@@ -121,10 +112,9 @@ export default function GeographySection() {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-[480px] aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden border border-border shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-card">
-              {/* TEMP: ersätt med foto från Bohuslän, gärna Grebbestads gästhamn eller liknande */}
               <img
-                src="https://images.unsplash.com/photo-1696102825924-26aef2a51d30?auto=format&fit=crop&q=80&w=1200"
-                alt="Bohusläns klippkust med hav i bakgrunden"
+                src="/img/galleri/foto-05.webp"
+                alt="Båt vid Bohusläns klippkust"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
@@ -141,7 +131,7 @@ export default function GeographySection() {
                       Grebbestad
                     </p>
                     <p className="text-muted-foreground text-sm">
-                      Hela Bohuslän, Dalsland, Värmland
+                      Hela västkusten, Dalsland, Värmland och Norge
                     </p>
                   </div>
                   <a

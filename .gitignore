@@ -22,6 +22,9 @@ pnpm-debug.log*
 # macOS
 .DS_Store
 
+# Råa kund-foton/videor (optimerade kopior ligger i public/img). Deployas aldrig.
+temp-pictures/
+
 # IDE
 .idea/
 .vscode/
