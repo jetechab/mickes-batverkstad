@@ -6,6 +6,7 @@ interface Props {
   title: string;
   titleAccent: string;
   lede: string;
+  price?: string;
   bullets: string[];
   sections: { heading: string; body: string }[];
   includesTitle: string;
@@ -20,6 +21,7 @@ const {
   title,
   titleAccent,
   lede,
+  price,
   bullets,
   sections,
   includesTitle,
@@ -31,7 +33,7 @@ const {
 ---
 
 <section
-  class="bg-background pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden border-b border-border"
+  class="bg-background pt-24 pb-20 lg:pt-28 lg:pb-32 relative overflow-hidden border-b border-border"
 >
   <div class="absolute inset-0 pointer-events-none opacity-50">
     <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
@@ -63,6 +65,19 @@ const {
         <p class="text-muted-foreground text-lg leading-relaxed mb-8 max-w-(--max-w-text)">
           {lede}
         </p>
+
+        {
+          price && (
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-8">
+              <span class="font-heading text-2xl font-bold text-primary">
+                {price}
+              </span>
+              <span class="text-sm text-muted-foreground">
+                Inkl. moms. Framkörningsavgift 685 kr tillkommer.
+              </span>
+            </div>
+          )
+        }
 
         <div class="grid sm:grid-cols-2 gap-4 mb-10">
           {

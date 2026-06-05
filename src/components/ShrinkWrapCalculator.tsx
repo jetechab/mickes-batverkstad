@@ -4,16 +4,16 @@ import { motion, useInView } from "framer-motion";
 import { Calculator, Ruler } from "lucide-react";
 import { useRef, useState } from "react";
 
-const BASE = 1800;
-const PER_METER = 850;
-const MIN = 4;
-const MAX = 14;
+const BASE = 2700; // lägsta pris, gäller båtar upp till BREAK meter
+const BREAK = 5.5;
+const PER_METER = 500; // per meter över BREAK
+const MIN = 3;
+const MAX = 9;
+const FRAKT = 685; // framkörningsavgift som tillkommer
 
-function formatRange(length: number) {
-  const center = BASE + (length - MIN) * PER_METER;
-  const low = Math.round((center * 0.85) / 100) * 100;
-  const high = Math.round((center * 1.15) / 100) * 100;
-  return { low, high };
+function priceFor(length: number) {
+  if (length <= BREAK) return BASE;
+  return BASE + Math.round(PER_METER * (length - BREAK));
 }
 
 export default function ShrinkWrapCalculator() {
@@ -21,7 +21,7 @@ export default function ShrinkWrapCalculator() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const [length, setLength] = useState(6);
 
-  const { low, high } = formatRange(length);
+  const price = priceFor(length);
 
   return (
     <div
@@ -90,13 +90,14 @@ export default function ShrinkWrapCalculator() {
         >
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground mb-2">
-              Uppskattat prisintervall
+              Uppskattat pris
             </p>
             <p className="font-heading text-3xl lg:text-4xl font-bold text-foreground tabular-nums">
-              {low.toLocaleString("sv-SE")}–{high.toLocaleString("sv-SE")} kr
+              {price.toLocaleString("sv-SE")} kr
             </p>
             <p className="text-xs text-muted-foreground mt-2">
-              Inkl. moms. Slutpriset bekräftas före arbete.
+              Inkl. moms. Framkörningsavgift {FRAKT} kr tillkommer. Slutpriset
+              bekräftas före arbete.
             </p>
           </div>
           <a

@@ -1,6 +1,6 @@
 export const siteContact = {
   companyName: "Mickes Båtverkstad AB",
-  organizationNumber: "",
+  organizationNumber: "556677-9624",
   email: "mickes@batverkstad.se",
   phoneDisplay: "0767-16 67 16",
   phoneHref: "+46767166716",
@@ -138,7 +138,7 @@ export const orter: Ort[] = [
       "Långsträckt kust från Resö till Hamburgsund",
     ],
     localCopy: [
-      "Tanums kommun är vår hemmakommun. Mickes Båtverkstad har bas i Grebbestad och vi täcker hela kommunen utan extra utryckningskostnader.",
+      "Tanums kommun är vår hemmakommun. Mickes Båtverkstad har bas i Grebbestad och vi kommer ut till båten där den står, var du än befinner dig i kommunen.",
       "Det är ett stort område, från Resö och Havstenssund i norr ner till Hamburgsund i söder. Vi rör oss längs kusten och kommer ut till båtar i alla samhällen och vid alla större bryggor.",
       "Behöver du service i någon av byarna utanför samhällena, säg till vid bokning så ser vi till att hitta rätt direkt utan onödig svängkörning.",
     ],
@@ -193,7 +193,7 @@ export const orter: Ort[] = [
     ],
     localCopy: [
       "Hamburgsund är ett mindre samhälle men med ett livligt båtliv. Strömmen mellan fastlandet och Hamburgö skapar ett naturligt skyddat farvatten där många båtar ligger året runt.",
-      "Vi kör hit ofta som del av en runda som inkluderar Fjällbacka och Grebbestad. Bokar du en tid samma dag som någon annan i området hjälper det oss med planeringen, och du slipper eventuell utryckningskostnad om vi ändå är i området.",
+      "Vi kör hit ofta som del av en runda som inkluderar Fjällbacka och Grebbestad. Bokar du en tid samma dag som någon annan i området hjälper det oss med planeringen, och det blir enklare att passa in besöket när vi ändå är på väg.",
       "På Hamburgö kan vi bara komma med båt så det kräver lite extra planering. Hör av dig så löser vi det.",
     ],
     nearestBase: "Cirka 20 min från Grebbestad",

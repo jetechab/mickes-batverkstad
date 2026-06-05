@@ -28,7 +28,7 @@ const heroServices = [
   {
     label: "Krympplast",
     value: "Täckning",
-    sub: "Båtar mellan 2-12 meter",
+    sub: "Båtar upp till 9 meter",
     href: "/tjanster/krympplastning/",
   },
   {
