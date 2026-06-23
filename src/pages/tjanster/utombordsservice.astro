@@ -6,7 +6,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Utombordsservice",
+  name: "Utombordarservice",
   provider: {
     "@type": "LocalBusiness",
     name: "Mickes Båtverkstad AB",
@@ -26,7 +26,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Utombordsservice",
+      name: "Utombordarservice",
       item: "https://batverkstad.se/tjanster/utombordsservice/",
     },
   ],
@@ -34,16 +34,17 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Utombordsservice | Yamaha, Mercury, Suzuki och fler"
+  title="Utombordarservice | Yamaha, Mercury, Suzuki och fler"
   description="Planerad service och underhåll av utombordare på plats hos dig. Yamaha, Mercury, Suzuki, Honda, Evinrude, Tohatsu med flera. Garanti på arbete och delar."
   schema={[serviceSchema, breadcrumbSchema]}
 >
   <ServicePage
     eyebrow="Tjänst"
-    title="Utombordsservice"
+    title="Utombordarservice"
     titleAccent="service och underhåll, på plats"
     lede="Utbildad marin servicetekniker med lång erfarenhet på samtliga större märken. Vi gör planerad service och underhåll på din utombordare där båten står. Verkstadsbilen rullar fram, du slipper transport till varv."
     price="Från 2 195 kr"
+    priceNote="i arbetskostnad, inkl. moms. Servicedelar, miljöavgift och framkörningsavgift 685 kr tillkommer. Du får alltid ett tydligt kostnadsbesked på arbetskostnaden innan arbetet påbörjas."
     image="/img/service.jpg"
     imageAlt="Service av utombordsmotor med flushöra under spolning"
     imageCaption="Service och underhåll av utombordare, alla större märken. Garanti på arbete och delar."
@@ -55,12 +56,17 @@ const breadcrumbSchema = {
     ]}
     includesTitle="Vad ingår i en årsservice"
     includes={[
-      "Olje- och oljefilterbyte",
-      "Byte av tändstift",
-      "Kontroll och byte av impeller",
-      "Kontroll av växelhusolja",
-      "Kontroll av batteri och anoder",
-      "Test under last och dokumentation",
+      "Visuell inspektion av motor och installation",
+      "Byte av motorolja",
+      "Byte av oljefilter",
+      "Byte av växelhusolja (nedre enheten)",
+      "Byte av bränslefilter (lågtryck)",
+      "Kontroll och byte av tätningar växelhuspluggar",
+      "Inspektion av anoder",
+      "Kontroll av kylsystem och kylvattenflöde",
+      "Smörjning av fettpunkter",
+      "Rost- och elektronikskydd (Corroguard eller motsv.)",
+      "Varmkörning och funktionskontroll",
     ]}
     sections={[
       {
@@ -73,7 +79,7 @@ const breadcrumbSchema = {
       },
       {
         heading: "Garanti och dokumentation",
-        body: "Du får dokumentation på vad som utförts och vilka delar som bytts. Garanti på arbete och delar enligt branschpraxis. Skulle något inte fungera som det ska efter besöket, hör av dig så löser vi det.",
+        body: "Du får dokumentation på vad som utförts och vilka delar som bytts. Garanti på arbete och delar enligt svensk konsumentlagstiftning. Skulle något inte fungera som det ska efter besöket, hör av dig så löser vi det.",
       },
       {
         heading: "Reservdelar och tillbehör",

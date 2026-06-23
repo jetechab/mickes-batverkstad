@@ -7,6 +7,7 @@ interface Props {
   titleAccent: string;
   lede: string;
   price?: string;
+  priceNote?: string;
   bullets: string[];
   sections: { heading: string; body: string }[];
   includesTitle: string;
@@ -22,6 +23,7 @@ const {
   titleAccent,
   lede,
   price,
+  priceNote,
   bullets,
   sections,
   includesTitle,
@@ -73,7 +75,7 @@ const {
                 {price}
               </span>
               <span class="text-sm text-muted-foreground">
-                Inkl. moms. Framkörningsavgift 685 kr tillkommer.
+                {priceNote ?? "Inkl. moms. Framkörningsavgift 685 kr tillkommer."}
               </span>
             </div>
           )

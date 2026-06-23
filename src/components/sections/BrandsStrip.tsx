@@ -11,7 +11,7 @@ const groups = [
   },
   {
     heading: "Bottenfärg och tillbehör",
-    items: ["Jotun"],
+    items: ["Kvalitetsfärg", "Primer", "Slipmaterial"],
     tail: "med flera",
   },
 ];

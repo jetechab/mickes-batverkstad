@@ -8,7 +8,7 @@ const usps = [
   {
     icon: Truck,
     title: "Vi kommer ut till båten",
-    body: "Du behöver inte tänka på transport. Vi kommer ut med servicebilen till din båt, hemma eller vid båtplatsen.",
+    body: "Du behöver inte tänka på transport. Vi kommer ut med servicebilen där båten står, hemma, vid fritidshuset eller i marinan.",
   },
   {
     icon: Wrench,

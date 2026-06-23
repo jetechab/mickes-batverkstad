@@ -196,7 +196,10 @@ export default function HeroSection({ city }: HeroSectionProps) {
                 </p>
                 <ArrowUpRight className="w-4 h-4 text-muted-foreground/60 group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
               </div>
-              <p className="font-heading text-xl md:text-2xl font-bold text-foreground leading-tight mb-1.5">
+              <p
+                lang="sv"
+                className="font-heading text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight mb-1.5 hyphens-auto break-words"
+              >
                 {service.value}
               </p>
               <p className="text-[12px] text-muted-foreground">{service.sub}</p>

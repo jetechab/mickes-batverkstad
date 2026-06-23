@@ -190,7 +190,7 @@ export default function ContactLeadForm() {
           value={form.message}
           onChange={(e) => update("message", e.target.value)}
           className={`${inputClass} resize-y`}
-          placeholder="Beskriv kort vad du vill ha gjort, eventuella problem och annat som kan vara bra för oss att veta."
+          placeholder="Beskriv kort vad du vill ha utfört. Ange gärna årsmodell samt eventuella tillägg som impeller- eller kamremsbyte."
         />
       </Field>
 

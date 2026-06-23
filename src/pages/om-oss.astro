@@ -1,5 +1,6 @@
 ---
 import CtaSection from "@/components/sections/CtaSection.tsx";
+import ReviewsSection from "@/components/sections/ReviewsSection.tsx";
 import UspSection from "@/components/sections/UspSection.tsx";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
@@ -134,5 +135,6 @@ const breadcrumbSchema = {
   </section>
 
   <UspSection client:visible />
+  <ReviewsSection client:visible />
   <CtaSection client:visible />
 </BaseLayout>

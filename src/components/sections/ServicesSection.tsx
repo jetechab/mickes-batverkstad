@@ -7,10 +7,10 @@ import { useRef } from "react";
 const services = [
   {
     icon: Wrench,
-    title: "Utombordsservice",
+    title: "Utombordarservice",
     href: "/tjanster/utombordsservice/",
     body: "Vi gör planerad service och underhåll på alla märken av utombordare med mobil verkstad, på plats hos dig. Yamaha, Mercury, Suzuki, Honda, Evinrude, Tohatsu m.fl. Garanti på arbete och delar.",
-    bullets: ["Årsservice", "Underhåll", "Reservdelar"],
+    bullets: ["Årsservice", "Serviceprotokoll", "Reservdelar"],
   },
   {
     icon: Droplets,
@@ -23,8 +23,8 @@ const services = [
     icon: Paintbrush,
     title: "Bottenmålning",
     href: "/tjanster/bottenmalning/",
-    body: "Bottenmålning med Jotun-produkter. Vi sliper, primar och målar där båten står, även på släp eller bockar. Slipper transport till varv.",
-    bullets: ["Jotun-färg", "Slip och förarbete", "Släp eller bockar"],
+    body: "Bottenmålning med kvalitetsprodukter. Vi målar där båten står, även på släp eller bockar. Slipper transport till varv.",
+    bullets: ["Kvalitetsfärg", "Maskerar och målar", "Släp eller bockar"],
   },
 ];
 
@@ -63,7 +63,7 @@ export default function ServicesSection() {
             </h2>
             <p className="text-muted-foreground max-w-[380px] leading-relaxed text-[15px] lg:text-right">
               Tre kärntjänster, en mobil verkstad. Vi kommer ut till
-              hemmaplanen, bryggan eller uppställningsplatsen.
+              hemmaplanen, bryggan eller marinan.
             </p>
           </div>
         </motion.div>

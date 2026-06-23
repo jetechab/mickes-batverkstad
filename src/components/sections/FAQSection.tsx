@@ -8,9 +8,9 @@ import { useRef, useState } from "react";
 export const faqs: { q: string; a: ReactNode; plain: string }[] = [
   {
     q: "Vad kostar service av en utombordare?",
-    a: "Priset beror på motor, ålder och om något behöver bytas. En enkel årsservice ligger runt timpris plus delar. Vi ger alltid ett kostnadsbesked innan vi börjar arbetet så du vet vad det landar på.",
+    a: "Årsservice från 2 195 kr i arbetskostnad. Framkörningsavgift 685 kr tillkommer. Servicedelar och miljöavgift tillkommer. Du får alltid ett tydligt kostnadsbesked på arbetskostnaden innan arbetet påbörjas.",
     plain:
-      "Priset beror på motor, ålder och om något behöver bytas. En enkel årsservice ligger runt timpris plus delar. Vi ger alltid ett kostnadsbesked innan vi börjar arbetet så du vet vad det landar på.",
+      "Årsservice från 2 195 kr i arbetskostnad. Framkörningsavgift 685 kr tillkommer. Servicedelar och miljöavgift tillkommer. Du får alltid ett tydligt kostnadsbesked på arbetskostnaden innan arbetet påbörjas.",
   },
   {
     q: "Vilka områden täcker ni?",
@@ -32,19 +32,19 @@ export const faqs: { q: string; a: ReactNode; plain: string }[] = [
   },
   {
     q: "Hur lång framförhållning behöver ni?",
-    a: "Vi försöker komma ut samma vecka. Inför säsongsstart och inför täckning på hösten är det fullt så hör av dig tidigt om det ska göras under den perioden.",
+    a: "Vi försöker komma ut samma vecka. Inför säsongsstart och inför täckning på hösten är det full fart, så hör gärna av dig om det ska göras under den perioden.",
     plain:
-      "Vi försöker komma ut samma vecka. Inför säsongsstart och inför täckning på hösten är det fullt.",
+      "Vi försöker komma ut samma vecka. Inför säsongsstart och inför täckning på hösten är det full fart, så hör gärna av dig.",
   },
   {
     q: "Vad gäller för garanti?",
-    a: "Garanti på utfört arbete och på reservdelar enligt branschpraxis. Skulle något inte funka som det ska efter en service, hör av dig så löser vi det.",
+    a: "Garanti på utfört arbete och på reservdelar enligt svensk konsumentlagstiftning. Skulle något inte funka som det ska efter en service, hör av dig så löser vi det.",
     plain:
-      "Garanti på utfört arbete och på reservdelar enligt branschpraxis. Skulle något inte funka som det ska efter en service, hör av dig så löser vi det.",
+      "Garanti på utfört arbete och på reservdelar enligt svensk konsumentlagstiftning. Skulle något inte funka som det ska efter en service, hör av dig så löser vi det.",
   },
   {
     q: "Kan jag stanna kvar med båten på släp under bottenmålning?",
-    a: "Ja, det går utmärkt. Vi sliper, primar och målar där båten står. Du slipper transport och inomhusvarv. Krympplastning fungerar lika bra på släp.",
+    a: "Ja, det går utmärkt. Vi målar där båten står. Du slipper transport och inomhusvarv. Krympplastning fungerar lika bra på släp.",
     plain:
       "Ja, vi utför bottenmålning på släp eller bockar. Krympplastning funkar lika bra på släp.",
   },
@@ -154,7 +154,7 @@ export default function FAQSection({ items = faqs }: FAQSectionProps) {
             </h2>
             <p className="text-[15px] text-muted-foreground leading-relaxed mb-8">
               Hittar du inte det du letar efter? Ring eller maila så svarar vi
-              under arbetsdagen.
+              snarast möjligt.
             </p>
             <div className="flex flex-col gap-4">
               <a

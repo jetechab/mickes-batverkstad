@@ -26,7 +26,7 @@ export const siteContactLinks = {
 export const services = [
   {
     slug: "utombordsservice",
-    title: "Utombordsservice",
+    title: "Utombordarservice",
     short: "Planerad service och underhåll av alla utombordsmärken, på plats hos dig.",
     brands: ["Yamaha", "Mercury", "Suzuki", "Honda", "Evinrude", "Tohatsu"],
   },
@@ -39,8 +39,8 @@ export const services = [
   {
     slug: "bottenmalning",
     title: "Bottenmålning",
-    short: "Bottenmålning med Jotun-produkter. Görs på släp eller bockar.",
-    brands: ["Jotun"],
+    short: "Bottenmålning med kvalitetsprodukter. Görs på släp eller bockar.",
+    brands: ["Kvalitetsfärg"],
   },
 ] as const;
 
@@ -139,7 +139,7 @@ export const orter: Ort[] = [
     localCopy: [
       "Lysekil ligger vid den enda äkta tröskelfjorden i Sverige, Gullmarsfjorden. Båtfolk här rör sig både i öppet hav och i de skyddade vikarna inåt fjorden, vilket ställer lite olika krav på service och bottenfärg.",
       "Vi tar uppdrag i Lysekils gästhamn, vid Slätten och längs hela Stångenäshalvön. Står båten i Brastad eller på någon av de privata uppställningsplatserna runt staden så hittar vi dit.",
-      "För båtar som ligger länge inåt fjorden rekommenderar vi ofta en självpolerande Jotun-färg. Vi går igenom alternativen på plats och föreslår system som passar just din båts trafikmönster.",
+      "För båtar som ligger länge inåt fjorden rekommenderar vi ofta en självpolerande kvalitetsfärg. Vi går igenom alternativen på plats och föreslår system som passar just din båts trafikmönster.",
     ],
     nearestBase: "Cirka 1 timme från Grebbestad",
   },
@@ -210,7 +210,7 @@ export const orter: Ort[] = [
     localCopy: [
       "Smögen är ett av Bohusläns mest fotograferade båtsamhällen. Smögenbryggan är en helt egen miljö och båtarna här är allt från små jolar till tunga fiskebåtar.",
       "Vi kör ner till Smögen och Kungshamn med jämna mellanrum, framför allt inför säsongsstart och i augusti när folk hinner planera nästa års arbete. Står båten på Hasselösund, på Smögen eller i Kungshamn så är det samma logistik för oss.",
-      "Bottenmålning är en vanlig beställning här. Yttre Bohuskusten med mycket trafik och saltvatten ställer lite tuffare krav på färgsystemet. Vi rekommenderar oftast en Jotun-färg som klarar både fart och stillaliggande.",
+      "Bottenmålning är en vanlig beställning här. Yttre Bohuskusten med mycket trafik och saltvatten ställer lite tuffare krav på färgsystemet. Vi rekommenderar oftast en kvalitetsfärg som klarar både fart och stillaliggande.",
     ],
     nearestBase: "Cirka 1 timme och 15 min från Grebbestad",
   },

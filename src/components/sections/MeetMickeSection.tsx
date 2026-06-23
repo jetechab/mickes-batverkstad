@@ -20,12 +20,12 @@ const principles = [
   {
     icon: HandshakeIcon,
     title: "Du ska veta vad det landar på!",
-    body: "Innan jag börjar arbeta ger jag dig ett kostnadsförslag. Dyker något oväntat upp stannar jag upp och stämmer av med dig. Inga överraskningar i fakturan.",
+    body: "Innan jag börjar arbeta ger jag dig ett prisförslag på arbetskostnaden. Dyker något oväntat upp stannar jag upp och stämmer av med dig. Inga överraskningar i fakturan.",
   },
   {
     icon: ShieldCheck,
     title: "Garanti, alltid!",
-    body: "Vi lämnar garanti på både arbete och delar. Skulle något inte funka som det ska efter besöket, ring så kommer jag tillbaka och löser det.",
+    body: "Vi lämnar garanti på både arbete och delar enligt svensk konsumentlagstiftning.",
   },
 ];
 
@@ -76,9 +76,9 @@ export default function MeetMickeSection() {
                 vägarna i onödan, det känns bakvänt.
               </p>
               <p>
-                Sedan dess har jag kört ut till över 150 båtar, där de står.
-                Med servicebilen, verktyg och de delar som behövs. Hemma på
-                tomten, vid bryggan eller på uppställningsplatsen. Jag står
+                Sedan dess har jag kört ut till ett hundratal båtar per år, där
+                de står. Med servicebilen, verktyg och de delar som behövs.
+                Hemma på tomten, vid bryggan eller på uppställningsplatsen. Jag står
                 själv bakom varje uppdrag, vilket betyder att du alltid pratar
                 med samma person. Du vet vem som tar ansvar för din båt från
                 första samtal till klart arbete.
@@ -121,17 +121,19 @@ export default function MeetMickeSection() {
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-1 h-4 rounded-full bg-accent-sand" />
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent-sand">
-                    Mobil verkstad
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 lg:p-6">
+                <div className="inline-flex flex-col gap-1.5 rounded-xl bg-background/70 backdrop-blur-md border border-border px-4 py-3">
+                  <div className="flex items-center gap-2">
+                    <div className="w-1 h-3.5 rounded-full bg-accent-sand" />
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent-sand">
+                      Mobil verkstad
+                    </p>
+                  </div>
+                  <p className="font-heading text-[17px] sm:text-lg font-bold text-foreground leading-snug">
+                    Service där båten ligger. När det behövs.
                   </p>
                 </div>
-                <p className="font-heading text-base lg:text-lg font-bold text-foreground leading-snug">
-                  Service där båten ligger. När det behövs.
-                </p>
               </div>
             </div>
 
