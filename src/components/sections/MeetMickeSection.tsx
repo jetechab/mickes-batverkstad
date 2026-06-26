@@ -78,7 +78,7 @@ export default function MeetMickeSection() {
               <p>
                 Sedan dess har jag kört ut till ett hundratal båtar per år, där
                 de står. Med servicebilen, verktyg och de delar som behövs.
-                Hemma på tomten, vid bryggan eller på uppställningsplatsen. Jag står
+                Hemma på tomten, vid bryggan eller i marinan. Jag står
                 själv bakom varje uppdrag, vilket betyder att du alltid pratar
                 med samma person. Du vet vem som tar ansvar för din båt från
                 första samtal till klart arbete.

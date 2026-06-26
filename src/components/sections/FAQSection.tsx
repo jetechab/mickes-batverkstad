@@ -25,10 +25,10 @@ export const faqs: { q: string; a: ReactNode; plain: string }[] = [
       "Ja, alla större märken: Yamaha, Mercury, Suzuki, Honda, Evinrude, Tohatsu med flera. Även äldre motorer.",
   },
   {
-    q: "Måste båten in på verkstad?",
-    a: "Nej, det är hela poängen med oss. Vi rullar fram med verkstaden där båten står. På släp, vid bryggan eller uppallad på tomten, det funkar. Det sparar dig både frakt och tid.",
+    q: "Kan båten stå kvar där den är?",
+    a: "Ja, det är hela poängen med oss. Vi rullar fram med verkstaden där båten står. På släp, vid bryggan eller uppallad på tomten, det funkar. Det sparar dig både frakt och tid.",
     plain:
-      "Nej, vi kommer ut till båten. På släp, vid bryggan eller uppallad på tomten.",
+      "Ja, vi kommer ut till båten. På släp, vid bryggan eller uppallad på tomten.",
   },
   {
     q: "Hur lång framförhållning behöver ni?",
