@@ -23,14 +23,21 @@ const currentYear = new Date().getFullYear();
       class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-border rounded-2xl bg-card/30 px-6 pt-8"
     >
       <div class="lg:col-span-1">
-        <a href="/" class="flex items-center gap-2.5 mb-4 group">
-          <img
-            src="/logo.png"
-            alt="Mickes Båtverkstad"
-            class="h-10 w-auto"
-            width="120"
-            height="40"
-          />
+        <a href="/" class="flex flex-col mb-4 group">
+          <span class="flex items-center gap-2.5">
+            <img
+              src="/img/priox-mark.svg"
+              alt=""
+              class="h-10 w-10"
+              width="40"
+              height="40"
+            />
+            <span class="flex flex-col">
+              <span class="font-heading text-lg font-bold text-foreground leading-[1.05]">Priox</span>
+              <span class="font-heading text-sm font-semibold text-primary leading-[1.05]">Båtverkstad</span>
+            </span>
+          </span>
+          <span class="mt-1.5 text-[11px] text-muted-foreground leading-none">{siteContact.formerName}</span>
         </a>
         <p class="text-[13px] text-muted-foreground leading-relaxed mb-5">
           Mobil båtverkstad i Bohuslän. Vi servar utombordare, krympplastar och

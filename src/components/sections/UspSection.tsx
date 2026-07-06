@@ -48,9 +48,9 @@ export default function UspSection() {
           className="text-center mb-14 lg:mb-20"
         >
           <img
-            src="/logo.png"
-            alt="Mickes Båtverkstad"
-            className="h-10 md:h-12 w-auto mx-auto mb-6"
+            src="/img/priox-mark.svg"
+            alt="Priox Båtverkstad"
+            className="h-12 md:h-14 w-auto mx-auto mb-6"
             loading="lazy"
           />
           <h2 className="font-heading text-2xl md:text-3xl lg:text-[2.5rem] font-bold text-foreground leading-tight max-w-2xl mx-auto">

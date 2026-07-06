@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { siteContact } from "@/lib/site";
 import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -62,14 +63,29 @@ export default function Header() {
       <div className="max-w-(--max-w-content) mx-auto px-6 flex items-center justify-between">
         <a
           href="/"
-          className="flex items-center gap-2.5 flex-shrink-0 group"
-          aria-label="Mickes Båtverkstad"
+          className="flex flex-col flex-shrink-0 group"
+          aria-label="Priox Båtverkstad, tidigare Mickes Båtverkstad"
         >
-          <img
-            src="/logo.png"
-            alt="Mickes Båtverkstad"
-            className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
-          />
+          <span className="flex items-center gap-2.5">
+            <img
+              src="/img/priox-mark.svg"
+              alt=""
+              width={36}
+              height={36}
+              className="h-9 w-9 group-hover:scale-105 transition-transform duration-300"
+            />
+            <span className="flex flex-col">
+              <span className="font-heading text-[17px] font-bold text-foreground leading-[1.05]">
+                Priox
+              </span>
+              <span className="font-heading text-[13px] font-semibold text-primary leading-[1.05]">
+                Båtverkstad
+              </span>
+            </span>
+          </span>
+          <span className="mt-1 text-[10px] text-muted-foreground leading-none">
+            {siteContact.formerName}
+          </span>
         </a>
 
         <nav
