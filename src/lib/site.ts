@@ -44,6 +44,12 @@ export const services = [
     short: "Bottenmålning med kvalitetsprodukter. Görs på släp eller bockar.",
     brands: ["Kvalitetsfärg"],
   },
+  {
+    slug: "brygganlaggningar",
+    title: "Brygganläggningar & bryggservice",
+    short: "Byggnation, ombyggnad, renovering och underhåll av bryggor och marina anläggningar.",
+    brands: [],
+  },
 ] as const;
 
 // Orter vi täcker utöver de med egen sida (orter nedan). Visas som täckningslista.

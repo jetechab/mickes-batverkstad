@@ -40,8 +40,8 @@ const currentYear = new Date().getFullYear();
           <span class="mt-1.5 text-[11px] text-muted-foreground leading-none">{siteContact.formerName}</span>
         </a>
         <p class="text-[13px] text-muted-foreground leading-relaxed mb-5">
-          Mobil båtverkstad i Bohuslän. Vi servar utombordare, krympplastar och
-          bottenmålar på plats hos dig.
+          Mobil båtverkstad i Bohuslän. Vi servar utombordare, krympplastar,
+          bottenmålar och tar hand om bryggor, på plats hos dig.
         </p>
         {
           siteContact.fSkatt && (
@@ -67,6 +67,7 @@ const currentYear = new Date().getFullYear();
               { label: "Utombordarservice", href: "/tjanster/utombordsservice/" },
               { label: "Krympplastning", href: "/tjanster/krympplastning/" },
               { label: "Bottenmålning", href: "/tjanster/bottenmalning/" },
+              { label: "Brygganläggningar", href: "/tjanster/brygganlaggningar/" },
               { label: "Reservdelar", href: "/reservdelar/" },
             ].map(({ label, href }) => (
               <li>

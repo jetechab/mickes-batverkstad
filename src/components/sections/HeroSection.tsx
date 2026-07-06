@@ -37,6 +37,12 @@ const heroServices = [
     sub: "Båtar mellan 2-12 meter",
     href: "/tjanster/bottenmalning/",
   },
+  {
+    label: "Bryggor & marina",
+    value: "Brygganläggningar & bryggservice",
+    sub: "Byggnation, ombyggnad, renovering och underhåll",
+    href: "/tjanster/brygganlaggningar/",
+  },
 ];
 
 interface HeroSectionProps {
@@ -182,7 +188,7 @@ export default function HeroSection({ city }: HeroSectionProps) {
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.65 }}
-          className="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4"
+          className="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4"
         >
           {heroServices.map((service) => (
             <a

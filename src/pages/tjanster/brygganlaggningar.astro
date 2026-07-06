@@ -1,0 +1,85 @@
+---
+import CtaSection from "@/components/sections/CtaSection.tsx";
+import ServicePage from "@/components/ServicePage.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Brygganläggningar & bryggservice",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Priox Båtverkstad",
+  },
+  description:
+    "Byggnation, ombyggnad, renovering och underhåll av bryggor, bryggdäck, landgångar och marina anläggningar längs Bohuskusten.",
+  serviceType: "Dock and pier construction and maintenance",
+  areaServed: { "@type": "AdministrativeArea", name: "Bohuslän" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://batverkstad.se/" },
+    { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://batverkstad.se/tjanster/" },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Brygganläggningar & bryggservice",
+      item: "https://batverkstad.se/tjanster/brygganlaggningar/",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Brygganläggningar & bryggservice | Byggnation och underhåll"
+  description="Byggnation, ombyggnad, renovering och underhåll av bryggor, bryggdäck och landgångar längs Bohuskusten. För privatpersoner, företag, samfälligheter och marinor."
+  schema={[serviceSchema, breadcrumbSchema]}
+>
+  <ServicePage
+    eyebrow="Tjänst"
+    title="Brygganläggningar &"
+    titleAccent="bryggservice"
+    lede="Vi utför byggnation, ombyggnad, renovering och underhåll av bryggor, bryggdäck, landgångar och marina anläggningar längs Bohuskusten. Vi hjälper privatpersoner, företag, samfälligheter och marinor med både mindre och större projekt."
+    price="Från 1 250 kr"
+    bullets={[
+      "Byggnation och ombyggnad",
+      "Reparation och renovering",
+      "Hållbara och säkra konstruktioner",
+      "Marina anläggningar och kajer",
+      "Kvalitetsmaterial för lång livslängd",
+      "Erfarenhet från kustens förhållanden",
+    ]}
+    includesTitle="Det här ingår"
+    includes={[
+      "Besiktning och bedömning på plats",
+      "Planering och förslag på åtgärder",
+      "Byggnation, ombyggnad och reparation",
+      "Montering av landgångar, pollare, stegar och utrustning",
+      "Byte av bryggvirke och bärande konstruktioner",
+      "Slutkontroll efter utfört arbete",
+    ]}
+    sections={[
+      {
+        heading: "Havsanknuten verksamhet",
+        body: "Vi är ett anläggningsföretag med inriktning på bryggor och marina anläggningar. Arbetet sker vid och på vattnet, och vi är vana vid de förutsättningar som kusten ger. Väder, vind och saltvatten ställer andra krav än byggen på land.",
+      },
+      {
+        heading: "Verksamma längs Bohuskusten",
+        body: "Med bas i Grebbestad utför vi arbeten vid bryggor, marinor, hamnar och kustnära anläggningar längs hela Bohuskusten. Vi tar uppdrag för privatpersoner, företag, samfälligheter och marinor.",
+      },
+      {
+        heading: "Kvalitet och hållbarhet",
+        body: "Vi använder kvalitetsmaterial och beprövade metoder. En brygga ska klara många säsonger av väder, vind och saltvatten, så vi bygger för lång livslängd och säker användning.",
+      },
+      {
+        heading: "Rådgivning och helhet",
+        body: "Vi hjälper dig hela vägen från planering till färdig brygganläggning. Det börjar med en besiktning på plats, sedan får du ett tydligt förslag på åtgärder och pris innan arbetet sätter igång.",
+      },
+    ]}
+  />
+
+  <CtaSection client:visible />
+</BaseLayout>

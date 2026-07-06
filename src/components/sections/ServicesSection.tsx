@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, ArrowUpRight, Droplets, Paintbrush, Wrench } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Droplets, Fence, Paintbrush, Wrench } from "lucide-react";
 import { useRef } from "react";
 
 const services = [
@@ -25,6 +25,13 @@ const services = [
     href: "/tjanster/bottenmalning/",
     body: "Bottenmålning med kvalitetsprodukter. Vi målar där båten står, även på släp eller bockar. Slipper transport till varv.",
     bullets: ["Kvalitetsfärg", "Maskerar och målar", "Släp eller bockar"],
+  },
+  {
+    icon: Fence,
+    title: "Brygganläggningar & bryggservice",
+    href: "/tjanster/brygganlaggningar/",
+    body: "Byggnation, ombyggnad, renovering och underhåll av bryggor, bryggdäck, landgångar och marina anläggningar. För privatpersoner, företag, samfälligheter och marinor.",
+    bullets: ["Byggnation och ombyggnad", "Reparation och renovering", "Underhåll och service"],
   },
 ];
 
@@ -62,13 +69,13 @@ export default function ServicesSection() {
               </span>
             </h2>
             <p className="text-muted-foreground max-w-[380px] leading-relaxed text-[15px] lg:text-right">
-              Tre kärntjänster, en mobil verkstad. Vi kommer ut till
+              Fyra kärntjänster, en mobil verkstad. Vi kommer ut till
               hemmaplanen, bryggan eller marinan.
             </p>
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (
