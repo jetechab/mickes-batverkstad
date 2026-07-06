@@ -155,6 +155,9 @@ Byggs på `ServicePage.astro`-mallen, samma struktur som de tre befintliga.
 - Grep visar att enda kvarvarande "Mickes" i källkoden är de avsiktliga
   "Tidigare Mickes Båtverkstad"-strängarna (plus filnamn som
   micke-vid-bilen.jpg och komponentnamnet MeetMickeSection, som behålls).
+- Undantag: kundcitaten i ReviewsSection är äkta omdömen som nämner
+  "Mickes Båtverkstad". De ändras inte, citat skrivs inte om i efterhand.
+  Referenser till personen Micke (alt-texter, kommentarer) behålls också.
 - Visuell koll i webbläsaren mot skisserna: startsida, tjänster, nya
   tjänstesidan, priser, om oss, header/footer på mobil och desktop.
 - Favicon och og-bild kontrolleras i byggresultatet.
