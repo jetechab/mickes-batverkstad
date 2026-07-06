@@ -1,7 +1,7 @@
 {
-  "name": "Mickes Båtverkstad",
-  "short_name": "Mickes",
-  "description": "Mobil båtverkstad i Bohuslän. Service av utombordare, krympplastning och bottenmålning på plats hos kunden.",
+  "name": "Priox Båtverkstad",
+  "short_name": "Priox",
+  "description": "Mobil båtverkstad i Bohuslän. Service av utombordare, krympplastning, bottenmålning och bryggservice på plats hos kunden.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -14,8 +14,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#1f305f",
-  "background_color": "#0a1924",
+  "theme_color": "#1f2f5f",
+  "background_color": "#f5f1ea",
   "display": "browser",
   "start_url": "/",
   "lang": "sv-SE"
