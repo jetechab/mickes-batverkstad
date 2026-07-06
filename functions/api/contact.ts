@@ -126,7 +126,7 @@ function buildCustomerTextEmail(data: Payload) {
   return [
     `Hej ${data.name}!`,
     "",
-    "Tack för din förfrågan till Mickes Båtverkstad. Vi har tagit emot ditt meddelande och återkommer så snart vi kan, oftast samma dag på vardagar.",
+    "Tack för din förfrågan till Priox Båtverkstad. Vi har tagit emot ditt meddelande och återkommer så snart vi kan, oftast samma dag på vardagar.",
     "",
     "Här är en sammanfattning av vad du skickade:",
     "",
@@ -139,11 +139,11 @@ function buildCustomerTextEmail(data: Payload) {
     "Meddelande:",
     data.message,
     "",
-    "Behöver du nå oss direkt, ring 0767-16 67 16 eller maila mickes@batverkstad.se.",
+    "Behöver du nå oss direkt, ring 0767-16 67 16 eller maila info@priox.se.",
     "",
     "Hälsningar",
     "Micke",
-    "Mickes Båtverkstad AB",
+    "Priox Båtverkstad, en verksamhet inom PRIOX AB",
     "Box 6, 457 02 Grebbestad",
     "batverkstad.se",
   ]
@@ -174,7 +174,7 @@ function buildCustomerHtmlEmail(data: Payload) {
     <div style="font-family:Inter,Arial,sans-serif;background:#f5f1ea;padding:32px 16px;color:#0a1924;">
       <div style="max-width:560px;margin:0 auto;background:#ffffff;border:1px solid #e2d5b8;border-radius:20px;overflow:hidden;box-shadow:0 6px 24px rgba(10,25,36,0.06);">
         <div style="padding:32px 32px 24px;background:linear-gradient(135deg,#0a1924,#122638);color:#f5f1ea;">
-          <p style="margin:0 0 8px 0;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#5ec3d6;font-weight:700;">Mickes Båtverkstad</p>
+          <p style="margin:0 0 8px 0;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#5ec3d6;font-weight:700;">Priox Båtverkstad</p>
           <h1 style="margin:0;font-size:24px;line-height:1.25;font-weight:700;">Tack för din förfrågan, ${escapeHtml(data.name)}!</h1>
         </div>
         <div style="padding:28px 32px;">
@@ -201,12 +201,13 @@ function buildCustomerHtmlEmail(data: Payload) {
           </div>
         </div>
         <div style="padding:20px 32px 28px;border-top:1px solid #e2e8f0;color:#64748b;font-size:12px;line-height:1.6;">
-          <p style="margin:0 0 4px 0;font-weight:700;color:#0a1924;">Mickes Båtverkstad AB</p>
+          <p style="margin:0 0 4px 0;font-weight:700;color:#0a1924;">Priox Båtverkstad</p>
+          <p style="margin:0 0 4px 0;">En verksamhet inom PRIOX AB · Tidigare Mickes Båtverkstad</p>
           <p style="margin:0;">Box 6, 457 02 Grebbestad · godkänd för F-skatt</p>
           <p style="margin:8px 0 0 0;">
             <a href="https://batverkstad.se" style="color:#0a6378;text-decoration:none;">batverkstad.se</a>
             ·
-            <a href="mailto:mickes@batverkstad.se" style="color:#0a6378;text-decoration:none;">mickes@batverkstad.se</a>
+            <a href="mailto:info@priox.se" style="color:#0a6378;text-decoration:none;">info@priox.se</a>
           </p>
         </div>
       </div>
@@ -295,7 +296,7 @@ export async function onRequestPost(context: PagesContext) {
         await sendViaResend(env.RESEND_API_KEY, {
           from: env.CONTACT_FROM_EMAIL,
           to: data.email,
-          subject: "Tack för din förfrågan – Mickes Båtverkstad",
+          subject: "Tack för din förfrågan – Priox Båtverkstad",
           text: buildCustomerTextEmail(data),
           html: buildCustomerHtmlEmail(data),
           replyTo: env.CONTACT_TO_EMAIL,
