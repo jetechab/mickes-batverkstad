@@ -1,7 +1,9 @@
 export const siteContact = {
-  companyName: "Mickes Båtverkstad AB",
+  displayName: "Priox Båtverkstad",
+  legalName: "PRIOX AB",
+  formerName: "Tidigare Mickes Båtverkstad",
   organizationNumber: "556677-9624",
-  email: "mickes@batverkstad.se",
+  email: "info@priox.se",
   phoneDisplay: "0767-16 67 16",
   phoneHref: "+46767166716",
   openingHours: "Mån-Fre 08:00-17:00",
@@ -172,7 +174,7 @@ export const orter: Ort[] = [
       "Långsträckt kust från Resö till Hamburgsund",
     ],
     localCopy: [
-      "Tanums kommun är vår hemmakommun. Mickes Båtverkstad har bas i Grebbestad och vi kommer ut till båten där den står, var du än befinner dig i kommunen.",
+      "Tanums kommun är vår hemmakommun. Priox Båtverkstad, tidigare Mickes Båtverkstad, har bas i Grebbestad och vi kommer ut till båten där den står, var du än befinner dig i kommunen.",
       "Det är ett stort område, från Resö och Havstenssund i norr ner till Hamburgsund i söder. Vi rör oss längs kusten och kommer ut till båtar i alla samhällen och vid alla större bryggor.",
       "Behöver du service i någon av byarna utanför samhällena, säg till vid bokning så ser vi till att hitta rätt direkt utan onödig svängkörning.",
     ],
