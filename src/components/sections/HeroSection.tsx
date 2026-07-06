@@ -305,8 +305,9 @@ function PersonalCard() {
                 fill="none"
               />
             </svg>
-            <p className="text-[11px] text-muted-foreground">
-              Mickes Båtverkstad AB
+            <p className="text-[11px] text-muted-foreground text-right">
+              Priox Båtverkstad
+              <span className="block">Tidigare Mickes Båtverkstad</span>
             </p>
           </div>
 

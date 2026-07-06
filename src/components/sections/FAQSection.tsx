@@ -50,9 +50,9 @@ export const faqs: { q: string; a: ReactNode; plain: string }[] = [
   },
   {
     q: "Har ni F-skatt?",
-    a: "Ja. Mickes Båtverkstad AB är godkänd för F-skatt. Företagsuppgifter finns i sidfoten på sajten.",
+    a: "Ja. Priox Båtverkstad drivs inom PRIOX AB som är godkänt för F-skatt. Företagsuppgifter finns i sidfoten på sajten.",
     plain:
-      "Ja. Mickes Båtverkstad AB är godkänd för F-skatt.",
+      "Ja. PRIOX AB är godkänt för F-skatt.",
   },
 ];
 

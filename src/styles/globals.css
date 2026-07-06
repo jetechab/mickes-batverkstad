@@ -7,7 +7,7 @@
 
 /*
  * Brand-paletten är PLACEHOLDER. Maritim navy + havsblå accent + sand som lyft.
- * Byts ut när Mickes/Måns godkänt slutgiltig palett. Komponenter ska aldrig
+ * Byts ut när klienten godkänt slutgiltig palett. Komponenter ska aldrig
  * hårdkoda hex-värden – använd semantiska klasser (bg-background, text-primary,
  * border-border osv.) så att hela paletten kan bytas i denna fil.
  *

@@ -65,13 +65,13 @@ export default function MeetMickeSection() {
               Hej, det är jag som är Micke.
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-sand">
-                Din båtmekaniker och grundare av Mickes båtverkstad.
+                Din båtmekaniker och grundare av Priox Båtverkstad.
               </span>
             </h2>
 
             <div className="space-y-5 text-muted-foreground text-[17px] leading-relaxed max-w-(--max-w-text)">
               <p>
-                Jag grundade Mickes Båtverkstad för att göra båtlivet enklare.
+                Jag grundade båtverkstaden för att göra båtlivet enklare.
                 Vi som älskar vår båt ska inte behöva köra runt med den på
                 vägarna i onödan, det känns bakvänt.
               </p>
