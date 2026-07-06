@@ -60,9 +60,9 @@ export default function UspSection() {
             </span>
           </h2>
           <p className="mt-5 text-muted-foreground text-base lg:text-lg max-w-(--max-w-text) mx-auto leading-relaxed">
-            Mobil verkstad betyder att service, krympplastning och
-            bottenmålning sker där båten redan står. Mindre tid med båten på
-            vägen, mer tid med båten i vattnet!
+            Mobil verkstad betyder att service, krympplastning, bryggservice
+            och bottenmålning sker där båten redan står. Mindre tid med båten
+            på vägen, mer tid med båten i vattnet!
           </p>
         </motion.div>
 

@@ -57,8 +57,8 @@ export default function CtaSection() {
             </span>
           </h2>
           <p className="text-muted-foreground text-[16px] leading-relaxed mb-12 max-w-[500px] mx-auto">
-            Service, krympplastning eller bottenmålning. Mobil verkstad direkt
-            till båten. Snabbt, smidigt, garanterat.
+            Service, krympplastning, bottenmålning eller bryggservice. Mobil
+            verkstad direkt till båten. Snabbt, smidigt, garanterat.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-5 mb-14">

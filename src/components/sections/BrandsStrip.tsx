@@ -9,11 +9,6 @@ const groups = [
     items: ["Yamaha", "Mercury", "Suzuki", "Honda", "Evinrude", "Tohatsu"],
     tail: "med flera",
   },
-  {
-    heading: "Bottenfärg och tillbehör",
-    items: ["Kvalitetsfärg", "Primer", "Slipmaterial"],
-    tail: "med flera",
-  },
 ];
 
 export default function BrandsStrip() {
@@ -53,7 +48,7 @@ export default function BrandsStrip() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px rounded-2xl border border-border bg-border overflow-hidden">
+        <div className="grid grid-cols-1 gap-px rounded-2xl border border-border bg-border overflow-hidden">
           {groups.map((g, gi) => (
             <motion.div
               key={g.heading}

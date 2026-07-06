@@ -1,14 +1,8 @@
 "use client";
 
-import {
-  motion,
-  useAnimationFrame,
-  useInView,
-  useMotionValue,
-  useReducedMotion,
-} from "framer-motion";
-import { Quote, Star } from "lucide-react";
-import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import { useRef } from "react";
 
 /*
  * Riktiga kundomdömen insamlade av Micke (juni 2026). Inga datum visas, enligt
@@ -122,26 +116,14 @@ export default function ReviewsSection() {
   const ref = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const visible = useInView(ref, { margin: "-10px" });
-  const reduceMotion = useReducedMotion();
-  const x = useMotionValue(0);
-  const [paused, setPaused] = useState(false);
 
-  // Kontinuerlig marquee: spåret glider åt vänster och loopar sömlöst när
-  // den första uppsättningen omdömen har passerat. Pausar vid hover, när
-  // sektionen är ur bild och om användaren valt mindre rörelse.
-  useAnimationFrame((_, delta) => {
-    if (paused || reduceMotion || !visible) return;
+  const scrollByCard = (dir: 1 | -1) => {
     const track = trackRef.current;
     if (!track) return;
-    const half = track.scrollWidth / 2;
-    if (half <= 0) return;
-    let next = x.get() - (delta / 1000) * 40;
-    if (next <= -half) next += half;
-    x.set(next);
-  });
-
-  const loop = [...reviews, ...reviews];
+    const card = track.querySelector<HTMLElement>("[data-review-card]");
+    const step = card ? card.offsetWidth + 24 : track.clientWidth * 0.9;
+    track.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
 
   return (
     <section
@@ -160,24 +142,45 @@ export default function ReviewsSection() {
           initial={{ opacity: 0, y: 14 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-12 lg:mb-16 max-w-2xl"
+          className="mb-12 lg:mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6"
         >
-          <div className="inline-flex items-center gap-3 mb-5">
-            <div className="w-6 h-[2px] bg-primary" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              Recensioner
-            </span>
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-3 mb-5">
+              <div className="w-6 h-[2px] bg-primary" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                Recensioner
+              </span>
+            </div>
+            <h2
+              id="reviews-heading"
+              className="font-heading text-3xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.1] mb-4"
+            >
+              Vad kunderna säger
+            </h2>
+            <p className="text-muted-foreground text-[15px] leading-relaxed max-w-xl">
+              Röster från båtägare längs kusten som vi hjälpt på plats, hemma
+              eller i marinan.
+            </p>
           </div>
-          <h2
-            id="reviews-heading"
-            className="font-heading text-3xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.1] mb-4"
-          >
-            Vad kunderna säger
-          </h2>
-          <p className="text-muted-foreground text-[15px] leading-relaxed max-w-xl">
-            Röster från båtägare längs kusten som vi hjälpt på plats, hemma
-            eller i marinan.
-          </p>
+
+          <div className="flex items-center gap-3 shrink-0">
+            <button
+              type="button"
+              onClick={() => scrollByCard(-1)}
+              aria-label="Föregående omdömen"
+              className="w-11 h-11 rounded-full border border-border bg-card flex items-center justify-center text-foreground hover:border-primary/40 hover:text-primary transition-all"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollByCard(1)}
+              aria-label="Fler omdömen"
+              className="w-11 h-11 rounded-full border border-border bg-card flex items-center justify-center text-foreground hover:border-primary/40 hover:text-primary transition-all"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </motion.div>
       </div>
 
@@ -185,24 +188,17 @@ export default function ReviewsSection() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.5, delay: 0.15 }}
-        className={
-          reduceMotion
-            ? "relative overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            : "relative"
-        }
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
+        className="relative"
       >
-        <motion.div
+        <div
           ref={trackRef}
-          style={{ x }}
-          className="flex gap-6 w-max px-6 will-change-transform"
+          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-w-(--max-w-content) mx-auto"
         >
-          {loop.map((r, i) => (
+          {reviews.map((r) => (
             <article
-              key={`${r.name}-${i}`}
-              aria-hidden={i >= reviews.length}
-              className="shrink-0 w-[86vw] sm:w-[360px] lg:w-[380px] flex"
+              key={`${r.name}-${r.text.slice(0, 12)}`}
+              data-review-card
+              className="snap-start shrink-0 basis-[86%] sm:basis-[45%] lg:basis-[31.5%] flex"
             >
               <div className="flex h-full flex-col bg-card rounded-2xl border border-border p-8 hover:border-primary/40 hover:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)] transition-all duration-300">
                 <Quote className="w-8 h-8 text-primary/25 mb-4" />
@@ -243,7 +239,7 @@ export default function ReviewsSection() {
               </div>
             </article>
           ))}
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

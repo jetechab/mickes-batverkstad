@@ -32,21 +32,27 @@ export const faqs: { q: string; a: ReactNode; plain: string }[] = [
   },
   {
     q: "Hur lång framförhållning behöver ni?",
-    a: "Vi försöker komma ut samma vecka. Inför säsongsstart och inför täckning på hösten är det full fart, så hör gärna av dig om det ska göras under den perioden.",
+    a: "Vi försöker komma ut samma vecka. Inför säsongsstart och inför täckning på hösten är det full fart, så hör gärna av dig i god tid om det ska göras under den perioden.",
     plain:
-      "Vi försöker komma ut samma vecka. Inför säsongsstart och inför täckning på hösten är det full fart, så hör gärna av dig.",
+      "Vi försöker komma ut samma vecka. Inför säsongsstart och inför täckning på hösten är det full fart, så hör gärna av dig i god tid.",
   },
   {
     q: "Vad gäller för garanti?",
-    a: "Garanti på utfört arbete och på reservdelar enligt svensk konsumentlagstiftning. Skulle något inte funka som det ska efter en service, hör av dig så löser vi det.",
+    a: "Garanti på utfört arbete och på reservdelar enligt svensk konsumentlagstiftning.",
     plain:
-      "Garanti på utfört arbete och på reservdelar enligt svensk konsumentlagstiftning. Skulle något inte funka som det ska efter en service, hör av dig så löser vi det.",
+      "Garanti på utfört arbete och på reservdelar enligt svensk konsumentlagstiftning.",
   },
   {
     q: "Kan jag stanna kvar med båten på släp under bottenmålning?",
-    a: "Ja, det går utmärkt. Vi målar där båten står. Du slipper transport och inomhusvarv. Krympplastning fungerar lika bra på släp.",
+    a: "Ja, det går utmärkt. Vi målar där båten står. Du slipper transport och inomhusvarv. Krympplastning fungerar också lika bra på släp.",
     plain:
-      "Ja, vi utför bottenmålning på släp eller bockar. Krympplastning funkar lika bra på släp.",
+      "Ja, vi utför bottenmålning på släp eller bockar. Krympplastning funkar också lika bra på släp.",
+  },
+  {
+    q: "Gör ni även jobb på bryggor?",
+    a: "Ja. Vi bygger, renoverar och underhåller bryggor, bryggdäck och landgångar längs Bohuskusten. Det börjar med en besiktning på plats, sedan får du ett tydligt förslag på åtgärder och pris innan vi sätter igång.",
+    plain:
+      "Ja, vi utför byggnation, renovering och underhåll av bryggor och marina anläggningar längs Bohuskusten.",
   },
   {
     q: "Har ni F-skatt?",

@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { siteContact } from "@/lib/site";
 import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -61,32 +60,33 @@ export default function Header() {
       )}
     >
       <div className="max-w-(--max-w-content) mx-auto px-6 flex items-center justify-between">
-        <a
-          href="/"
-          className="flex flex-col flex-shrink-0 group"
-          aria-label="Priox Båtverkstad, tidigare Mickes Båtverkstad"
-        >
-          <span className="flex items-center gap-2.5">
+        <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
+          <a
+            href="/"
+            className="flex items-center gap-2.5 group"
+            aria-label="Priox Båtverkstad"
+          >
             <img
               src="/img/priox-mark.svg"
               alt=""
-              width={36}
-              height={36}
-              className="h-9 w-9 group-hover:scale-105 transition-transform duration-300"
+              width={40}
+              height={40}
+              className="h-10 w-10 group-hover:scale-105 transition-transform duration-300"
             />
             <span className="flex flex-col">
-              <span className="font-heading text-[17px] font-bold text-foreground leading-[1.05]">
+              <span className="font-heading text-[19px] font-bold text-foreground leading-[1.02] tracking-tight">
                 Priox
               </span>
-              <span className="font-heading text-[13px] font-semibold text-primary leading-[1.05]">
+              <span className="font-heading text-[15px] font-medium text-foreground leading-[1.02]">
                 Båtverkstad
               </span>
             </span>
+          </a>
+          <span className="text-[10px] text-muted-foreground leading-snug border-l border-border pl-3">
+            Tidigare
+            <span className="block">Mickes Båtverkstad</span>
           </span>
-          <span className="mt-1 text-[10px] text-muted-foreground leading-none">
-            {siteContact.formerName}
-          </span>
-        </a>
+        </div>
 
         <nav
           className="hidden lg:flex items-center gap-1"
