@@ -73,11 +73,13 @@ export default function Header() {
               height={40}
               className="h-10 w-10 group-hover:scale-105 transition-transform duration-300"
             />
-            <span className="flex flex-col">
-              <span className="font-heading text-[19px] font-bold text-foreground leading-[1.02] tracking-tight">
-                Priox
+            <span className="flex flex-col" aria-hidden="true">
+              <span className="flex justify-between font-heading text-[17px] font-bold text-foreground leading-[1.05] tracking-tight">
+                {"Priox".split("").map((c, i) => (
+                  <span key={i}>{c}</span>
+                ))}
               </span>
-              <span className="font-heading text-[15px] font-medium text-foreground leading-[1.02]">
+              <span className="font-heading text-[17px] font-bold text-foreground leading-[1.05] tracking-tight">
                 Båtverkstad
               </span>
             </span>
