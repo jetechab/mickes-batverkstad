@@ -23,7 +23,7 @@ const currentYear = new Date().getFullYear();
       class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-border rounded-2xl bg-card/30 px-6 pt-8"
     >
       <div class="lg:col-span-1">
-        <a href="/" class="flex items-center gap-2.5 mb-2 group" aria-label="Priox Båtverkstad">
+        <a href="/" class="inline-flex items-center gap-2.5 mb-1.5 group" aria-label="Priox Båtverkstad">
           <img
             src="/img/priox-mark.svg"
             alt=""
@@ -32,10 +32,10 @@ const currentYear = new Date().getFullYear();
             height="40"
           />
           <span class="flex flex-col" aria-hidden="true">
-            <span class="flex justify-between font-heading text-[17px] font-bold text-foreground leading-[1.05] tracking-tight">
-              {"Priox".split("").map((c) => <span>{c}</span>)}
+            <span class="font-heading text-[25px] font-bold text-foreground leading-[0.95] tracking-tight">Priox</span>
+            <span class="flex justify-between font-heading text-[12px] font-semibold text-foreground leading-[1.2]">
+              {"Båtverkstad".split("").map((c) => <span>{c}</span>)}
             </span>
-            <span class="font-heading text-[17px] font-bold text-foreground leading-[1.05] tracking-tight">Båtverkstad</span>
           </span>
         </a>
         <p class="text-[11px] text-muted-foreground mb-4">{siteContact.formerName}</p>

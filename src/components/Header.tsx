@@ -60,7 +60,7 @@ export default function Header() {
       )}
     >
       <div className="max-w-(--max-w-content) mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
+        <div className="flex flex-col flex-shrink-0 min-w-0">
           <a
             href="/"
             className="flex items-center gap-2.5 group"
@@ -74,19 +74,18 @@ export default function Header() {
               className="h-10 w-10 group-hover:scale-105 transition-transform duration-300"
             />
             <span className="flex flex-col" aria-hidden="true">
-              <span className="flex justify-between font-heading text-[17px] font-bold text-foreground leading-[1.05] tracking-tight">
-                {"Priox".split("").map((c, i) => (
+              <span className="font-heading text-[25px] font-bold text-foreground leading-[0.95] tracking-tight">
+                Priox
+              </span>
+              <span className="flex justify-between font-heading text-[12px] font-semibold text-foreground leading-[1.2]">
+                {"Båtverkstad".split("").map((c, i) => (
                   <span key={i}>{c}</span>
                 ))}
               </span>
-              <span className="font-heading text-[17px] font-bold text-foreground leading-[1.05] tracking-tight">
-                Båtverkstad
-              </span>
             </span>
           </a>
-          <span className="text-[10px] text-muted-foreground leading-snug border-l border-border pl-3">
-            Tidigare
-            <span className="block">Mickes Båtverkstad</span>
+          <span className="mt-0.5 text-[10px] text-muted-foreground leading-none text-center">
+            Tidigare Mickes Båtverkstad
           </span>
         </div>
 
