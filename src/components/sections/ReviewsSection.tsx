@@ -192,7 +192,7 @@ export default function ReviewsSection() {
       >
         <div
           ref={trackRef}
-          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-w-(--max-w-content) mx-auto"
+          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 scroll-px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-w-(--max-w-content) mx-auto"
         >
           {reviews.map((r) => (
             <article
