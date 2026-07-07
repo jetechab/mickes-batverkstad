@@ -155,7 +155,7 @@ export default function HeroSection({ city }: HeroSectionProps) {
               initial={reduceMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.45 }}
-              className="grid grid-cols-1 xs:grid-cols-2 gap-2 md:gap-3 max-w-2xl"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 max-w-2xl"
             >
               {checkmarks.map((item, i) => (
                 <motion.div
@@ -188,7 +188,7 @@ export default function HeroSection({ city }: HeroSectionProps) {
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.65 }}
-          className="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4"
+          className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4"
         >
           {heroServices.map((service) => (
             <a
@@ -214,7 +214,7 @@ export default function HeroSection({ city }: HeroSectionProps) {
 
           <a
             href="/boka/"
-            className="group flex flex-col justify-between rounded-2xl bg-primary text-primary-foreground px-5 py-5 md:px-6 md:py-6 col-span-2 lg:col-span-1 hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(30,74,107,0.12)] hover:shadow-[0_0_40px_rgba(30,74,107,0.18)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="group flex flex-col justify-between rounded-2xl bg-primary text-primary-foreground px-5 py-5 md:px-6 md:py-6 sm:col-span-2 lg:col-span-1 hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(30,74,107,0.12)] hover:shadow-[0_0_40px_rgba(30,74,107,0.18)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground/70">
               Redo att boka?
