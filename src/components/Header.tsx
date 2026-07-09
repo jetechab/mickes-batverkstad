@@ -69,22 +69,22 @@ export default function Header() {
             <img
               src="/img/priox-mark.svg"
               alt=""
-              width={48}
-              height={48}
-              className="h-12 w-12 group-hover:scale-105 transition-transform duration-300"
+              width={56}
+              height={56}
+              className="h-14 w-14 group-hover:scale-105 transition-transform duration-300"
             />
             <span className="flex flex-col w-fit" aria-hidden="true">
-              <span className="font-heading text-[32px] font-bold text-foreground leading-[0.95] tracking-tight">
+              <span className="font-heading text-[38px] font-bold text-foreground leading-[0.95] tracking-tight">
                 Priox
               </span>
-              <span className="flex justify-between font-heading text-[12px] font-semibold text-foreground leading-[1.2]">
+              <span className="flex justify-between font-heading text-[14px] font-semibold text-foreground leading-[1.2]">
                 {"Båtverkstad".split("").map((c, i) => (
                   <span key={i}>{c}</span>
                 ))}
               </span>
             </span>
           </a>
-          <span className="mt-1.5 text-[10px] text-muted-foreground leading-none text-center">
+          <span className="mt-1.5 text-[11px] text-muted-foreground leading-none text-center">
             Tidigare Mickes Båtverkstad
           </span>
         </div>
@@ -122,7 +122,7 @@ export default function Header() {
 
         <div className="lg:hidden flex items-center gap-1 -mr-1">
           <button
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all"
+            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all cursor-pointer"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
             aria-expanded={mobileOpen}
