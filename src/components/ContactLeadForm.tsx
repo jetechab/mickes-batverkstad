@@ -1,8 +1,8 @@
 "use client";
 
+import { services } from "@/lib/site";
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { useState } from "react";
-import { services } from "@/lib/site";
 
 interface FormState {
   name: string;
@@ -204,14 +204,13 @@ export default function ContactLeadForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(30,74,107,0.12)] hover:shadow-[0_0_40px_rgba(30,74,107,0.18)] disabled:opacity-50 disabled:cursor-not-allowed text-[15px]"
+          className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-[0_0_30px_rgba(30,74,107,0.12)] hover:shadow-[0_0_40px_rgba(30,74,107,0.18)] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer text-[15px]"
         >
           {status === "submitting" ? "Skickar..." : "Skicka bokningsförfrågan"}
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </button>
         <p className="text-[12px] text-muted-foreground text-center sm:text-right max-w-xs">
-          Vi använder dina uppgifter bara för att kontakta dig om din
-          förfrågan.
+          Vi använder dina uppgifter bara för att kontakta dig om din förfrågan.
         </p>
       </div>
     </form>

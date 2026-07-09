@@ -139,11 +139,11 @@ const {
             class="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+          <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
           {imageCaption && (
             <figcaption class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-              <div class="flex items-center gap-3 max-w-2xl">
-                <div class="w-1 h-10 rounded-full bg-accent-sand" />
+              <div class="flex items-center gap-3 max-w-2xl rounded-2xl border border-border bg-background/85 backdrop-blur-md px-5 py-4">
+                <div class="w-1 h-10 rounded-full bg-accent-sand shrink-0" />
                 <p class="text-sm lg:text-base text-foreground font-medium leading-snug">
                   {imageCaption}
                 </p>

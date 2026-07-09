@@ -57,8 +57,7 @@ export const faqs: { q: string; a: ReactNode; plain: string }[] = [
   {
     q: "Har ni F-skatt?",
     a: "Ja. Priox Båtverkstad drivs inom PRIOX AB som är godkänt för F-skatt. Företagsuppgifter finns i sidfoten på sajten.",
-    plain:
-      "Ja. PRIOX AB är godkänt för F-skatt.",
+    plain: "Ja. PRIOX AB är godkänt för F-skatt.",
   },
 ];
 
@@ -82,7 +81,7 @@ function FAQItem({
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 py-6 text-left group"
+        className="w-full flex items-center justify-between gap-4 py-6 text-left group cursor-pointer"
         aria-expanded={open}
       >
         <span className="text-[16px] font-bold text-foreground group-hover:text-primary transition-colors leading-snug">

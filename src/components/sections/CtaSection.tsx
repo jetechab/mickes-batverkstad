@@ -78,7 +78,7 @@ export default function CtaSection() {
             </a>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-8 sm:gap-y-3">
             {[
               "F-skatt",
               "Garanti på arbete",
@@ -87,7 +87,7 @@ export default function CtaSection() {
             ].map((item) => (
               <span
                 key={item}
-                className="flex items-center gap-2 text-[13px] font-medium text-muted-foreground"
+                className="flex items-center gap-2 text-[13px] font-medium text-muted-foreground whitespace-nowrap"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
                 {item}

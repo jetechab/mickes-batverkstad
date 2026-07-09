@@ -42,7 +42,7 @@ export default function Gallery() {
             type="button"
             onClick={() => setOpen(i)}
             aria-label={`Öppna bild: ${photo.alt}`}
-            className="group mb-4 block w-full overflow-hidden rounded-2xl border border-border bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="group mb-4 block w-full cursor-pointer overflow-hidden rounded-2xl border border-border bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <img
               src={photo.src}
@@ -74,7 +74,7 @@ export default function Gallery() {
               type="button"
               onClick={close}
               aria-label="Stäng"
-              className="absolute top-4 right-4 w-11 h-11 rounded-full border border-border bg-card flex items-center justify-center text-foreground hover:text-primary hover:border-primary/40 transition-all"
+              className="absolute top-4 right-4 w-11 h-11 rounded-full border border-border bg-card flex items-center justify-center text-foreground hover:text-primary hover:border-primary/40 transition-all cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -86,7 +86,7 @@ export default function Gallery() {
                 go(-1);
               }}
               aria-label="Föregående bild"
-              className="absolute left-2 sm:left-6 w-11 h-11 rounded-full border border-border bg-card flex items-center justify-center text-foreground hover:text-primary hover:border-primary/40 transition-all"
+              className="absolute left-2 sm:left-6 w-11 h-11 rounded-full border border-border bg-card flex items-center justify-center text-foreground hover:text-primary hover:border-primary/40 transition-all cursor-pointer"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -97,7 +97,7 @@ export default function Gallery() {
                 go(1);
               }}
               aria-label="Nästa bild"
-              className="absolute right-2 sm:right-6 w-11 h-11 rounded-full border border-border bg-card flex items-center justify-center text-foreground hover:text-primary hover:border-primary/40 transition-all"
+              className="absolute right-2 sm:right-6 w-11 h-11 rounded-full border border-border bg-card flex items-center justify-center text-foreground hover:text-primary hover:border-primary/40 transition-all cursor-pointer"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
