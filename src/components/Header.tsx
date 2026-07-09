@@ -69,22 +69,22 @@ export default function Header() {
             <img
               src="/img/priox-mark.svg"
               alt=""
-              width={40}
-              height={40}
-              className="h-10 w-10 group-hover:scale-105 transition-transform duration-300"
+              width={48}
+              height={48}
+              className="h-12 w-12 group-hover:scale-105 transition-transform duration-300"
             />
             <span className="flex flex-col w-fit" aria-hidden="true">
-              <span className="font-heading text-[28px] font-bold text-foreground leading-[0.95] tracking-tight">
+              <span className="font-heading text-[32px] font-bold text-foreground leading-[0.95] tracking-tight">
                 Priox
               </span>
-              <span className="flex justify-between font-heading text-[11px] font-semibold text-foreground leading-[1.2]">
+              <span className="flex justify-between font-heading text-[12px] font-semibold text-foreground leading-[1.2]">
                 {"Båtverkstad".split("").map((c, i) => (
                   <span key={i}>{c}</span>
                 ))}
               </span>
             </span>
           </a>
-          <span className="mt-0.5 text-[10px] text-muted-foreground leading-none text-center">
+          <span className="mt-1.5 text-[10px] text-muted-foreground leading-none text-center">
             Tidigare Mickes Båtverkstad
           </span>
         </div>
