@@ -124,9 +124,9 @@ export default function HeroSection({ city }: HeroSectionProps) {
               transition={{ duration: 0.5, delay: 0.15 }}
               className="text-[1.05rem] md:text-[1.2rem] text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-(--max-w-text)"
             >
-              Service av utombordare, krympplastning och bottenmålning utförs
-              där båten står. Vi kommer ut till dig så att du slipper transport
-              och inomhusförvar.
+              Service av utombordare, krympplastning, bottenmålning och
+              bryggservice. Allt utförs på plats hos dig, så att du slipper
+              transport och inomhusförvar.
             </motion.p>
 
             <motion.div
