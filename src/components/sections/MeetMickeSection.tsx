@@ -85,8 +85,10 @@ export default function MeetMickeSection() {
               </p>
               <p>
                 Jag är utbildad marin servicetekniker och har tagit hand om
-                utombordare i många år. När du hör av dig till mig så hjälper
-                jag dig med den bästa och smidigaste lösningen för dig och din
+                utombordare i många år. Med min bakgrund som byggmästare
+                erbjuder jag även bryggservice, allt från reparationer till
+                helt nya bryggor. När du hör av dig till mig så hjälper jag
+                dig med den bästa och smidigaste lösningen för dig och din
                 båt.
               </p>
             </div>
