@@ -60,34 +60,15 @@ export default function Header() {
       )}
     >
       <div className="max-w-(--max-w-content) mx-auto px-6 flex items-center justify-between">
-        <div className="flex flex-col flex-shrink-0 min-w-0">
-          <a
-            href="/"
-            className="flex items-center gap-2.5 group"
-            aria-label="Priox Båtverkstad"
-          >
-            <img
-              src="/img/priox-mark.svg"
-              alt=""
-              width={56}
-              height={56}
-              className="h-14 w-14 group-hover:scale-105 transition-transform duration-300"
-            />
-            <span className="flex flex-col w-fit" aria-hidden="true">
-              <span className="font-heading text-[38px] font-bold text-foreground leading-[0.95] tracking-tight">
-                Priox
-              </span>
-              <span className="flex justify-between font-heading text-[14px] font-semibold text-foreground leading-[1.2]">
-                {"Båtverkstad".split("").map((c, i) => (
-                  <span key={i}>{c}</span>
-                ))}
-              </span>
-            </span>
-          </a>
-          <span className="mt-1.5 text-[11px] text-muted-foreground leading-none text-center">
-            Tidigare Mickes Båtverkstad
-          </span>
-        </div>
+        <a href="/" className="flex-shrink-0 group" aria-label="Priox Båtverkstad">
+          <img
+            src="/img/priox-logo.svg"
+            alt="Priox Båtverkstad"
+            width={149}
+            height={56}
+            className="h-14 w-auto group-hover:scale-105 transition-transform duration-300"
+          />
+        </a>
 
         <nav
           className="hidden lg:flex items-center gap-1"

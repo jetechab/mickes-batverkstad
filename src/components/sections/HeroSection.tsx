@@ -65,6 +65,15 @@ export default function HeroSection({ city }: HeroSectionProps) {
     >
       <HeroBackdrop />
 
+      {/* Ligger visuellt direkt under headerloggan men skrollar bort med sidan */}
+      <div className="absolute top-2 inset-x-0 z-10 pointer-events-none">
+        <div className="max-w-(--max-w-content) mx-auto px-6">
+          <span className="text-[11px] text-muted-foreground">
+            Tidigare Mickes Båtverkstad
+          </span>
+        </div>
+      </div>
+
       <div className="relative max-w-(--max-w-content) mx-auto px-6 w-full z-10">
         <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
           <div className="order-1 min-w-0">
