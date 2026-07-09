@@ -139,7 +139,7 @@ function buildCustomerTextEmail(data: Payload) {
     "Meddelande:",
     data.message,
     "",
-    "Behöver du nå oss direkt, ring 0767-16 67 16 eller maila info@priox.se.",
+    "Behöver du nå oss direkt, ring 0767-16 67 16 eller maila mickes@batverkstad.se.",
     "",
     "Hälsningar",
     "Micke",
@@ -207,7 +207,7 @@ function buildCustomerHtmlEmail(data: Payload) {
           <p style="margin:8px 0 0 0;">
             <a href="https://batverkstad.se" style="color:#0a6378;text-decoration:none;">batverkstad.se</a>
             ·
-            <a href="mailto:info@priox.se" style="color:#0a6378;text-decoration:none;">info@priox.se</a>
+            <a href="mailto:mickes@batverkstad.se" style="color:#0a6378;text-decoration:none;">mickes@batverkstad.se</a>
           </p>
         </div>
       </div>

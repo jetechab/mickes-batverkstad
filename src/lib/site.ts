@@ -3,7 +3,7 @@ export const siteContact = {
   legalName: "PRIOX AB",
   formerName: "Tidigare Mickes Båtverkstad",
   organizationNumber: "556677-9624",
-  email: "info@priox.se",
+  email: "mickes@batverkstad.se",
   phoneDisplay: "0767-16 67 16",
   phoneHref: "+46767166716",
   openingHours: "Mån-Fre 08:00-17:00",
