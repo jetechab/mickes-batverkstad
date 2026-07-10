@@ -1,6 +1,5 @@
 "use client";
 
-import Turnstile, { TURNSTILE_SITE_KEY } from "@/components/Turnstile";
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { useState } from "react";
 
@@ -20,14 +19,9 @@ export default function QuickBookForm() {
     "idle",
   );
   const [error, setError] = useState<string | null>(null);
-  const [turnstileToken, setTurnstileToken] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (TURNSTILE_SITE_KEY && !turnstileToken) {
-      setError("Vänta tills robotkontrollen ovanför knappen blivit klar och försök igen.");
-      return;
-    }
     setStatus("submitting");
     setError(null);
 
@@ -40,7 +34,6 @@ export default function QuickBookForm() {
           name: form.name,
           phone: form.phone,
           message: form.message,
-          turnstileToken,
         }),
       });
 
@@ -141,8 +134,6 @@ export default function QuickBookForm() {
           placeholder="Ex: Service på Yamaha 60 hk, båten står i Grebbestad."
         />
       </div>
-
-      <Turnstile onToken={setTurnstileToken} />
 
       {error && (
         <p className="text-destructive text-sm mb-4" role="alert">
