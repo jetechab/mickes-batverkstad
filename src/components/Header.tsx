@@ -62,7 +62,7 @@ export default function Header() {
       <div className="max-w-(--max-w-content) mx-auto px-6 flex items-center justify-between">
         <a href="/" className="flex-shrink-0 group" aria-label="Priox Båtverkstad">
           <img
-            src="/img/priox-logo.svg?v=2"
+            src="/img/priox-logo.svg?v=3"
             alt="Priox Båtverkstad"
             width={149}
             height={56}
