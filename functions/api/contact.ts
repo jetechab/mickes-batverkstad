@@ -4,6 +4,7 @@ type Env = {
   CONTACT_FROM_EMAIL?: string;
   CONTACT_TO_EMAIL?: string;
   RESEND_API_KEY?: string;
+  TURNSTILE_SECRET_KEY?: string;
 };
 
 type PagesContext = {
@@ -30,6 +31,7 @@ const payloadSchema = z
     preferredDate: z.string().trim().max(40).optional().default(""),
     message: z.string().trim().min(2, "Skriv kort vad det gäller.").max(2000),
     website: z.string().max(0).optional().default(""),
+    turnstileToken: z.string().max(4000).optional().default(""),
   })
   .superRefine((data, ctx) => {
     if (data.source === "full-book" && !data.email) {
@@ -263,6 +265,32 @@ export async function onRequestPost(context: PagesContext) {
 
     if (parsed.data.website) {
       return jsonResponse({ message: "Tack, vi hör av oss!" }, 200);
+    }
+
+    // Turnstile-verifiering, aktiv först när hemligheten är satt i Cloudflare
+    if (env.TURNSTILE_SECRET_KEY) {
+      const verification = (await fetch(
+        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            secret: env.TURNSTILE_SECRET_KEY,
+            response: parsed.data.turnstileToken,
+            remoteip: request.headers.get("CF-Connecting-IP") ?? undefined,
+          }),
+        },
+      ).then((r) => r.json())) as { success?: boolean };
+
+      if (!verification.success) {
+        return jsonResponse(
+          {
+            error:
+              "Robotkontrollen gick inte igenom. Ladda om sidan och försök igen, eller ring 0767-16 67 16.",
+          },
+          400,
+        );
+      }
     }
 
     if (

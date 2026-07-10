@@ -1,5 +1,6 @@
 "use client";
 
+import Turnstile, { TURNSTILE_SITE_KEY } from "@/components/Turnstile";
 import { services } from "@/lib/site";
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { useState } from "react";
@@ -34,6 +35,7 @@ export default function ContactLeadForm() {
     "idle",
   );
   const [error, setError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -41,6 +43,10 @@ export default function ContactLeadForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (TURNSTILE_SITE_KEY && !turnstileToken) {
+      setError("Vänta tills robotkontrollen ovanför knappen blivit klar och försök igen.");
+      return;
+    }
     setStatus("submitting");
     setError(null);
 
@@ -48,7 +54,7 @@ export default function ContactLeadForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ source: "full-book", ...form }),
+        body: JSON.stringify({ source: "full-book", ...form, turnstileToken }),
       });
 
       if (!res.ok) {
@@ -193,6 +199,10 @@ export default function ContactLeadForm() {
           placeholder="Beskriv kort vad du vill ha utfört. Ange gärna årsmodell samt eventuella tillägg som impeller- eller kamremsbyte."
         />
       </Field>
+
+      <div className="mt-6">
+        <Turnstile onToken={setTurnstileToken} />
+      </div>
 
       {error && (
         <p className="text-destructive text-sm mb-4 mt-4" role="alert">

@@ -105,6 +105,29 @@ Går något snett efter fas D/E: byt tillbaka namnservrarna i Loopia till de
 gamla, då är läget återställt inom cirka en timme. Släck inte
 Loopia-webbhotellet förrän nya sajten rullat felfritt någon vecka.
 
+## Turnstile (spamskydd på formulären)
+
+Koden är förberedd men vilande: utan nycklarna nedan fungerar formulären
+exakt som tidigare, utan robotkontroll.
+
+- [ ] Cloudflare dashboard, **Turnstile** (i vänstermenyn på kontonivå),
+      **Add widget**:
+  - Namn: `batverkstad formulär`
+  - Hostnames: `batverkstad.se`, `www.batverkstad.se` och
+    `<projekt>.pages.dev` (så testmiljön också fungerar)
+  - Mode: **Managed** (osynlig för de flesta människor)
+- [ ] Kopiera **Site Key** och **Secret Key**.
+- [ ] Pages-projektet, Settings, Environment variables, **Production**:
+  - `PUBLIC_TURNSTILE_SITE_KEY` = site key (behövs vid BYGGET, får inte
+    vara Encrypt-only om CF frågar, den är publik ändå)
+  - `TURNSTILE_SECRET_KEY` = secret key (klicka **Encrypt**)
+- [ ] **Retry deployment** så nycklarna bakas in.
+- [ ] Testa båda formulären: en liten ruta/snurra visas ovanför
+      skicka-knappen, och utskicket fungerar som vanligt.
+- [ ] Verifiera skyddet: skicka ett anrop direkt mot
+      `/api/contact` utan token (t.ex. via curl), svaret ska bli 400
+      "Robotkontrollen gick inte igenom".
+
 ## Resend-notiser
 
 - Inget DNS-jobb behövs för mailen: priox.se är redan verifierad i Resend
