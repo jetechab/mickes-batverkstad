@@ -1,8 +1,8 @@
 "use client";
 
 import { services } from "@/lib/site";
-import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, CheckCircle2, Phone, TriangleAlert } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 interface FormState {
   name: string;
@@ -34,6 +34,14 @@ export default function ContactLeadForm() {
     "idle",
   );
   const [error, setError] = useState<string | null>(null);
+  const errorRef = useRef<HTMLDivElement>(null);
+
+  // Mobil: se till att felet alltid hamnar i synfältet när det dyker upp
+  useEffect(() => {
+    if (error) {
+      errorRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [error]);
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -195,9 +203,16 @@ export default function ContactLeadForm() {
       </Field>
 
       {error && (
-        <p className="text-destructive text-sm mb-4 mt-4" role="alert">
-          {error}
-        </p>
+        <div
+          ref={errorRef}
+          role="alert"
+          className="mt-6 flex items-start gap-3 rounded-xl border border-destructive/50 bg-destructive/10 px-4 py-3.5"
+        >
+          <TriangleAlert className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
+          <p className="text-sm font-medium text-destructive leading-snug">
+            {error}
+          </p>
+        </div>
       )}
 
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mt-6">

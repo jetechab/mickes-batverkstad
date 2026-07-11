@@ -175,6 +175,22 @@
     overflow-x: clip;
   }
 
+  /*
+   * iOS Safari ger datumfält en egen minbredd och höjd som får dem att
+   * sticka utanför formulärets kant på mobil. Lås dem till samma mått
+   * och vänsterställning som övriga fält.
+   */
+  input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    min-width: 0;
+    min-height: 3rem;
+    text-align: left;
+  }
+  input[type="date"]::-webkit-date-and-time-value {
+    text-align: left;
+  }
+
   h1,
   h2,
   h3,

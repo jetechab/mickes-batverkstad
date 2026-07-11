@@ -1,7 +1,7 @@
 "use client";
 
-import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, CheckCircle2, Phone, TriangleAlert } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 interface FormState {
   name: string;
@@ -19,6 +19,14 @@ export default function QuickBookForm() {
     "idle",
   );
   const [error, setError] = useState<string | null>(null);
+  const errorRef = useRef<HTMLDivElement>(null);
+
+  // Mobil: se till att felet alltid hamnar i synfältet när det dyker upp
+  useEffect(() => {
+    if (error) {
+      errorRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [error]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -136,9 +144,16 @@ export default function QuickBookForm() {
       </div>
 
       {error && (
-        <p className="text-destructive text-sm mb-4" role="alert">
-          {error}
-        </p>
+        <div
+          ref={errorRef}
+          role="alert"
+          className="mb-4 flex items-start gap-3 rounded-xl border border-destructive/50 bg-destructive/10 px-4 py-3.5"
+        >
+          <TriangleAlert className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
+          <p className="text-sm font-medium text-destructive leading-snug">
+            {error}
+          </p>
+        </div>
       )}
 
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:justify-between">
