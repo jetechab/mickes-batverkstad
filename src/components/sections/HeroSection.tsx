@@ -345,8 +345,8 @@ export function PersonalCard() {
         </div>
       </div>
 
-      {/* Mobil: inuti fotohörnet (utanför kortet finns ingen plats). Desktop: utstickande som förr. */}
-      <div className="absolute top-16 right-4 lg:-top-6 lg:-right-6 bg-card border border-border rounded-2xl px-4 py-3 lg:px-5 lg:py-4 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)] backdrop-blur-xl">
+      {/* Döljs på mobil (fick ingen snygg plats där), visas utstickande på desktop som förr. */}
+      <div className="hidden lg:block absolute -top-6 -right-6 bg-card border border-border rounded-2xl px-5 py-4 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)] backdrop-blur-xl">
         <div className="flex items-center gap-2.5">
           <div className="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
             <MapPin className="w-4 h-4 text-primary" />
