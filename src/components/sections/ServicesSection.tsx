@@ -59,7 +59,7 @@ export default function ServicesSection({
           textmassan bryts av innan tjänstelistan.
         */}
         {withMechanicCard && (
-          <div className="lg:hidden pt-6 mb-14">
+          <div className="lg:hidden mb-14">
             <PersonalCard />
           </div>
         )}
