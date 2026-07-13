@@ -155,7 +155,7 @@ function buildCustomerTextEmail(data: Payload) {
     .join("\n");
 }
 
-function buildCustomerHtmlEmail(data: Payload) {
+export function buildCustomerHtmlEmail(data: Payload) {
   const detailRows: [string, string][] = [
     ["Tjänst", data.service],
     ["Båtmodell", data.boatModel],

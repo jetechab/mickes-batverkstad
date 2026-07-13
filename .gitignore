@@ -32,3 +32,4 @@ temp-pictures/
 # Cloudflare/Vercel local
 .wrangler/
 .vercel/
+mail-previews/
