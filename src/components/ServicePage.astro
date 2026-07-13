@@ -60,7 +60,8 @@ const {
         </div>
         <h1 class="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-[1.05] tracking-tight">
           {title}
-          <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-sand">
+          {/* pb så gradienten täcker nedstaplar (g, j, y), annars kapas de */}
+          <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-sand pb-[0.12em]">
             {titleAccent}
           </span>
         </h1>
@@ -132,23 +133,38 @@ const {
     <section class="bg-background py-12 lg:py-16">
       <div class="max-w-(--max-w-content) mx-auto px-6">
         {/* TEMP: ersätt med Mickes egen bild från verkstaden */}
-        <figure class="relative rounded-3xl overflow-hidden border border-border shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)] aspect-[16/9] lg:aspect-[21/9]">
+        {/*
+          Mobil: kort med hela fotot obeskuret och bildtexten under (klientens
+          önskemål). Desktop: panoramabeskuret foto med textplatta över, som
+          tidigare.
+        */}
+        <figure class="relative rounded-3xl overflow-hidden border border-border bg-card shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)] lg:aspect-[21/9]">
           <img
             src={image}
             alt={imageAlt}
-            class="absolute inset-0 w-full h-full object-cover"
+            class="w-full h-auto lg:absolute lg:inset-0 lg:h-full lg:object-cover"
             loading="lazy"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+          <div class="hidden lg:block absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
           {imageCaption && (
-            <figcaption class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-              <div class="flex items-center gap-3 max-w-2xl rounded-2xl border border-border bg-background/85 backdrop-blur-md px-5 py-4">
-                <div class="w-1 h-10 rounded-full bg-accent-sand shrink-0" />
-                <p class="text-sm lg:text-base text-foreground font-medium leading-snug">
-                  {imageCaption}
-                </p>
-              </div>
-            </figcaption>
+            <>
+              <figcaption class="lg:hidden p-5">
+                <div class="flex items-center gap-3">
+                  <div class="w-1 h-10 rounded-full bg-accent-sand shrink-0" />
+                  <p class="text-sm text-foreground font-medium leading-snug">
+                    {imageCaption}
+                  </p>
+                </div>
+              </figcaption>
+              <figcaption class="hidden lg:block absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                <div class="flex items-center gap-3 max-w-2xl rounded-2xl border border-border bg-background/85 backdrop-blur-md px-5 py-4">
+                  <div class="w-1 h-10 rounded-full bg-accent-sand shrink-0" />
+                  <p class="text-sm lg:text-base text-foreground font-medium leading-snug">
+                    {imageCaption}
+                  </p>
+                </div>
+              </figcaption>
+            </>
           )}
         </figure>
       </div>

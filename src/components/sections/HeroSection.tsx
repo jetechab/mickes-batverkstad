@@ -251,7 +251,7 @@ function HeroBackdrop() {
   );
 }
 
-function PersonalCard() {
+export function PersonalCard() {
   return (
     <div className="relative max-w-[440px] mx-auto">
       <div className="relative rounded-[2rem] border border-border bg-card shadow-[0_30px_80px_-20px_rgba(0,0,0,0.65)] overflow-hidden">

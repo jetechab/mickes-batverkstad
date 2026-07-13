@@ -77,7 +77,11 @@ function buildOwnerTextEmail(data: Payload) {
   ].join("\n");
 }
 
-function buildOwnerHtmlEmail(data: Payload) {
+/*
+ * Staplad layout (etikett över värde) istället för tvåkolumnstabell:
+ * leadmailet läses ofta i mobilen och tabellen klipptes där.
+ */
+export function buildOwnerHtmlEmail(data: Payload) {
   const rows: [string, string][] = [
     ["Namn", data.name],
     ["Telefon", data.phone],
@@ -89,32 +93,32 @@ function buildOwnerHtmlEmail(data: Payload) {
     ["Önskat datum", data.preferredDate || "Ej angivet"],
   ];
 
-  const tableRows = rows
+  const fieldBlocks = rows
     .map(
       ([label, value]) => `
-        <tr>
-          <td style="padding:10px 12px;border-bottom:1px solid #e2e8f0;font-weight:600;color:#0a1924;vertical-align:top;">${escapeHtml(label)}</td>
-          <td style="padding:10px 12px;border-bottom:1px solid #e2e8f0;color:#334155;">${escapeHtml(value)}</td>
-        </tr>`,
+        <div style="padding:10px 0;border-bottom:1px solid #e2e8f0;">
+          <p style="margin:0 0 2px 0;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#64748b;">${escapeHtml(label)}</p>
+          <p style="margin:0;font-size:15px;line-height:1.5;font-weight:600;color:#0a1924;word-break:break-word;">${escapeHtml(value)}</p>
+        </div>`,
     )
     .join("");
 
   return `
-    <div style="font-family:Inter,Arial,sans-serif;background:#f5f1ea;padding:24px;color:#0a1924;">
-      <div style="max-width:680px;margin:0 auto;background:#ffffff;border:1px solid #d4b985;border-radius:18px;overflow:hidden;">
-        <div style="padding:24px 28px;background:#0a1924;color:#f5f1ea;">
-          <p style="margin:0 0 8px 0;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#5ec3d6;">Ny förfrågan</p>
-          <h1 style="margin:0;font-size:24px;line-height:1.2;">${data.source === "quick-book" ? "Snabbokning" : "Bokningsförfrågan"} från batverkstad.se</h1>
+    <div style="font-family:Inter,Arial,sans-serif;background:#f5f1ea;padding:16px 8px;color:#0a1924;">
+      <div style="max-width:600px;width:100%;margin:0 auto;background:#ffffff;border:1px solid #d4b985;border-radius:16px;overflow:hidden;">
+        <div style="padding:18px 20px;background:#0a1924;color:#f5f1ea;">
+          <p style="margin:0 0 4px 0;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5ec3d6;">batverkstad.se</p>
+          <h1 style="margin:0;font-size:20px;line-height:1.3;">${data.source === "quick-book" ? "Ny snabbokning" : "Ny bokningsförfrågan"}</h1>
         </div>
-        <div style="padding:24px 28px;">
-          <table style="width:100%;border-collapse:collapse;">${tableRows}</table>
-          <div style="margin-top:24px;padding:18px 20px;border-radius:14px;background:#f5f1ea;border:1px solid #d4b985;">
-            <p style="margin:0 0 10px 0;font-size:13px;font-weight:700;color:#0a1924;">Meddelande</p>
-            <p style="margin:0;font-size:15px;line-height:1.65;color:#334155;white-space:pre-wrap;">${escapeHtml(data.message)}</p>
+        <div style="padding:8px 20px 20px;">
+          ${fieldBlocks}
+          <div style="margin-top:16px;padding:14px 16px;border-radius:12px;background:#f5f1ea;border:1px solid #d4b985;">
+            <p style="margin:0 0 6px 0;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#64748b;">Meddelande</p>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#334155;white-space:pre-wrap;word-break:break-word;">${escapeHtml(data.message)}</p>
           </div>
           ${
             data.email
-              ? `<p style="margin:18px 0 0 0;font-size:13px;color:#64748b;">Svara direkt på det här mailet för att kontakta ${escapeHtml(data.name)}.</p>`
+              ? `<p style="margin:14px 0 0 0;font-size:13px;color:#64748b;">Svara direkt på det här mailet för att kontakta ${escapeHtml(data.name)}.</p>`
               : ""
           }
         </div>

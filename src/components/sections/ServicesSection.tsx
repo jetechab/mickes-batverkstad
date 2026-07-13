@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, ArrowUpRight, Droplets, Fence, Paintbrush, Wrench } from "lucide-react";
+import { Anchor, ArrowRight, ArrowUpRight, Droplets, Paintbrush, Wrench } from "lucide-react";
 import { useRef } from "react";
+import { PersonalCard } from "./HeroSection";
 
 const services = [
   {
@@ -27,7 +28,7 @@ const services = [
     bullets: ["Kvalitetsfärg", "Maskerar och målar", "Släp eller bockar"],
   },
   {
-    icon: Fence,
+    icon: Anchor,
     title: "Brygganläggningar & bryggservice",
     href: "/tjanster/brygganlaggningar/",
     body: "Byggnation, ombyggnad, renovering och underhåll av bryggor, bryggdäck, landgångar och marina anläggningar. För privatpersoner, företag, samfälligheter och marinor.",
@@ -35,7 +36,11 @@ const services = [
   },
 ];
 
-export default function ServicesSection() {
+export default function ServicesSection({
+  withMechanicCard = false,
+}: {
+  withMechanicCard?: boolean;
+}) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -48,6 +53,16 @@ export default function ServicesSection() {
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,color-mix(in_srgb,var(--color-primary)_8%,transparent),transparent_50%)]" />
 
       <div className="max-w-(--max-w-content) mx-auto px-6 relative z-10">
+        {/*
+          Mobil bildbrytare: porträttkortet från heron (som är dolt på små
+          skärmar) visas här istället, på klientens önskemål, så att
+          textmassan bryts av innan tjänstelistan.
+        */}
+        {withMechanicCard && (
+          <div className="lg:hidden pt-6 mb-14">
+            <PersonalCard />
+          </div>
+        )}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
