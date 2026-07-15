@@ -71,24 +71,25 @@ export default function MeetMickeSection() {
 
             <div className="space-y-5 text-muted-foreground text-[17px] leading-relaxed max-w-(--max-w-text)">
               <p>
-                Jag grundade båtverkstaden för att göra båtlivet enklare.
-                Vi som älskar vår båt ska inte behöva köra runt med den på
-                vägarna i onödan, det känns bakvänt.
+                Jag grundade Priox Båtverkstad för att göra båtlivet enklare.
+                Vi som älskar våra båtar ska inte behöva transportera dem i
+                onödan. Därför kommer vi till båten, där den står.
               </p>
               <p>
-                Sedan dess har jag kört ut till ett hundratal båtar per år, där
-                de står. Med servicebilen, verktyg och de delar som behövs.
-                Hemma på tomten, vid bryggan eller i marinan. Jag står
-                själv bakom varje uppdrag, vilket betyder att du alltid pratar
-                med samma person. Du vet vem som tar ansvar för din båt från
-                första samtal till klart arbete.
+                Varje år hjälper vi ett hundratal båtägare med service på plats.
+                Med servicebilen, verktygen och de delar som behövs utför vi
+                arbetet hemma på tomten, vid bryggan eller i marinan. Jag är din
+                kontakt genom hela uppdraget och ser till att arbetet utförs med
+                den kvalitet och omsorg som Priox Båtverkstad står för.
               </p>
               <p>
-                Jag är utbildad marin servicetekniker och har tagit hand om
-                utombordare i många år. Numera erbjuder jag även bryggservice,
-                allt från reparationer till helt nya bryggor. När du hör av
-                dig till mig så hjälper jag dig med den bästa och smidigaste
-                lösningen för dig och din båt.
+                Jag är utbildad marin servicetekniker och har under många år
+                arbetat med utombordare. Med min bakgrund som byggingenjör och
+                byggmästare erbjuder vi även bryggservice, från reparationer och
+                renoveringar till nybyggnation av bryggor. Oavsett om det gäller
+                en motor eller en brygga är målet detsamma, att leverera ett
+                noggrant utfört arbete, hållbara lösningar och ett personligt
+                bemötande.
               </p>
             </div>
 
@@ -96,7 +97,7 @@ export default function MeetMickeSection() {
               <div className="flex items-center gap-3">
                 <Compass className="w-5 h-5 text-primary" />
                 <p className="text-sm text-foreground font-medium">
-                  Bas i Grebbestad, kör hela Bohuslän, Dalsland och Värmland.
+                  Bas i Grebbestad, verksam i Bohuslän, Dalsland och Värmland.
                 </p>
               </div>
               <a
@@ -115,15 +116,35 @@ export default function MeetMickeSection() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-4"
           >
-            <div className="relative rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)] aspect-[4/3]">
+            {/*
+              Mobil: hela fotot obeskuret med bildtexten under, så Mickes
+              ansikte inte täcks (klientens önskemål). Desktop: beskuret foto
+              med textplatta över, som förr.
+            */}
+            <div className="rounded-2xl overflow-hidden border border-border bg-card shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)] lg:relative lg:aspect-[4/3]">
               <img
                 src="/img/micke-vid-bilen.jpg"
                 alt="Micke vid sin servicebil vid vattnet i Bohuslän"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="w-full h-auto lg:absolute lg:inset-0 lg:h-full lg:object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 lg:p-6">
+              <div className="hidden lg:block absolute inset-0 bg-gradient-to-t from-background via-background/55 to-transparent" />
+
+              {/* Mobil: bildtext under fotot */}
+              <div className="lg:hidden p-5">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-1 h-3.5 rounded-full bg-accent-sand" />
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent-sand">
+                    Mobil verkstad
+                  </p>
+                </div>
+                <p className="font-heading text-[17px] sm:text-lg font-bold text-foreground leading-snug">
+                  Service där båten ligger. När det behövs.
+                </p>
+              </div>
+
+              {/* Desktop: textplatta över fotot */}
+              <div className="hidden lg:block absolute bottom-0 left-0 right-0 p-6">
                 <div className="inline-flex flex-col gap-1.5 rounded-xl bg-background/70 backdrop-blur-md border border-border px-4 py-3">
                   <div className="flex items-center gap-2">
                     <div className="w-1 h-3.5 rounded-full bg-accent-sand" />
@@ -131,7 +152,7 @@ export default function MeetMickeSection() {
                       Mobil verkstad
                     </p>
                   </div>
-                  <p className="font-heading text-[17px] sm:text-lg font-bold text-foreground leading-snug">
+                  <p className="font-heading text-lg font-bold text-foreground leading-snug">
                     Service där båten ligger. När det behövs.
                   </p>
                 </div>
