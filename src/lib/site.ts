@@ -46,8 +46,8 @@ export const services = [
   },
   {
     slug: "brygganlaggningar",
-    title: "Brygganläggningar & bryggservice",
-    short: "Byggnation, ombyggnad, renovering och underhåll av bryggor och marina anläggningar.",
+    title: "Bryggbygge & bryggservice",
+    short: "Bryggbyggen, bryggrenoveringar, pålning och underhåll av bryggor och marina anläggningar.",
     brands: [],
   },
 ] as const;

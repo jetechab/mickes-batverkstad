@@ -52,7 +52,7 @@ export const faqs: { q: string; a: ReactNode; plain: string }[] = [
     q: "Gör ni även jobb på bryggor?",
     a: "Ja. Vi bygger, renoverar och underhåller bryggor, bryggdäck och landgångar längs Bohuskusten. Det börjar med en besiktning på plats, sedan får du ett tydligt förslag på åtgärder och pris innan vi sätter igång.",
     plain:
-      "Ja, vi utför byggnation, renovering och underhåll av bryggor och marina anläggningar längs Bohuskusten.",
+      "Ja, vi utför bryggbyggen, bryggrenoveringar, pålning och underhåll av bryggor och marina anläggningar längs Bohuskusten.",
   },
   {
     q: "Har ni F-skatt?",

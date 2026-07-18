@@ -29,10 +29,10 @@ const services = [
   },
   {
     icon: Anchor,
-    title: "Brygganläggningar & bryggservice",
+    title: "Bryggbygge & bryggservice",
     href: "/tjanster/brygganlaggningar/",
-    body: "Byggnation, ombyggnad, renovering och underhåll av bryggor, bryggdäck, landgångar och marina anläggningar. För privatpersoner, företag, samfälligheter och marinor.",
-    bullets: ["Byggnation och ombyggnad", "Reparation och renovering", "Underhåll och service"],
+    body: "Bryggbyggen, ombyggnader, bryggrenoveringar, pålning och underhåll av bryggor, bryggdäck, landgångar och marina anläggningar. För privatpersoner, företag, samfälligheter och marinor.",
+    bullets: ["Bryggbygge och ombyggnad", "Bryggrenovering och reparation", "Pålning och underhåll"],
   },
 ];
 

@@ -40,7 +40,7 @@ const heroServices = [
   {
     label: "Bryggor & marina",
     value: "Bryggservice",
-    sub: "Byggnation, ombyggnad och underhåll",
+    sub: "Bryggbygge, ombyggnad och underhåll",
     href: "/tjanster/brygganlaggningar/",
   },
 ];
@@ -86,7 +86,8 @@ export default function HeroSection({ city }: HeroSectionProps) {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-md">
                 <Anchor className="w-3.5 h-3.5 text-primary" />
                 <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.12em] text-primary">
-                  Mobil båtverkstad i Bohuslän
+                  Mobil båtverkstad & bryggservice
+                  <span className="hidden sm:inline"> i Bohuslän</span>
                 </span>
               </div>
               <a

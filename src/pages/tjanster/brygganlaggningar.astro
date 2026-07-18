@@ -6,13 +6,13 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Brygganläggningar & bryggservice",
+  name: "Bryggbygge, bryggservice & bryggrenovering",
   provider: {
     "@type": "LocalBusiness",
     name: "Priox Båtverkstad",
   },
   description:
-    "Byggnation, ombyggnad, renovering och underhåll av bryggor, bryggdäck, landgångar och marina anläggningar längs Bohuskusten.",
+    "Bryggbyggen, ombyggnader, bryggrenoveringar, pålningsarbeten och underhåll av bryggor, bryggdäck, landgångar och marina anläggningar längs Bohuskusten.",
   serviceType: "Dock and pier construction and maintenance",
   areaServed: { "@type": "AdministrativeArea", name: "Bohuslän" },
 };
@@ -26,7 +26,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Brygganläggningar & bryggservice",
+      name: "Bryggbygge, bryggservice & bryggrenovering",
       item: "https://batverkstad.se/tjanster/brygganlaggningar/",
     },
   ],
@@ -34,22 +34,23 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Brygganläggningar & bryggservice | Byggnation och underhåll"
-  description="Byggnation, ombyggnad, renovering och underhåll av bryggor, bryggdäck och landgångar längs Bohuskusten. För privatpersoner, företag, samfälligheter och marinor."
+  title="Bryggbygge, bryggservice & bryggrenovering i Bohuslän"
+  description="Bryggbyggen, ombyggnader, bryggrenoveringar, pålningsarbeten och underhåll av bryggor, bryggdäck och landgångar längs Bohuskusten. För privatpersoner, företag, samfälligheter och marinor."
   schema={[serviceSchema, breadcrumbSchema]}
 >
   <ServicePage
     eyebrow="Tjänst"
-    title="Brygganläggningar &"
-    titleAccent="bryggservice"
-    lede="Vi utför byggnation, ombyggnad, renovering och underhåll av bryggor, bryggdäck, landgångar och marina anläggningar längs Bohuskusten. Vi hjälper privatpersoner, företag, samfälligheter och marinor med både mindre och större projekt."
+    title="Bryggbygge, bryggservice &"
+    titleAccent="bryggrenovering"
+    lede="Vi utför bryggbyggen, ombyggnader, bryggrenoveringar, pålningsarbeten och underhåll av bryggor, bryggdäck, landgångar och marina anläggningar längs Bohuskusten. Vi hjälper privatpersoner, företag, samfälligheter och marinor med både mindre och större projekt."
     price="Från 1 250 kr"
     image="/img/brygga.webp"
     imageAlt="Träbrygga vid Bohuskusten med sjöbodar och klippor i bakgrunden"
     imageCaption="Hållbara brygglösningar för den marina miljön. Byggt för att klara väder, vind och saltvatten."
     bullets={[
-      "Byggnation och ombyggnad",
-      "Reparation och renovering",
+      "Bryggbygge och ombyggnad",
+      "Bryggrenovering och reparation",
+      "Pålning och grundläggning för bryggor",
       "Hållbara och säkra konstruktioner",
       "Marina anläggningar och kajer",
       "Kvalitetsmaterial för lång livslängd",
@@ -59,7 +60,7 @@ const breadcrumbSchema = {
     includes={[
       "Besiktning och bedömning på plats",
       "Planering och förslag på åtgärder",
-      "Byggnation, ombyggnad och reparation",
+      "Bryggbygge, ombyggnad och reparation",
       "Montering av landgångar, pollare, stegar och utrustning",
       "Byte av bryggvirke och bärande konstruktioner",
       "Slutkontroll efter utfört arbete",
