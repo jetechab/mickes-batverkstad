@@ -19,7 +19,7 @@ const breadcrumbSchema = {
   description="Priox Båtverkstad, tidigare Mickes Båtverkstad, är en mobil båtverkstad i Bohuslän. Service av utombordare, krympplastning, bottenmålning och bryggservice. Bas i Grebbestad."
   schema={breadcrumbSchema}
 >
-  <section class="bg-background pt-24 pb-20 lg:pt-28 lg:pb-28 relative overflow-hidden border-b border-border">
+  <section class="bg-background pt-20 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden border-b border-border">
     <div class="absolute inset-0 pointer-events-none opacity-50">
       <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
       <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent-sand/10 rounded-full blur-[120px]"></div>
@@ -32,18 +32,35 @@ const breadcrumbSchema = {
         <span class="text-foreground">Om oss</span>
       </nav>
 
-      <div class="relative rounded-3xl overflow-hidden border border-border shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)] aspect-[16/9] mb-12 lg:mb-16">
+      {/*
+        Mobil: hela fotot obeskuret med bildtexten under, så texten inte
+        hamnar över ansiktet (korr från Måns). Desktop: beskuret foto med
+        text över, som förr.
+      */}
+      <div class="rounded-3xl overflow-hidden border border-border bg-card shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)] mb-12 lg:mb-16 lg:relative lg:aspect-[16/9]">
         <img
           src="/img/micke-vid-bilen.jpg"
           alt="Micke framför servicebilen i Bohuslän"
-          class="absolute inset-0 w-full h-full object-cover"
+          class="w-full h-auto lg:absolute lg:inset-0 lg:h-full lg:object-cover"
           loading="eager"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-10">
+        <div class="hidden lg:block absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent"></div>
+
+        {/* Mobil: bildtext under fotot */}
+        <div class="lg:hidden p-5">
+          <div class="flex items-center gap-3">
+            <div class="w-1 h-10 rounded-full bg-accent-sand"></div>
+            <p class="text-sm text-foreground font-medium leading-snug">
+              Bas i Grebbestad. Verkstaden kör jag dit båten står.
+            </p>
+          </div>
+        </div>
+
+        {/* Desktop: text över fotot */}
+        <div class="hidden lg:block absolute bottom-0 left-0 right-0 p-10">
           <div class="flex items-center gap-3 max-w-2xl">
             <div class="w-1 h-10 rounded-full bg-accent-sand"></div>
-            <p class="text-sm lg:text-base text-foreground font-medium leading-snug">
+            <p class="text-base text-foreground font-medium leading-snug">
               Bas i Grebbestad. Verkstaden kör jag dit båten står.
             </p>
           </div>
